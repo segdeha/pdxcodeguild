@@ -24,25 +24,25 @@ Students will learn Python, Django, JavaScript, SQL, HTML, CSS, how to think lik
 
 The course is broken down into five sections. Each section has a number of competencies that will be incorporated into exercises and projects for each section. The sections are outlined below with technical and interpersonal objectives listed.
 
-1. ### Python
+1. **Python**
    - Technical:
      - Read, write and debug programs in Python, using professional tools and practices that meet industry expectations of a junior web developer and follow PEP 8 standards     - Write a python program using PEP 8 standards (Industry standards for Python)     - Use comments to clearly explain code     - Use command line, IDE/text editor, python packages and repositories
    - Interpersonal:     - Be an effective pair programming partner (be courteous & flexible, communicate clearly, listen carefully, and be an active participant)
-1. ### HTML/CSS
+1. **HTML/CSS**
    - Technical:
      - Create a static website using HTML5 and CSS3
      - Practice website file management     - Deploy website to host     - Find and correct errors/inconsistencies in HTML and CSS across Chrome, Firefox, and Microsoft Edge
    - Interpersonal:
      - asdf
-1. ### JavaScript
+1. **JavaScript**
    - Technical:
      - asdf
    - Interpersonal:     - asdf
-1. ### Django/SQL
+1. **Django/SQL**
    - Technical:
      - asdf
    - Interpersonal:     - asdf
-1. ### Capstone
+1. **Capstone**
    - Technical:
      - asdf
    - Interpersonal:     - Be an effective presenter to both technical and non-technical audiences

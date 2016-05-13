@@ -74,13 +74,13 @@ In fair {two}, where we lay our scene,
 From ancient {three} break to new mutiny,
 Where civil blood makes civil hands unclean.
 From forth the fatal loins of these two foes
-A pair of star-cross`d {four} take their life;
+A pair of star-cross’d {four} take their life;
 Whole misadventured piteous overthrows
-Do with their {five} bury their parents` strife.
+Do with their {five} bury their parents’ strife.
 The fearful passage of their {six} love,
-And the continuance of their parents` rage,
-Which, but their children`s end, nought could {seven},
-Is now the {eight} hours` traffic of our stage;
+And the continuance of their parents’ rage,
+Which, but their children’s end, nought could {seven},
+Is now the {eight} hours’ traffic of our stage;
 The which if you with {nine} {ten} attend,
 What here shall {eleven}, our toil shall strive to mend.
 '''.format(

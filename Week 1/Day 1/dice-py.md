@@ -14,3 +14,14 @@ Program should ask the user for the number of dice they want to roll as well as 
 - String concatenation
 - Handling user input
 - Importing functions
+- Defining functions
+- `for` loops¹
+- The `range` statement¹
+- Casting values
+- Reading error messages
+
+------
+
+Sources:
+
+1. [Compound statements](https://docs.python.org/3/reference/compound_stmts.html)

@@ -1,7 +1,8 @@
-Write a simple program that, when run, prompts the user for input then prints a result.
+Write a simple program that, when run, prompts the user for several inputs then prints a [Mad Lib](https://en.wikipedia.org/wiki/Mad_Libs) as the result.
 
+1. Search the interwebs for an example Mad Lib
 1. Open Atom
-1. Create a new file and save it as `dice.py`
+1. Create a new file and save it as `madlib.py`
 1. Follow along with the instructor
 
 ------
@@ -9,5 +10,11 @@ Write a simple program that, when run, prompts the user for input then prints a 
 ### Key Concepts
 
 - Variables
-- String concatenation
+- String formatting¹
 - Handling user input
+
+------
+
+Sources:
+
+1. [Common string operations](https://docs.python.org/3.1/library/string.html)

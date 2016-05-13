@@ -30,7 +30,8 @@ The course is broken down into five sections. Each section has a number of compe
    - Interpersonal:     - Be an effective pair programming partner (be courteous & flexible, communicate clearly, listen carefully, and be an active participant)
 1. ### HTML/CSS
    - Technical:
-     - asdf
+     - Create a static website using HTML5 and CSS3
+     - Practice website file management     - Deploy website to host     - Find and correct errors/inconsistencies in HTML and CSS across Chrome, Firefox, and Microsoft Edge
    - Interpersonal:
      - asdf
 1. ### JavaScript

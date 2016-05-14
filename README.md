@@ -14,11 +14,11 @@ Course materials for the Summer 2016 Day Class with PDX Code Guild.
 
 ## Description
 
-Python-Based Junior Developer is an intense twelve-week, part time, hands-on immersive course that combines individual projects and group study to give students the skills and habits they need to succeed as a junior developer.
+_Python-Based Junior Developer_ is an intensive, 12-week, part-time, hands-on, immersive course that combines individual projects and group study to give students the skills and habits they need to succeed as a junior developer.
 
 ## Overview
 
-Students will learn Python, Django, JavaScript, SQL, HTML, CSS, how to think like a programmer, and important developer practices including source control, testing, and debugging. Students practice skills using pair programming and group work, as well as work on personal portfolio projects.
+Students learn Python, Django, JavaScript, SQL, HTML, CSS, as well as how to think like a programmer, and important developer practices including source control, testing, and debugging. Students practice skills using pair programming and group work, as well as work on personal portfolio projects.
 
 ## Learning Objectives
 
@@ -27,27 +27,34 @@ The course is broken down into five sections. Each section has a number of compe
 1. **Python**
    - Technical:
      - Read, write and debug programs in Python, using professional tools and practices that meet industry expectations of a junior web developer and follow [PEP 8](https://www.python.org/dev/peps/pep-0008/) standards     - Use comments to clearly explain code     - Use command line, IDE/text editor, python packages and repositories
-   - Interpersonal:     - Be an effective pair programming partner (be courteous & flexible, communicate clearly, listen carefully, and be an active participant)
+   - Interpersonal:     - Be an effective pair programming partner (be courteous & flexible, communicate clearly, listen carefully, and be an active participant)     - Make effective use of 1-on-1 meetings with the instructor
+     - Understand your motivations, develop empathy for the motivations of others
 1. **HTML/CSS**
    - Technical:
      - Create a static website using HTML5 and CSS3
      - Practice website file management     - Deploy website to host     - Find and correct errors/inconsistencies in HTML and CSS across Chrome, Firefox, and Microsoft Edge
    - Interpersonal:
-     - asdf
+     - Silence your inner critic by adopting a growth mindset
 1. **JavaScript**
    - Technical:
      - Read and write functional JavaScript     - Augment static website using JavaScript     - Use the JavaScript libraries jQuery, jQueryUI
-   - Interpersonal:     - asdf
+   - Interpersonal:     - Get comfortable with professional networking     - Give, receive, and integrate feedback through code reviews     - Recognize and manage stress and anxiety
 1. **Django/SQL**
    - Technical:
-     - Use the Python web framework Django with Python, HTML, CSS, SQL and JavaScript to create a fully functional, modern website     - Use Python HTML, CSS, SQL and JavaScript to create a fully featured website     - Write code that uses the application-database relationship and common database components including data types, tables and stored procedures     - Independently find answers to technical questions
-   - Interpersonal:     - asdf
+     - Use the Python web framework Django with Python, HTML, CSS, SQL and JavaScript to create a fully functional, modern website     - Use Python HTML, CSS, SQL and JavaScript to create a fully featured website     - Write code that uses the application-database relationship and common database components including data types, tables and stored procedures   - Interpersonal:     - Find a healthy balance between independently find answers to technical questions and asking for help (avoid ‘white knuckling’ problems)
+     - Understand how you handle conflict
+     - Understand the biases we all bring to our work
 1. **Capstone**
    - Technical:
      - Plan, design and implement a final project that demonstrates an understanding of all the topics covered, and how they work together for full stack web design
      - Follow all industry standards for the languages and tools used     - Choose a final project that uses tools learned in class     - Break a problem down into steps and order the steps logically     - Utilize resources to find answers to questions that come up during building of the final project     - Work independently and as a team to manage time, communicate, be flexible and delegate     - Produce a final project that demonstrates mastery of programming skills and professional developer practices
-   - Interpersonal:     - Be an effective presenter to both technical and non-technical audiences
-     - Be able to clearly communicate your skills and motivations in an interview setting
+   - Interpersonal:     - Effectively present work to both technical and non-technical audiences
+     - Clearly communicate your skills and motivations in an interview setting
+1. **Post-capstone**
+   - Technical:
+     - Polish/improve capstone project in preparation for demo day
+   - Interpersonal:
+     - Write an effective resume
 
 ## Basis for Final Grade
 

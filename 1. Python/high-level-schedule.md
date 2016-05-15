@@ -1,12 +1,46 @@
 # High-Level Schedule
 
-The course is broken into 5 major themes:
+The course is broken into 5 major streams. There will be overlap at times, but for the most part we will focus on 1 topic at a time, while building on previously learned skills and knowledge.
 
-1. Python
-1. HTML/CSS
-1. JavaScript
-1. Django/SQL
-1. Capstone Project
+1. **Python**
+    - Language basics
+    - Advanced features of the language (classes, modules)
+    - Working with source control
+    - Debugging
+    - Structuring programs
+    - Unit testing
+    - Pair programming
+    - Code reviews
+1. **HTML/CSS**
+    - How the web works (HTTP, requests, responses)
+    - Semantic HTML
+    - Accessibility (ARIA)
+    - CSS selectors
+    - Box model
+    - Typography
+    - Color
+    - Layout
+    - Frontend build tools
+    - Intro to Sass & Gulp
+    - Presentation skills (useful for demos, e.g.)
+1. **JavaScript**
+    - Language basics
+    - Prototypal inheritance
+    - Scope/closures
+    - Event handling
+    - DOM manipulation
+    - Ajax requests (asynchronous programming)
+1. **Django/SQL**
+    - MVC
+    - Scaffolding (CRUD)
+    - Routes
+    - Views
+    - Databases (SQL)
+    - ORM
+1. **Capstone Project**
+    - Software Development Lifecycle (SDLC)
+    - Agile versus waterfall
+    - Interviewing practice
 
 ------
 

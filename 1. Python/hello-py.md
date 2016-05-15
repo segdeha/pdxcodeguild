@@ -5,7 +5,7 @@
 Write a simple program that prints out “Hello world!” when run.
 
 1. Open Atom
-1. Create a new file and save it as `hello.py`
+1. Create a new file and save it as `hello.py` (save this and all coursework in a directory together)
 1. Follow along with your instructor
 
 ------

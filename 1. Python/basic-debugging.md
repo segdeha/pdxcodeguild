@@ -1,6 +1,6 @@
 # Basic Debugging
 
-You will make mistakes. That’s expected! The computer will tell you what is wrong _if you ask._
+You _will_ make mistakes. That’s expected! The computer will tell you what is wrong _if you listen._
 
 Use the following two ideas to help you solve problems. **I cannot stress strongly enough** how these techniques will help.
 

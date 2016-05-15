@@ -13,6 +13,8 @@ Use comments to:
 1. Disable one version of code you’re trying out to compare to another version
 1. As a to-do list for things you need to fill in later
 
+------
+
 ## Multi-line comments
 
 Sometimes you need to write comments that span multiple lines. [PEP 8 recommends](http://legacy.python.org/dev/peps/pep-0008/#block-comments) using multiple, single-line comments (`#` style) unless the comment is what’s known as a documentation string or ‘docstring’.

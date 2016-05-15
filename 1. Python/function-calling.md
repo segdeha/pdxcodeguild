@@ -8,7 +8,7 @@ Operators are the super basic verbs of programming represented by symbols. But t
     argument value --+- function --> return value
     argument value -/
 
-Python gives us a function called `max`.
+For example, Python gives us a function called `max`.
 It returns the bigger of the two input arguments.
 
 To use a function, you **call** it:

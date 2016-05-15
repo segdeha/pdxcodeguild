@@ -33,7 +33,10 @@ Open Atom and install the following packages:
 - autocomplete-python
 - language-python
 - python-autopep8
+- linter
 - linter-python-pep8
+- linter-sass-lint
+- linter-eslint
 
 ------
 

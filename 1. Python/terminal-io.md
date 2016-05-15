@@ -1,7 +1,5 @@
 # Terminal I/O
 
-Thus far we’ve only been moving values invisibly inside the program.
-
 The following Python outputs nothing:
 
     name = 'David'

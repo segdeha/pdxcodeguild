@@ -15,7 +15,7 @@ To use a function, you **call** it:
 
     max(5, 9)  #> 9
 
-Provide the **name** of the function, then an `(`, then a comma separated list of expressions to **pass** as inputs, then a `)`.
+Provide the **name** of the function, then an `(`, then a comma-separated list of expressions to **pass** as inputs, then a `)`.
 The `()`s are required to make the function actually execute.
 
 The order of the arguments is important. Depending on the function, it might interpret the values of the arguments differently.

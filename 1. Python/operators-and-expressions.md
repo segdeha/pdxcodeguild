@@ -2,7 +2,7 @@
 
 Programming is giving instructions to the computer to transform some input data into different output data.
 
-The most basic way is via an **operator.** Operators take in multiple input **arguments** and **returns** a single output value. Operators are the basic verbs of programming.
+The most basic way is via an **operator.** Operators take in multiple input **arguments** and **return** a single output value. Operators are the basic verbs of programming.
 
     argument value -\
                      >-- operator --> return value

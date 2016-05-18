@@ -4,7 +4,7 @@ If you don’t already, make sure you have all of the following installed on you
 
 - [git](https://git-scm.com/downloads)
 - [Python 3](https://www.python.org/downloads/)
-- [Atom](https://atom.io/)
+- [Atom](https://atom.io/) and/or [PyCharm](https://account.jetbrains.com/a/aoszpv)
 - [Slack](https://slack.com/downloads)
 - [Google Chrome](https://www.google.com/chrome/browser/desktop/)
 

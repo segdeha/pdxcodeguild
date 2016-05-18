@@ -22,7 +22,7 @@ Look at the _bottom_ of the error message:
 * `NameError` — No variable or function known by that name
 * `ValueError` — A value you’re using doesn’t make sense in the context
 * `TypeError` — You’re using the wrong type
-* `SyntaxError` — You’re not writing Python correctly
+* `SyntaxError` — Your Python is written incorrectly
 
 ------
 

@@ -15,9 +15,15 @@ Files and directories that match will not show up when you run `git status` in y
 
 The following is a good starting point for your own `.gitignore` file:
 
-    .DS_Store # applies only to OS X
-    .gitignore # ignore the .gitignore file!
-    node_modules # directory where npm stores packages
-    *.pyc # compiled python files
-    __pycache__ # pre-parsed python
-    db.sqlite3 # Django default database
+    # applies only to OS X
+    .DS_Store
+    # ignore the .gitignore file!
+    .gitignore
+    # directory where npm stores packages
+    node_modules
+    # compiled python files
+    *.pyc
+    # pre-parsed python
+    __pycache__
+    # Django default database
+    db.sqlite3

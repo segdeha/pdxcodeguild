@@ -30,7 +30,7 @@ def process_user_movement(description, doors):
     print("You see doors to the ", end="")
     print(*list(doors.keys()), sep=", ")
 
-    # Prompt the for what doors they want
+    # Prompt the user for what doors they want
     choice = ""
 
     # Do things based on their response

@@ -83,12 +83,12 @@ Example:
 
 The following table shows some of the relative characteristics of the different types:
 
-    | Type  | Length? | Ordered? | Lookup? |
-    | ----- | ------- | -------- | ------- |
-    | List  | Yes     | Yes      | No      |
-    | Tuple | Yes     | Yes      | No      |
-    | Dict  | No      | No       | Yes     |
-    | Set   | No      | No       | No      |
+    | Type  | Length? | Ordered? | Lookup? | Mutable? |
+    |-------|---------|----------|---------|----------|
+    | List  | Yes     | Yes      | No      | Yes      |
+    | Tuple | Yes     | Yes      | No      | No       |
+    | Dict  | Yes     | No       | Yes     | Yes      |
+    | Set   | No      | No       | No      | Yes      |
 
 There is _no shame_ in converting between data structures within a single problem.
 There is no perfect data structure that answers all of your questions, so…

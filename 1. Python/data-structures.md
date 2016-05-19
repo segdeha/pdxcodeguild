@@ -12,7 +12,7 @@ Example:
     
     mixed_data = ['a string', 42, {'a':'dictionary'}]
 
-To access a member of a list, you reference its index. This makes it convenient to loop over the values. Note that these indexes start at 0, not 1!
+To access a member of a list, you reference its index. This makes it convenient to loop over the values. _Note that these indexes start at 0, not 1!_
 
 Example:
 
@@ -21,7 +21,7 @@ Example:
     for i in range(0, len(supercar_makes)):
         print(supercar_makes[i])
 
-Despite their simplicity, because they guarantee order, lists have many uses including acting as [queues](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) and [stacks](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)).
+Despite their simplicity and because they guarantee order, lists have many uses including acting as [queues](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) and [stacks](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)).
 
 ## Tuple
 

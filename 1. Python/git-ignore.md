@@ -5,9 +5,12 @@ A **Git Ignore** file is a list of file names for Git to ignore and not track. I
 Each line in the file is a pattern to match.
 You can use `#` comments.
 
-    *.txt # Ignore all files ending in .txt
-    notes # Ignore all files or directories named notes anywhere
-    /root_notes # Ignore a file named root_notes in the repo root
+    # Ignore all files ending in .txt
+    *.txt
+    # Ignore all files or directories named notes anywhere
+    notes
+    # Ignore a file named root_notes in the repo root
+    /root_notes
 
 Files and directories that match will not show up when you run `git status` in your repository root.
 

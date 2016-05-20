@@ -1,3 +1,11 @@
+"""
+
+>>> calculate_change(99)
+'Your change for 99¢ consists of 3 quarters, 2 dimes, 4 pennies.'
+
+"""
+
+
 def calculate_change(cents):
     """Return a formatted string with only the coins listed that are needed for the change.
 
@@ -5,7 +13,7 @@ def calculate_change(cents):
     'Your change for 99¢ consists of 3 quarters, 2 dimes, 4 pennies.'
 
     >>> calculate_change(47)
-    'Your change for 47¢ consists of 1 quarters, 2 dimes, 2 pennies.'
+    'Your change for 47¢ consists of 1 quarter, 2 dimes, 2 pennies.'
 
     >>> calculate_change(12)
     'Your change for 12¢ consists of 1 dimes, 2 pennies.'
@@ -30,9 +38,9 @@ def calculate_change(cents):
     pieces = []
 
     if num_quarters > 0:
-        # quarters_string = 'quarter' if num_quarters == 1 else 'quarters'
-        # pieces.append('{num_quarters} ' + quarters_string)
-        pieces.append('{num_quarters} quarters')
+        quarters_string = 'quarter' if num_quarters == 1 else 'quarters'
+        pieces.append('{num_quarters} ' + quarters_string)
+        # pieces.append('{num_quarters} quarters')
 
     if num_dimes > 0:
         pieces.append('{num_dimes} dimes')

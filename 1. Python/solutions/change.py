@@ -72,13 +72,15 @@ def get_coins_and_remainder_for_value(coin, value):
     return value // coin, value % coin
 
 
-# input
-cents = int(input('How much change do you need (enter a number of cents under 100)? '))
-change = calculate_change(cents)
-print(change)
+def prompt_user():
+    """Gather user input, calculate change, print result"""
+    cents = int(input('How much change do you need (enter a number of cents under 100)? '))
+    change = calculate_change(cents)
+    print(change)
 
 
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    prompt_user()

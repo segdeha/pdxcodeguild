@@ -15,6 +15,7 @@ Python supports the following 4 types of errors (by default, you can create your
 * `ValueError` — A value you’re using doesn’t make sense in the context
 * `TypeError` — You’re using the wrong type
 * `SyntaxError` — Your Python is written incorrectly
+* `KeyError` — The key you’re trying to access is not present in the dictionary
 
 An elegant way to make your program more robust is to ‘catch’ thrown errors using what’s called a `try`/`except` block.
 

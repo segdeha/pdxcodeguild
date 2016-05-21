@@ -42,6 +42,12 @@ Example:
     
     character = {'name':'Brienne of Tarth', 'role': 'knight', 'kings_killed': 1, 'allegiances': ['House Tarth', 'House Baratheon', 'Renly Baratheon’s Kingsguard', 'House Tully', 'House Stark']}
 
+You can access members (values) of the dictionary directly using ‘sub’ syntax.
+
+Example:
+
+    food_ratings['curry']  # > 8.0
+
 If you want to iterate over the values in a dictionary, you must first retrieve the keys using the built-in `.keys()` method.
 
 Example:

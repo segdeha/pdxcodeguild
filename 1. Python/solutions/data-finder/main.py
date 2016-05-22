@@ -207,9 +207,10 @@ def main(filename):
     # Get the directory in which the script is executing
     dirname = os.path.split(os.path.abspath(__file__))[0]
 
-    # Open the file, read the data, and convert the JSON to a data structure
+    # Open the file, read the data, convert the JSON to a data structure, close the file
     f = open('/'.join([dirname, filename]), 'r')
     data = json.loads(f.read())
+    f.close()
 
     data_type = input('Are you interested in {choices}? '.format(
         choices=format_list_as_string(data.keys())

@@ -20,6 +20,9 @@ Programming your game, you would continue in this way, breaking down problems in
 1. Solve the small problems one at a time
 1. Connect the dots
 1. Once your program is working, refactor/improve/optimize
+    - Add error/exception handling
+    - Change variable/function names to be more clear and descriptive
+    - Add comments (docstrings for functions, comments for tricky/non-obvious parts of the code)
 
 Example:
 
@@ -56,3 +59,9 @@ Having quickly verified in the Python shell that this works, let’s use this as
         print('It is not a palindrome!')
 
 This is a really simple example, but it is here to illustrate the process you should follow for breaking big problems down into smaller ones.
+
+------
+
+Sources:
+
+1. [The Beginner Programmer's guide to Problem Solving ](http://www.codeproject.com/Tips/833768/The-Beginner-Programmers-guide-to-Problem-Solving)

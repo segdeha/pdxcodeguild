@@ -1,6 +1,6 @@
 # JSON
 
-[JavaScript Object Notation](http://www.json.org/) (JSON, pronounced like “Jason”) started out as a way of describing structured data within (not surprisingly) JavaScript. It has become the default way to share data within and between programs in most programming languages common to web development.
+[JavaScript Object Notation](http://www.json.org/) (JSON, pronounced like “Jason” not "Jaysawn") started out as a way of describing structured data within (not surprisingly) JavaScript. It has become the default way to share data within and between programs in most programming languages common to web development.
 
 ## What’s so great about JSON?
 
@@ -32,12 +32,22 @@ Example:
 
     import json
     
-    my_json_string = json.JSONEncoder().encode({"foo": ["bar", "baz"], 'qux': None, 'quux': True})
+    my_json_string = json.dumps({"foo": ["bar", "baz"], 'qux': None, 'quux': True})
     my_json_string  # > '{"foo": ["bar", "baz"], "quux": true, "qux": null}'
     
-    my_obj = json.JSONDecoder().decode(my_json_string)
+    my_obj = json.loads(my_json_string)
     my_obj  # > {'foo': ['bar', 'baz'], 'qux': None, 'quux': True}
 
-Note: The order of dictionary keys is not guaranteed, so if you want to unit test results from the JSON encoding method, pass `sort_keys=True` to `JSONEncoder` to ensure keys are returned in alphabetical order.
+Note: The order of dictionary keys is not guaranteed, so if you want to unit test results from the JSON encoding method, pass `sort_keys=True` to `json.dumps` to ensure keys are returned in alphabetical order.
+
+Example:
+
+    import json
+    
+    no_guaranteed_order = json.dumps({"c":3, "a":1, "b": 2})
+    no_guaranteed_order  # > '{"c": 3, "a": 1, "b": 2}'
+    
+    alpha_order = json.dumps({"c":3, "a":1, "b": 2}, sort_keys=True)
+    alpha_order  # > '{"a": 1, "b": 2, "c": 3}'
 
 You can read more about [Python’s built-in JSON methods](https://docs.python.org/3/library/json.html) in the documentation.

@@ -14,11 +14,11 @@ _Note: This is a pair programming exercise. Work together!_
 
 ## New Requirements
 
--  Load your data from the `data.json` file using what we learned in [File I/O](https://github.com/segdeha/pdxcodeguild/blob/master/1.%20Python/4/file-io.md) and [JSON](https://github.com/segdeha/pdxcodeguild/blob/master/1.%20Python/4/json.md)
+-  Load your data from the `data.json` file using what we covered in [File I/O](https://github.com/segdeha/pdxcodeguild/blob/master/1.%20Python/4/file-io.md) and [JSON](https://github.com/segdeha/pdxcodeguild/blob/master/1.%20Python/4/json.md)
 -  Notice that the data structure has categories at the top level
     -  Write your program in such a way that you could add additional categories and it would still work (e.g., ‘Comics’ in addition to or instead of ‘Food’, ‘Football’, and ‘Movies’)
 - Notice that within each category there are `data` and `strings` dictionaries
-    -  Use the `strings` dictionary for user prompts and output wherever you can (this allows customization of the user interface to fit the data as well as the possibility of localizing the content for different languages)
+    -  Use the `strings` dictionary for user prompts and output where you can (this allows for customization of the user interface to fit the data as well as the possibility of localizing the content for different languages)
 - Start by prompting the user for the category they want to explore
 - Have the program start over if the user enters input the program doesn’t understand
 - Allow the user the option of starting again once an answer is found

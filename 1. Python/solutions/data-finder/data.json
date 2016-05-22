@@ -66,6 +66,20 @@
             "Comedy": {
                 "Raising Arizona": ["Nicolas Cage", "Holly Hunter", "John Goodman"],
                 "Zoolander 2": ["Ben Stiller", "Owen Wilson", "Penélope Cruz"]
+            },
+            "Romantic Comedy": {
+                "The Princess Bride": [
+                    "Cary Elwes",
+                    "Robin Wright",
+                    "Mandy Patinkin",
+                    "Christopher Guest",
+                    "Wallace Shawn",
+                    "André the Giant",
+                    "Fred Savage",
+                    "Peter Falk",
+                    "Carol Kane",
+                    "Billy Crystal"
+                ]
             }
         },
         "strings": {

@@ -2,18 +2,14 @@
 
 When the file is run directly, the user experience goes like this:
 
-    Prompt the user for whether they’re interested in food or football
-        If they choose food, ask them for a type of cuisine or an ingredient
-            If they choose cuisine, prompt them for a dish from that kind of cuisine
-                If we find the dish, print the list of ingredients
-            If they entered an ingredient, print a dish that uses that ingredient
-        If they choose football, ask them for a conference or a team name
-            If they give us a conference, prompt them for a division within the conference
-                If we find the division, print the list of teams in the division
-            If they entered a team name, print the conference and division the team plays in
+- Prompt the user for which category they’re interested in
+  - Prompt the user for either the top-level key to the dataset or an item from one of the lists in the dataset
+    - If they choose a top-level key, prompt them for a child-key
+      - If we find the child-key, print the list items for the top-level and child keys
+    - If they choose an item from a list, print the top-level and child keys
 
 When the file is imported as a module, any of the functions are available to be used.
-See the docstrings in the methods for usage details.
+See the docstrings in the `__test__` variable for usage details.
 
 """
 
@@ -153,50 +149,12 @@ def format_list_as_string(list_of_strings, conjunction='or'):
     """Format a list of strings as a string where all items are separated by commas and the last 2 items are
     separated by the given conjunction (defaults to 'or')."""
     if len(list_of_strings) == 1:
-        return list_of_strings[0]  # Usually, this is a sign of brittleness, but we just checked to make sure it’s there
+        return list_of_strings[0]  # Usually this is a sign of brittleness, but we *just* checked to make sure it exists
     else:
         strings = list(list_of_strings)  # Copy the list so we don’t pop off the last member of the actual data
         last_item = strings.pop()
         delimiter = ' {conjunction} '.format(conjunction=conjunction)
         return delimiter.join([', '.join(strings), last_item])
-
-
-def find_by_keys(parent_key, dataset, strings):
-    """Search the dataset by keys and print the result."""
-    child_keys = list(dataset[parent_key].keys())
-    child_key = input(strings['second_prompt'].format(
-        child_keys=format_list_as_string(child_keys)
-    ))
-    items = get_items_by_parent_key_and_child_key(dataset, parent_key, child_key)
-
-    if items is None:
-        print('Sorry, I couldn’t find a match for that.\n')
-        main(dataset)
-    else:
-        print()
-        print(strings['two_inputs_output'].format(
-            parent_key=parent_key,
-            child_key=child_key,
-            items='\n• '.join(items)
-        ))
-        print()
-
-
-def find_by_list_item(list_item, dataset, strings):
-    """Search the dataset by list items and print the result."""
-    parent_key, child_key = get_parent_key_and_child_key_by_list_item(dataset, list_item)
-
-    if parent_key is None:  # No need to test both parent_key and child_key
-        print('Sorry, I couldn’t find a match for that.\n')
-        main(data)
-    else:
-        print()
-        print(strings['one_input_output'].format(
-            list_item=list_item,
-            parent_key=parent_key,
-            child_key=child_key
-        ))
-        print()
 
 
 def main(filename):
@@ -220,7 +178,7 @@ def main(filename):
         print('Sorry, I only know {choices}!\n'.format(
             choices=format_list_as_string(data.keys(), 'and')
         ))
-        main(data)
+        main(filename)
 
     dataset = data[data_type]['data']
     strings = data[data_type]['strings']
@@ -230,15 +188,45 @@ def main(filename):
         parent_keys=format_list_as_string(parent_keys)
     ))
 
-    if user_input in parent_keys:
-        find_by_keys(user_input, dataset, strings)
+    if user_input in parent_keys:  # There’s a match at the top level of our dataset
+        parent_key = user_input
+        child_keys = list(dataset[parent_key].keys())
+        child_key = input(strings['second_prompt'].format(
+            child_keys=format_list_as_string(child_keys)
+        ))
+        items = get_items_by_parent_key_and_child_key(dataset, parent_key, child_key)
+
+        if items is None:
+            print('Sorry, I couldn’t find a match for that.\n')
+            main(filename)
+        else:  # There’s a match for both the parent and child keys
+            print()
+            print(strings['two_inputs_output'].format(
+                parent_key=parent_key,
+                child_key=child_key,
+                items='\n• '.join(items)
+            ))
+            print()
     else:  # Assume the user input an item from a list
-        find_by_list_item(user_input, dataset, strings)
+        list_item = user_input
+        parent_key, child_key = get_parent_key_and_child_key_by_list_item(dataset, list_item)
+
+        if parent_key is None:  # No matching item
+            print('Sorry, I couldn’t find a match for that.\n')
+            main(filename)
+        else:
+            print()
+            print(strings['one_input_output'].format(
+                list_item=list_item,
+                parent_key=parent_key,
+                child_key=child_key
+            ))
+            print()
 
     again = input('Do you want to try again (y/n)? ').lower()
 
     if again == 'y':
-        main(data)
+        main(filename)
     else:
         # Exit on any other input besides 'y'
         print('Goodbye!')
@@ -249,7 +237,4 @@ if __name__ == '__main__':
     from doctest import testmod
 
     testmod()  # Run our unit tests when the script is run with the -v option
-
-    # Kick off the program by calling `main()` and passing it the location of the file with our data
-    # File must reside in the same directory as this script!
-    main('data.json')
+    main('data.json')  # Kick off the program, passing it the location of our data file

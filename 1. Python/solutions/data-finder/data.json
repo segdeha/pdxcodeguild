@@ -1,0 +1,78 @@
+{
+    "Food": {
+        "data": {
+            "Thai": {
+                "Pad Thai": ["Noodles", "Peanuts", "Egg", "Green Onions", "Bean Sprouts"],
+                "Yellow Curry": ["Tofu", "Onion", "Garlic", "Coconut Milk", "Curry Powder", "Cilantro"]
+            },
+            "Mexican": {
+                "Enchiladas": ["Tortillas", "Enchilada Sauce", "Cheese"],
+                "Burritos": ["Tortillas", "Beans", "Rice", "Cheese"],
+                "Chiles Rellenos": ["Poblano Chiles", "Cheese", "Egg Batter", "Red Sauce"]
+            },
+            "Italian": {
+                "Spaghetti": ["Pasta", "Red Sauce", "Oregano"]
+            },
+            "Indian": {
+                "Palak Paneer": ["Cheese", "Spinach", "Garlic", "Onion", "Tumeric", "Cream"]
+            }
+        },
+        "strings": {
+            "first_prompt": "Enter the name of a cuisine ({parent_keys}) or an ingredient: ",
+            "second_prompt": "Enter the name of a dish ({child_keys}): ",
+            "one_input_output": "{list_item} is used in the {parent_key} dish {child_key}.",
+            "two_inputs_output": "The following are ingredients in the {parent_key} dish {child_key}:\n• {items}"
+        }
+    },
+    "Football": {
+        "data": {
+            "AFC": {
+                "East": ["Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets"],
+                "North": ["Baltimore Ravens", "Cincinnati Bengals", "Cleveland Browns", "Pittsburgh Steelers"],
+                "South": ["Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans"],
+                "West": ["Denver Broncos", "Kansas City Chiefs", "Oakland Raiders", "San Diego Chargers"]
+            },
+            "NFC": {
+                "East": ["Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Redskins"],
+                "North": ["Chicago Bears", "Detroit Lions", "Green Bay Packers", "Minnesota Vikings"],
+                "South": ["Atlanta Falcons", "Carolina Panthers", "New Orleans Saints", "Tampa Bay Buccaneers"],
+                "West": ["Arizona Cardinals", "Los Angeles Rams", "San Francisco 49ers", "Seattle Seahawks"]
+            }
+        },
+        "strings": {
+            "first_prompt": "Enter the name of a conference ({parent_keys}) or team: ",
+            "second_prompt": "Enter the name of a division ({child_keys}): ",
+            "one_input_output": "The {list_item} are in the {parent_key} {child_key}.",
+            "two_inputs_output": "The following are the teams in the {parent_key} {child_key}:\n• {items}"
+        }
+    },
+    "Movies": {
+        "data": {
+            "Action Thriller": {
+                "Mad Max: Fury Road": ["Tom Hardy", "Charlize Theron", "Nicholas Hoult", "Zoë Kravitz"],
+                "Twister": ["Helen Hunt", "Bill Paxton", "Cary Elwes", "Philip Seymour Hoffman"]
+            },
+            "Sci-Fi": {
+                "Star Wars: Episode VII - The Force Awakens": [
+                    "Harrison Ford",
+                    "Mark Hamill",
+                    "Carrie Fisher",
+                    "Adam Driver",
+                    "Daisy Ridley",
+                    "John Boyega"
+                ],
+                "Sunshine": ["Cillian Murphy", "Michelle Yeoh", "Troy Garity", "Rose Byrne", "Chris Evans"]
+            },
+            "Comedy": {
+                "Raising Arizona": ["Nicolas Cage", "Holly Hunter", "John Goodman"],
+                "Zoolander 2": ["Ben Stiller", "Owen Wilson", "Penélope Cruz"]
+            }
+        },
+        "strings": {
+            "first_prompt": "Enter the name of a movie genre ({parent_keys}) or actor: ",
+            "second_prompt": "Enter the name of a movie ({child_keys}): ",
+            "one_input_output": "{list_item} was in {child_key} ({parent_key}).",
+            "two_inputs_output": "The following actors are in {child_key} ({parent_key}):\n• {items}"
+        }
+    }
+}

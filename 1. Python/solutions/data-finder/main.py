@@ -19,8 +19,14 @@ __test__ = {
     >>> get_items_by_parent_key_and_child_key({'foo':{'bar':['baz']}}, 'foo', 'bar')
     ['baz']
 
+    >>> get_items_by_parent_key_and_child_key({'foo':{'bar':['baz']}}, 'abc', 'xyz') is None
+    True
+
     >>> get_parent_key_and_child_key_by_list_item({'foo':{'bar':['baz']}}, 'baz')
     ('foo', 'bar')
+
+    >>> get_parent_key_and_child_key_by_list_item({'foo':{'bar':['baz']}}, 'xyz')
+    (None, None)
 
     >>> format_list_as_string(['a'])
     'a'
@@ -30,6 +36,12 @@ __test__ = {
 
     >>> format_list_as_string(['a', 'b', 'c'], 'and')
     'a, b and c'
+
+    >>> format_list_as_string('xyz')
+    'x, y or z'
+
+    >>> format_list_as_string(42)
+    42
 
     """,
 
@@ -148,17 +160,22 @@ def get_parent_key_and_child_key_by_list_item(data, list_item):
 def format_list_as_string(list_of_strings, conjunction='or'):
     """Format a list of strings as a string where all items are separated by commas and the last 2 items are
     separated by the given conjunction (defaults to 'or')."""
-    if len(list_of_strings) == 1:
-        return list_of_strings[0]  # Usually this is a sign of brittleness, but we *just* checked to make sure it exists
-    else:
-        strings = list(list_of_strings)  # Copy the list so we don’t pop off the last member of the actual data
-        last_item = strings.pop()
-        delimiter = ' {conjunction} '.format(conjunction=conjunction)
-        return delimiter.join([', '.join(strings), last_item])
+
+    try:
+        if len(list_of_strings) == 1:
+            return list_of_strings[0]  # Usually this is a sign of brittleness, but we *just* made sure it exists
+        else:
+            strings = list(list_of_strings)  # Copy the list so we don’t pop off the last member of the actual data
+            last_item = strings.pop()
+            delimiter = ' {conjunction} '.format(conjunction=conjunction)
+            return delimiter.join([', '.join(strings), last_item])
+    except TypeError:  # Don’t know what to do with this, so just return the original value
+        return list_of_strings
 
 
 def main(filename):
     """Prompt for user input, get a result from the data, print a nicely formatted answer."""
+
     import os
     import json
 
@@ -229,8 +246,10 @@ def main(filename):
         main(filename)
     else:
         # Exit on any other input besides 'y'
+        import sys
+
         print('Goodbye!')
-        return
+        sys.exit()
 
 
 if __name__ == '__main__':

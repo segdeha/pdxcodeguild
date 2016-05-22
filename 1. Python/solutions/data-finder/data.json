@@ -42,7 +42,7 @@
         "strings": {
             "first_prompt": "Enter the name of a conference ({parent_keys}) or team: ",
             "second_prompt": "Enter the name of a division ({child_keys}): ",
-            "one_input_output": "The {list_item} are in the {parent_key} {child_key}.",
+            "one_input_output": "The {list_item} play in the {parent_key} {child_key}.",
             "two_inputs_output": "The following are the teams in the {parent_key} {child_key}:\n• {items}"
         }
     },

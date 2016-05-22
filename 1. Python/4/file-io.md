@@ -34,4 +34,4 @@ Example:
     
     # 'my_file.txt' now contains 'This was such a cool file.'
 
-Note: It might seem clunky to have to open the file twice, once to read and once to write, but to keep things simple, safe, and predictable, Python only allows you to do one operation on a file at a time.
+Note: It might seem clunky to have to open the file twice, once to read and once to write, but to keep things simple, safe, and predictable, Python only allows you to do one type of operation on a file at a time.

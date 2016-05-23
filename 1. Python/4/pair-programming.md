@@ -24,6 +24,7 @@ Even for experienced programmers, it can be difficult to give both your full att
 
 - More person hours may be involved in completing a task using pairing. (Though the research shows that this is usually offset by higher quality.)
 - Talking is hard work. So take breaks!
+- Some research shows³ that programmers are more creative when they enjoy “privacy, personal workspace, and freedome from interruption” (my hunch is this is more true the more experienced you are)
 
 ## How to Pair Program
 
@@ -52,8 +53,6 @@ Sources:
 
 1. [Extreme Programming](http://www.extremeprogramming.org/rules/pair.html)
 1. [The Costs and Benefits of Pair Programming](http://collaboration.csc.ncsu.edu/laurie/Papers/XPSardinia.PDF) (PDF)
+1. [Pair Programming Considered Harmful?](http://techcrunch.com/2012/03/03/pair-programming-considered-harmful/)
 1. [PeopleSkills](http://c2.com/cgi/wiki?PeopleSkills)
 1. [Effective Navigation in Pair Programming](https://www.thoughtworks.com/insights/blog/effective-navigation-in-pair-programming)
-
-
-

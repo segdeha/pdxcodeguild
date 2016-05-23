@@ -6,7 +6,7 @@ Write a simple program that [reads in a file](https://github.com/segdeha/pdxcode
 
 1. Create a new directory called `json-reader`
 1. In your new directory, create a new file called `main.py`
-1. Save [data.json](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/1.%20Python/solutions/file-reader/data.json?token=AAAQ0qaCplLB_p7q4EhOcDBdsNIfkS9tks5XS4ADwA%3D%3D) to the same directory
+1. Save [data.json](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/1.%20Python/solutions/json-reader/data.json?token=AAAQ0mV883BuCIFv3eeci4F04fe01Eyqks5XTK34wA%3D%3D) to the same directory
 
 The output to the screen when the program is run should be the following:
 

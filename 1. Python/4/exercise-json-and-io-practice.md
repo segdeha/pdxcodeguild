@@ -1,4 +1,4 @@
-# JSON & I/O Practice
+# JSON & I/O Exercise
 
 ## Objective
 

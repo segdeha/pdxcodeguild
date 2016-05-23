@@ -8,7 +8,7 @@ _Note: This is a pair programming exercise. Work together!_
 
 ## Setup
 
-1. One person in your pair should create a new **repo** called `data-finder`. The other person in the pair should fork the repo. (We’re creating a new repo so you can better collaborate with your pairing partner.)
+1. One person in your pair should create a new **repo** called `data-finder` then add the other person in the pair as a collaborator. (We’re creating a new repo so you can better collaborate with your pairing partner.)
 1. In `data-finder`, create a new file called `main.py`
 1. Save [data.json](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/1.%20Python/solutions/data-finder/data.json?token=AAAQ0k1TdEbLQESpTgUEhlRgABnfI10Gks5XSzP9wA%3D%3D) to `data-finder` as `data.json`
 

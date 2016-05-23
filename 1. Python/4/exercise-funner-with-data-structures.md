@@ -25,6 +25,6 @@ _Note: This is a pair programming exercise. Work together!_
 
 ## Advanced
 
-- The NFL dataset allowed us to assume that each item in the several lists was unique to the dataset. The new dataset includes some the same ingredients in more than one dish as well as the same actor in more than one movie. Change your program to return a list of results when there are matches in multiple lists.
-- Cover as much of your program with tests as possible. One technique that makes this easier is to put tests together in a `__test__` variable near the top of the file. You could also put your tests in an external file.
+- The NFL dataset allowed us to assume that each item in the several lists was unique to the dataset. The new dataset includes some of the same ingredients in more than one dish as well as the same actor in more than one movie. Change your program to return a list of results when there are matches in multiple lists.
+- Cover as much of your program with tests as possible. One technique that allows for this without cluttering up your function definitions is to put tests together in a `__test__` variable near the top of the file. You could also put your tests in an external file.
 - Add your own dataset. Be creative!

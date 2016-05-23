@@ -31,6 +31,9 @@ Even for experienced programmers, it can be difficult to give both your full att
 - Start by discussing the problem and approach you’re going to take.
 - Stay engaged (especially the navigator).
 - Ask questions to clarify intent and approach.
+    - “Do you think this is a valid test?”
+    - “Does that look correct to you?”
+    - “What’s next?”
 - Make decisions together.
 - Switch who is the “driver” freely and frequently.
 
@@ -40,12 +43,29 @@ Even for experienced programmers, it can be difficult to give both your full att
 - Criticize ideas, not people.
 - Accept criticism without taking it personally. (Sometimes called [egoless programming](http://c2.com/cgi/wiki?EgolessProgramming).)
 - Know when to say “let’s try your idea first.”
+- Be courteous.
 
 ## How to be a Good Navigator
 
 - Encourage your driver to [DTSTTCPW](http://c2.com/cgi/wiki?DoTheSimplestThingThatCouldPossiblyWork).
 - Attempt to spot approaching pitfalls and offer gentle course corrections.
 - Take responsibility for sticking to [TDD](https://github.com/segdeha/pdxcodeguild/blob/master/1.%20Python/4/test-driven-development.md).
+
+## An Alternate Approach
+
+An alternative to the driver/navigator approach to pair programming is the “ping pong” approach. This works well if you’re doing TDD. It works by having the pairing partners taking turns writing tests and making them pass.
+
+        member 1         member 2
+    --------------------------------
+    write test
+                     make test green
+                     write next test
+    make test green
+    write next test
+                     make test green
+                     write next test
+
+Try both! You may find that the two approaches work well for different parts of the programming process.
 
 ------
 
@@ -56,3 +76,5 @@ Sources:
 1. [Pair Programming Considered Harmful?](http://techcrunch.com/2012/03/03/pair-programming-considered-harmful/)
 1. [PeopleSkills](http://c2.com/cgi/wiki?PeopleSkills)
 1. [Effective Navigation in Pair Programming](https://www.thoughtworks.com/insights/blog/effective-navigation-in-pair-programming)
+1. [How to Pair Program](http://www.wikihow.com/Pair-Program)
+1. [Some thoughts on pair-programming styles](http://articles.coreyhaines.com/posts/thoughts-on-pair-programming/)

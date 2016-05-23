@@ -16,7 +16,7 @@ Developers following TDD ()compared with other testing approaches such as Test-L
 
 ## Limitations of TDD
 
-TDD tends to apply more to code that you can unit-test (as opposed to functional-test). It therefore isn’t as effective for things like UI work, databases, or validating the correct use of external services (e.g., web APIs).
+TDD tends to apply more to code that you can unit-test (as opposed to functional-test). It therefore isn’t as effective for things like UI work or validating the correct use of external services (e.g., databases or web APIs).
 
 Additionally, the following are concerns with testing in general:
 

@@ -100,7 +100,7 @@ def main(teams):
         if conference is None:
             main(teams)
         else:
-            print('The {team_name} is in the {conference} {division}.'.format(
+            print('The {team_name} play in the {conference} {division}.'.format(
                 team_name=team_name,
                 conference=conference,
                 division=division

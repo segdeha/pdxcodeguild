@@ -12,10 +12,24 @@ Based on the response, return either a list of teams in that division or the nam
 def get_teams_by_conference_and_division(teams, conference, division):
     """Return a list of teams names for the given conference and division or None if there is no match
 
-    >>> get_teams_by_conference_and_division({'AFC': {'East': ['Buffalo Bills', 'Miami Dolphins', 'New England Patriots', 'New York Jets'],'North': ['Baltimore Ravens', 'Cincinnati Bengals', 'Cleveland Browns', 'Pittsburgh Steelers'],'South': ['Houston Texans', 'Indianapolis Colts', 'Jacksonville Jaguars', 'Tennessee Titans'],'West': ['Denver Broncos', 'Kansas City Chiefs', 'Oakland Raiders', 'San Diego Chargers']},'NFC': {'East': ['Dallas Cowboys', 'New York Giants', 'Philadelphia Eagles', 'Washington Redskins'],'North': ['Chicago Bears', 'Detroit Lions', 'Green Bay Packers', 'Minnesota Vikings'],'South': ['Atlanta Falcons', 'Carolina Panthers', 'New Orleans Saints', 'Tampa Bay Buccaneers'],'West': ['Arizona Cardinals', 'Los Angeles Rams', 'San Francisco 49ers', 'Seattle Seahawks']}}, 'NFC', 'West')
+    >>> NFL = {
+    ...     'AFC': {
+    ...         'East': ['Buffalo Bills', 'Miami Dolphins', 'New England Patriots', 'New York Jets'],
+    ...         'North': ['Baltimore Ravens', 'Cincinnati Bengals', 'Cleveland Browns', 'Pittsburgh Steelers'],
+    ...         'South': ['Houston Texans', 'Indianapolis Colts', 'Jacksonville Jaguars', 'Tennessee Titans'],
+    ...         'West': ['Denver Broncos', 'Kansas City Chiefs', 'Oakland Raiders', 'San Diego Chargers']
+    ...     },'NFC': {
+    ...         'East': ['Dallas Cowboys', 'New York Giants', 'Philadelphia Eagles', 'Washington Redskins'],
+    ...         'North': ['Chicago Bears', 'Detroit Lions', 'Green Bay Packers', 'Minnesota Vikings'],
+    ...         'South': ['Atlanta Falcons', 'Carolina Panthers', 'New Orleans Saints', 'Tampa Bay Buccaneers'],
+    ...         'West': ['Arizona Cardinals', 'Los Angeles Rams', 'San Francisco 49ers', 'Seattle Seahawks']
+    ...     }
+    ... }
+
+    >>> get_teams_by_conference_and_division(NFL, 'NFC', 'West')
     ['Arizona Cardinals', 'Los Angeles Rams', 'San Francisco 49ers', 'Seattle Seahawks']
 
-    >>> get_teams_by_conference_and_division({'AFC': {'East': ['Buffalo Bills', 'Miami Dolphins', 'New England Patriots', 'New York Jets'],'North': ['Baltimore Ravens', 'Cincinnati Bengals', 'Cleveland Browns', 'Pittsburgh Steelers'],'South': ['Houston Texans', 'Indianapolis Colts', 'Jacksonville Jaguars', 'Tennessee Titans'],'West': ['Denver Broncos', 'Kansas City Chiefs', 'Oakland Raiders', 'San Diego Chargers']},'NFC': {'East': ['Dallas Cowboys', 'New York Giants', 'Philadelphia Eagles', 'Washington Redskins'],'North': ['Chicago Bears', 'Detroit Lions', 'Green Bay Packers', 'Minnesota Vikings'],'South': ['Atlanta Falcons', 'Carolina Panthers', 'New Orleans Saints', 'Tampa Bay Buccaneers'],'West': ['Arizona Cardinals', 'Los Angeles Rams', 'San Francisco 49ers', 'Seattle Seahawks']}}, 'AFC', 'East')
+    >>> get_teams_by_conference_and_division(NFL, 'AFC', 'East')
     ['Buffalo Bills', 'Miami Dolphins', 'New England Patriots', 'New York Jets']
     """
 
@@ -28,7 +42,24 @@ def get_teams_by_conference_and_division(teams, conference, division):
 def get_conference_and_division_by_team_name(teams, team_name):
     """Return a tuple of the conference and division for the given team name or None if there is no match
 
-    >>> get_conference_and_division_by_team_name({'AFC': {'East': ['Buffalo Bills', 'Miami Dolphins', 'New England Patriots', 'New York Jets'],'North': ['Baltimore Ravens', 'Cincinnati Bengals', 'Cleveland Browns', 'Pittsburgh Steelers'],'South': ['Houston Texans', 'Indianapolis Colts', 'Jacksonville Jaguars', 'Tennessee Titans'],'West': ['Denver Broncos', 'Kansas City Chiefs', 'Oakland Raiders', 'San Diego Chargers']},'NFC': {'East': ['Dallas Cowboys', 'New York Giants', 'Philadelphia Eagles', 'Washington Redskins'],'North': ['Chicago Bears', 'Detroit Lions', 'Green Bay Packers', 'Minnesota Vikings'],'South': ['Atlanta Falcons', 'Carolina Panthers', 'New Orleans Saints', 'Tampa Bay Buccaneers'],'West': ['Arizona Cardinals', 'Los Angeles Rams', 'San Francisco 49ers', 'Seattle Seahawks']}}, 'Seattle Seahawks')
+    >>> NFL = {
+    ...     'AFC': {
+    ...         'East': ['Buffalo Bills', 'Miami Dolphins', 'New England Patriots', 'New York Jets'],
+    ...         'North': ['Baltimore Ravens', 'Cincinnati Bengals', 'Cleveland Browns', 'Pittsburgh Steelers'],
+    ...         'South': ['Houston Texans', 'Indianapolis Colts', 'Jacksonville Jaguars', 'Tennessee Titans'],
+    ...         'West': ['Denver Broncos', 'Kansas City Chiefs', 'Oakland Raiders', 'San Diego Chargers']
+    ...     },'NFC': {
+    ...         'East': ['Dallas Cowboys', 'New York Giants', 'Philadelphia Eagles', 'Washington Redskins'],
+    ...         'North': ['Chicago Bears', 'Detroit Lions', 'Green Bay Packers', 'Minnesota Vikings'],
+    ...         'South': ['Atlanta Falcons', 'Carolina Panthers', 'New Orleans Saints', 'Tampa Bay Buccaneers'],
+    ...         'West': ['Arizona Cardinals', 'Los Angeles Rams', 'San Francisco 49ers', 'Seattle Seahawks']
+    ...     }
+    ... }
+
+    >>> get_conference_and_division_by_team_name(NFL, 'New England Patriots')
+    ('AFC', 'East')
+
+    >>> get_conference_and_division_by_team_name(NFL, 'Seattle Seahawks')
     ('NFC', 'West')
     """
 

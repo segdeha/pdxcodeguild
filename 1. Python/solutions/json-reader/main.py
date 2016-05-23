@@ -14,9 +14,9 @@ Format of data.json:
 
 """
 
-f = open('data.json', 'r')
-data = json.loads(f.read())
-f.close()
+with open('data.json', 'r') as f:
+    contents = f.read()
+    data = json.loads(contents)
 
 print('The Latitude/Longitude of {locality} is {lat}/{lng}.'.format(
     locality=data['locality'],

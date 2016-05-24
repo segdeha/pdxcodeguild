@@ -9,8 +9,9 @@ _Note: This is a pair programming exercise. Work together!_
 ## Setup
 
 1. One person in your pair should create a new **repo** called `data-finder` then add the other person in the pair as a collaborator. (We’re creating a new repo so you can better collaborate with your pairing partner.)
-1. In `data-finder`, create a new file called `main.py`
-1. Save [data.json](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/1.%20Python/solutions/data-finder/data.json?token=AAAQ0k1TdEbLQESpTgUEhlRgABnfI10Gks5XSzP9wA%3D%3D) to `data-finder` as `data.json`
+1. Clone the repo to your local machine. (Your pair partner should do the same.)
+1. In the `data-finder` directory that was created when you cloned the repo, create a new file called `main.py`
+1. Save [data.json](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/1.%20Python/solutions/data-finder/data.json?token=AAAQ0k1TdEbLQESpTgUEhlRgABnfI10Gks5XSzP9wA%3D%3D) to the `data-finder` directory as `data.json`
 
 ## New Requirements
 
@@ -25,6 +26,7 @@ _Note: This is a pair programming exercise. Work together!_
 
 ## Advanced
 
+- The requirements above specify to go all the way back to the beginning of the program if the user gives us unexpected input. A better user experience would be not to lose the input they’ve given us to that point (i.e. category, top-level key, etc.). Modify your program to jump them back to the appropriate place in the user flow without losing their previous valid input.
 - The NFL dataset allowed us to assume that each item in the several lists was unique to the dataset. The new dataset includes some of the same ingredients in more than one dish as well as the same actor in more than one movie. Change your program to return a list of results when there are matches in multiple lists.
 - Cover as much of your program with tests as possible. One technique that allows for this without cluttering up your function definitions is to put tests together in a `__test__` variable near the top of the file. You could also put your tests in an external file.
 - Add your own dataset. Be creative!

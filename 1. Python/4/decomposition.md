@@ -58,7 +58,7 @@ Having quickly verified in the Python shell that this works, let’s use this as
     else:
         print('It is not a palindrome!')
 
-This is a really simple example, but it is here to illustrate the process you should follow for breaking big problems down into smaller ones.
+This is a really simple example, but it illustrates the process you should follow for breaking big problems down into smaller ones.
 
 ------
 

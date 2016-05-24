@@ -133,19 +133,17 @@ __test__ = {
 def get_items_by_parent_key_and_child_key(data, parent_key, child_key):
     """Return a list of items for the given parent_key and child_key or None if there is no match."""
 
-    try:
-        # If both the parent_key and child_key exist in the dictionary, this returns the data at that location
-        # If either key does not exist in the dictionary, this throws a KeyError
+    if parent_key in data and child_key in data[parent_key]:
         return data[parent_key][child_key]
-    except KeyError:
+    else:
         return None
 
 
 def get_parent_key_and_child_key_by_list_item(data, list_item):
     """Return a tuple of the parent_key and child_key for the given list item or None if there is no match."""
 
-    for parent_key in data.keys():
-        for child_key in data[parent_key].keys():
+    for parent_key in data:
+        for child_key in data[parent_key]:
             try:
                 # If `.index` succeeds, it returns a number between 0 and the index of the last item in the list
                 # If it fails, it throws a ValueError
@@ -190,7 +188,7 @@ def main(filename):
         choices=format_list_as_string(data.keys())
     ))
 
-    if data_type not in data.keys():
+    if data_type not in data:
         print('Sorry, I only know {choices}!\n'.format(
             choices=format_list_as_string(data.keys(), 'and')
         ))

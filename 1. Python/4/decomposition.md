@@ -43,7 +43,7 @@ Translate smaller problems into code:
     else:
         print('It is not a palindrome!')
 
-Because the step of reversing the string isn’t immediately obvious, we defer it until we put together the rest of the program. This allows us now focus on just that problem. Once we solve it, our program will be done!
+Because the step of reversing the string isn’t immediately obvious, we defer it until we put together the rest of the program. This allows us now to focus on just that problem. Once we solve it, our program will be done!
 
 A search of Google tells us that you can reverse a string by doing the following:
 

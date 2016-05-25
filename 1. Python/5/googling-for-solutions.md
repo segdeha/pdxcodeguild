@@ -30,4 +30,4 @@ Many results will take you to the programming-centric Q&A site, [Stack Overflow]
 
 The SO community votes up good answers and votes down bad answers. Only pay attention to the _top 1 or 2 answers._ Many lesser answers are, quite frankly, crap.
 
-Oh, and the question may have code in it, but that code usually doesn’t work. That’s why they’re asking the question! Here’s [an example](https://stackoverflow.com/questions/11195140).
+Oh, and the question may have code in it, but that code usually doesn’t work. That’s why they’re asking the question! Here’s [an example](https://stackoverflow.com/questions/3294889).

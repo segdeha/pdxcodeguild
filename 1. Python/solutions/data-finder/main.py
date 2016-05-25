@@ -161,13 +161,13 @@ def format_list_as_string(list_of_strings, conjunction='or'):
 
     try:
         if len(list_of_strings) == 1:
-            return list_of_strings[0]  # Usually this is a sign of brittleness, but we *just* made sure it exists
+            return list_of_strings[0]  # Usually [0] is a sign of brittleness, but we *just* made sure it exists
         else:
             strings = list(list_of_strings)  # Copy the list so we don’t pop off the last member of the actual data
             last_item = strings.pop()
             delimiter = ' {conjunction} '.format(conjunction=conjunction)
             return delimiter.join([', '.join(strings), last_item])
-    except TypeError:  # Don’t know what to do with this, so just return the original value
+    except TypeError:  # Don’t know what to do with this (e.g., an int), so just return the original value
         return list_of_strings
 
 
@@ -178,6 +178,7 @@ def main(filename):
     import json
 
     # Get the directory in which the script is executing
+    # This allows me to run main.py from a directory other than the one it sits in and have it still find data.json
     dirname = os.path.split(os.path.abspath(__file__))[0]
 
     # Open the file, read the data, convert the JSON to a data structure, close the file
@@ -194,6 +195,7 @@ def main(filename):
         ))
         main(filename)
 
+    # Simplify data handling by only working with the slices of the data we need
     dataset = data[data_type]['data']
     strings = data[data_type]['strings']
 
@@ -221,11 +223,11 @@ def main(filename):
                 items='\n• '.join(items)
             ))
             print()
-    else:  # Assume the user input an item from a list
+    else:  # Assume the user gave us an item from a list
         list_item = user_input
         parent_key, child_key = get_parent_key_and_child_key_by_list_item(dataset, list_item)
 
-        if parent_key is None:  # No matching item
+        if parent_key is None:  # No matching list item
             print('Sorry, I couldn’t find a match for that.\n')
             main(filename)
         else:
@@ -241,8 +243,7 @@ def main(filename):
 
     if again == 'y':
         main(filename)
-    else:
-        # Exit on any other input besides 'y'
+    else:  # Exit on any other input besides 'y'
         import sys
 
         print('Goodbye!')

@@ -67,7 +67,16 @@ _Note: In some cases (e.g., if the problem is more about control flow than value
 - Do this on an operation-by-operation basis
 - Avoid long strings of operations; assign to variables after each step to print
 
-Is the following correct?
+Example:
+
+**Objective:** Calculate weighted grade point averages.
+
+The general formula for calculating a weighted GPA is the following:
+
+1. Sum the grade points earned per class times the number of credits
+1. Divide by the total number of credits
+
+Knowing that, can you tell me whether the following is correct? Why or why not?
 
     def calculate_weighted_gpa(grades=[]):
         """Calculate GPA on a 4.3 scale,
@@ -93,15 +102,17 @@ Is the following correct?
     
     # Returns 3.0
 
-
-
-Break out each part and inspect individually.
+Is it any easier to tell if we break out each part and inspect them individually?
 
     def calculate_weighted_gpa(grades=[]):
         """Calculate GPA on a 4.3 scale,
         weighted by credit hours"""
         
-        total_grade_points = sum(grade['grade'] for grade in grades)
+        total_grade_points = sum(
+            grade['grade']
+            for grade
+            in grades
+        )
         # total_grade_points == 6.0
         
         number_of_classes = len(grades)
@@ -160,12 +171,14 @@ Correct solution:
     
     # Returns 2.9400000000000004
 
+You can verify that this result is at least closer using this [weighted GPA calculator](http://gradetracker.com/academy/weighted-high-school-gpa-calculator).
+
 ## Test Isolated Pieces
 
 Test each sub-problem (or instruction in a sub-problem) _in isolation._
 
-- Manually run and print out results of each sub-problem (easy, since each is a separate function)
-- Use input “literals” to test; avoid having to type in setup
+- Manually run and print out results of each sub-problem (easy to do if each is a separate function)
+- Import your program in the interactive shell and run your pure functions with different inputs to test whether they do what you expect
 
 Instead of running your whole program…
 

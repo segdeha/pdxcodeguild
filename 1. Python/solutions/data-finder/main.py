@@ -148,7 +148,7 @@ def get_parent_key_and_child_key_by_list_item(data, list_item):
                 # If `.index` succeeds, it returns a number between 0 and the index of the last item in the list
                 # If it fails, it throws a ValueError
                 if data[parent_key][child_key].index(list_item) > -1:
-                    return parent_key, child_key
+                    return parent_key, child_key  # Return results as a tuple
             except ValueError:
                 continue
 
@@ -162,7 +162,7 @@ def format_list_as_string(list_of_strings, conjunction='or'):
     try:
         if len(list_of_strings) == 1:
             return list_of_strings[0]  # Usually [0] is a sign of brittleness, but we *just* made sure it exists
-        else:
+        else:  # More than 1 item in the list
             strings = list(list_of_strings)  # Copy the list so we don’t pop off the last member of the actual data
             last_item = strings.pop()
             delimiter = ' {conjunction} '.format(conjunction=conjunction)

@@ -3,7 +3,10 @@
 Until now, we’ve foramtted strings using the `format` method in the following way:
 
     # Pass values as a named arguments
-    'My {adj1} {adj2} string'.format(adj1='super', adj2='awesome')
+    'My {adj1} {adj2} string'.format(
+        adj1='super',
+        adj2='awesome'
+    )
     
     # Returns 'My super awesome string'
 
@@ -11,7 +14,22 @@ This works and is clear, which is why I taught it first. But `format` is actuall
 
 ------
 
-For example, we can pass values as positional arguments.
+Firstly, instead of passing in each keyword argument one-at-a-time, we can actually pass in a dictionary and spread the values. (Remember `**kwargs`? It’s not just for function definitions!)
+
+Example:
+
+    # Pass values as a dictionary
+    adjectives = {
+        adj1: 'super',
+        adj2: 'awesome'
+    }
+    'My {adj1} {adj2} string'.format(**adjectives)
+    
+    # Returns 'My super awesome string'
+
+------
+
+In addition to named arguments, we can pass values as positional arguments.
 
 Example:
 
@@ -42,7 +60,7 @@ Example:
 
 ------
 
-We can also pass complex objects and access their members within the template tokens.
+We can also pass complex objects and access their attributes within the template tokens.
 
 Example:
 
@@ -50,11 +68,11 @@ Example:
     from datetime import datetime
 
     dt = datetime.fromtimestamp(1464061454)
-    '{dt:%B} {dt.day}, {dt.year}, {dt.hour}:{dt.minute}:{dt.second}'.format(dt=dt)
+    '{dt:%B} {dt.day}, {dt.year}'.format(dt=dt)
     
-    # Returns 'May 23, 2016, 20:44:14'
+    # Returns 'May 23, 2016'
 
-In the above example, we’re passing in `dt` (which is a `datetime` object) making it available to all of the replacement instances. `.day`, `.year`, etc. are attributes of the `dt` object.
+In the above example, we’re passing in `dt` (which is a `datetime` object) making it available to all of the replacement instances. `.day` and `.year` are attributes of the `dt` object.
 
 Also, notice `dt:%B`. The `%B` part of that token is a formatting string that gets run against the `dt` object and returns, in this case, the name of the month associated with the date.
 

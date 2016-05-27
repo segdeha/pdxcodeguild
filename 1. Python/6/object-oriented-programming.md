@@ -54,6 +54,8 @@ Example:
             else:
                 print(self.what_i_say)
 
+_Note: Before you object to the default number of legs for an animal being `0`, read [this](http://www.sciencefocus.com/qa/what-average-number-legs-animal)._
+
 ------
 
 To use the class, you create what are called “instances” of objects based on the class.
@@ -66,6 +68,7 @@ Our `Animal` class defines default values when the instance is created. So, insp
 
     my_animal.number_of_legs  #> 0
     my_animal.is_animal  #> True
+    Animal.is_animal  #> True
     my_animal.speak()  #> 'Sorry, I don’t speak!'
 
 We can create another instance with different properties like this:
@@ -74,6 +77,7 @@ We can create another instance with different properties like this:
 
     my_other_animal.number_of_legs  #> 4
     my_animal.is_animal  #> True
+    Animal.is_animal  #> True
     my_animal.speak()  #> 'ruff'
 
 ------

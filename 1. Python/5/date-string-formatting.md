@@ -26,5 +26,3 @@ Sources:
 
 1. Stack Overflow answer to [Python strftime - date without leading 0?](http://stackoverflow.com/a/16097385/11577)
 1. Python 2.7 docs for [datetime — Basic date and time types](https://docs.python.org/2/library/datetime.html)
-
-

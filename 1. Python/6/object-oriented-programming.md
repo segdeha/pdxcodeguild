@@ -102,3 +102,4 @@ Example:
 Sources:
 
 1. [Improve Your Python: Python Classes and Object Oriented Programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
+2. [Python Object Oriented](http://www.tutorialspoint.com/python/python_classes_objects.htm)

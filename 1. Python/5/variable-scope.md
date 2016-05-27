@@ -18,7 +18,7 @@ Even though Python checks in LGB order, let’s talk about global variables firs
 
 ## Global Variables
 
-A variable is considered a global when it is created at the file or module level. You can use the `global` declaration to gain access to global variables within functions in the same file or module.
+A variable is considered a global when it is created at the file or module level. You can use the `global` keyword to gain the ability to _change_ global variables within functions in the same file or module. You can _read_ global variables without using the `global` keyword.
 
 Example:
 

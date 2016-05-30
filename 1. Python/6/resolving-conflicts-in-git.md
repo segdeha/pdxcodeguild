@@ -4,27 +4,32 @@ There will be times when you merge your work to master and git won’t know how 
 
 This is normal! And it’s usually not terribly hard to fix the conflicts.
 
+------
+
 The basic workflow is as follows:
 
 1. Merge the feature branch into master (if there are conflicts, git will tell you which files are affected)
 1. Go into the affected files and choose which version of the code you want to keep (git will have both versions in the file with labels to show you which is your change and which is the original version)
 1. Commit the changes
 
+------
+
 Example:
 
     git branch
     * master
+      feature-xyz
 
-    <make some changes to dice.py>
+    <commit some changes to dice.py>
 
-    git checkout -b feature-xyz
-    Switched to a new branch 'feature-xyz'
+    git checkout feature-xyz
+    Switched to branch 'feature-xyz'
 
     git branch
     * feature-xyz
       master
 
-    <make more changes to dice.py>
+    <commit more changes to dice.py>
 
     git checkout master
     git merge feature-xyz

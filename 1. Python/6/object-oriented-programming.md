@@ -82,13 +82,15 @@ We can create another instance with different properties like this:
 
 ------
 
+## Instance -vs- Static Methods
+
 Did you notice we pass in `self` to the methods of the class? In this context, `self` represents the current instance of the class.
 
 Most of the time, we will be writing what are called “instance” methods. These take `self` as an argument and have access to instance properties (which makes sense because `self` refers to the instance!)
 
-There are other types of methods you can declare in your classes including static and class methods. (Class methods are used for inheritance and are a bit beyond the scope of what we need to know, so I’ll table that discussion for now.)
+Another type of methods you can declare in your classes is static methods.
 
-A static method is always going to do the same thing for every instance (which is why it doesn’t need access to instance-specific properties). Static methods are declared using what’s called a decorator (in this case `@staticmethod`).
+A static method always does the same thing for every instance (which is why it doesn’t need access to instance-specific properties). Static methods are declared using what’s called a “decorator” (in this case `@staticmethod`).
 
 Example:
 

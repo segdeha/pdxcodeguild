@@ -1,3 +1,5 @@
+"""Fun with Network I/O Solution"""
+
 import urllib.request
 import json
 from datetime import datetime

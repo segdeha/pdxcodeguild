@@ -19,12 +19,12 @@ for person in data['results']:
         person['name']['first'].title(),
         person['name']['last'].title()
     )
-    print("""    Name: {name}
-    Email: {email}
-    Username: {username}
-    Registration date: {registration_date}
-    Birth date: {birth_date}
-    """.format(
+    print("""Name: {name}
+Email: {email}
+Username: {username}
+Registration date: {registration_date}
+Birth date: {birth_date}
+""".format(
         name=name,
         email=person['email'],
         username=person['login']['username'],

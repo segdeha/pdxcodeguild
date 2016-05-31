@@ -14,18 +14,15 @@ def format_date(datestring):
     return '{dt.month}/{dt.day}/{dt.year}'.format(dt=dt)
 
 for person in data['results']:
-    name = """{} {} {}""".format(
-        person['name']['title'].title(),
-        person['name']['first'].title(),
-        person['name']['last'].title()
-    )
-    print("""Name: {name}
+    print("""Name: {title} {first} {last}
 Email: {email}
 Username: {username}
 Registration date: {registration_date}
 Birth date: {birth_date}
 """.format(
-        name=name,
+        title=person['name']['title'].title(),
+        first=person['name']['first'].title(),
+        last=person['name']['last'].title(),
         email=person['email'],
         username=person['login']['username'],
         registration_date=format_date(person['registered']),

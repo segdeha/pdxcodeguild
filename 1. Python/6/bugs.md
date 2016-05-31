@@ -16,8 +16,10 @@ Bug reports are typically tracked in some kind of bug tracking system and can co
 
 - End users (often via email)
 - A quality assurance (QA) team
-- Developers as they’re working on the software
+- Developers as they’re working on and using the software
 - The CEO (fix these ones first; I’m only kind of kidding)
+
+------
 
 Good bug reports include enough detail for you, as the developer, to be able to reproduce the problem. _If you can’t reproduce it, you have no way to know whether you fixed it!_
 
@@ -31,13 +33,15 @@ When writing bugs, try to include the following:
 - Steps to reproduce
 - Any other important details (e.g., browser version, OS, etc.)
 
+------
+
 Example:
 
 > **Summary:**
-> When uploading an image, I get an error even though the guidelines make it seem like it should work.
+> When uploading an image, I get an error even though the guidelines say it should work.
 >
 > **Observed behavior:**
-> The system reported the error “File type not supported”
+> The system reported the error “File type not supported”.
 >
 > **Expected behavior:**
 > The image should upload successfully.
@@ -49,4 +53,4 @@ Example:
 > 4. Click the button “OK”
 >
 > **Other details:**
-> I’m on OS X 10.11.4 using Chrome version 50.0.2661.102
+> I’m on OS X 10.11.4 using Chrome version 50.0.2661.102.

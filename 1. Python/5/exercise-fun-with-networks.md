@@ -9,13 +9,13 @@ Write a simple program that accesses a public JSON API and prints the results fo
 1. Print the results something like the following:
 
 ```
-Mr Aventino Lima
+Name: Mr Aventino Lima
 Email: aventino.lima@example.com
 Username: heavybutterfly582
 Registration date: 10/2/2002
 Birth date: 6/5/1994
 
-Mrs Sheryl Gardner
+Name: Mrs Sheryl Gardner
 Email: sheryl.gardner@example.com
 Username: whiteduck688
 Registration date: 8/11/2014
@@ -23,3 +23,5 @@ Birth date: 6/4/1983
 
 # Repeat for the remaining people
 ```
+
+_Hint: It might help you understand the structure of the returned JSON to run it through this [pretty printer](http://jsonprettyprint.com/)._

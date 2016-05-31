@@ -22,6 +22,14 @@ Much better! But did you notice `dt:%B`? That’s what’s called a [leaky abstr
 
 ------
 
+## Quick Exercise
+
+Take a few minutes in the interactive shell to create some date objects and format them in different ways.
+
+_Hint: Use the built-in `dir` method to discover what methods and attributes are available to you on a `datetime` object._
+
+------
+
 Sources:
 
 1. Stack Overflow answer to [Python strftime - date without leading 0?](http://stackoverflow.com/a/16097385/11577)

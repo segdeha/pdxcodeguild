@@ -4,7 +4,9 @@
 
 Fix two bugs in an existing, complex codebase.
 
-1. Download `advanced-dungeon-buggy.zip` (attached) to your code folder
+1. Have one person in your pair download `advanced-dungeon-buggy.zip` (attached) to a sibling directory to your code folder (i.e. **not** inside your code folder)
+1. Follow the directions [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to make this `advanced-dungeon-buggy` directory into a repo on GitHub
+1. Add your fellow pair programmer to the new repo as a collaborator
 1. Use the bug reports below to find and fix the defects
 
 ------

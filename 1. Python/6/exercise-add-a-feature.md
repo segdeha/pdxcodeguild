@@ -6,7 +6,9 @@ Add a new feature to an existing, complex codebase.
 
 Now that you’ve fixed some bugs in the dungeon game, you should have an idea of how it’s structured. It’s time to level up by adding a new feature!
 
-1. Download `advanced-dungeon-needs-feature.zip` (attached) to your code folder
+1. Have one person in your pair download `advanced-dungeon-newfeature.zip` (attached) to a sibling directory to your code folder (i.e. **not** inside your code folder)
+1. Follow the directions [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) to make this `advanced-dungeon-newfeature` directory into a repo on GitHub
+1. Add your fellow pair programmer to the new repo as a collaborator
 1. Use the feature request below as your guide to implement the feature
 
 ------
@@ -24,7 +26,7 @@ The ring should:
 
 When the player is wearing the ring:
 
-- The player should be able to move around the room with the spider without the spider noticing them
+- The player should be able to move around the room containing the spider without the spider noticing them
 
 Adding the ring will require:
 

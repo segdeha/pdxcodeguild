@@ -8,9 +8,9 @@ text = contents.decode('utf-8')
 data = json.loads(text)
 
 
-def format_date(datestring):
+def format_date(timestamp):
     """Format dates like it’s 12/31/1999"""
-    dt = datetime.fromtimestamp(datestring)
+    dt = datetime.fromtimestamp(timestamp)
     return '{dt.month}/{dt.day}/{dt.year}'.format(dt=dt)
 
 for person in data['results']:

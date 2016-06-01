@@ -89,6 +89,7 @@ __test__ = {
     """
 }
 
+
 class Animal:
     """Blueprint for a generic animal"""
 
@@ -113,9 +114,7 @@ class Dog(Animal):
     kind = 'canine'
 
     def __init__(self):
-        super().__init__()
-        self.number_of_legs = 4
-        self.what_i_say = 'ruff'
+        super().__init__(4, 'ruff')
 
     def wag(self):
         print('/wags tail')
@@ -128,7 +127,8 @@ class Pet:
         self.name = name
 
 
-class PetDog(Dog, Pet):
+# class PetDog(Dog, Pet):
+class PetDog(Pet, Dog):
     """Blueprint for a dog that is also a pet"""
 
     def __init__(self, name=None):

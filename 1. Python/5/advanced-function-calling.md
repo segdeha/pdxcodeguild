@@ -42,7 +42,7 @@ Optional arguments may also be passed **by keyword** _in any order,_ as long as 
     subtract(5, c=9, b=8)  #> -12
     # a = 5; b = 8; c = 9
 
-## *args & **kwargs
+## \*args & \*\*kwargs
 
 When reading more advanced Python code, you might see functions written like the following:
 

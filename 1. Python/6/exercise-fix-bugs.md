@@ -55,3 +55,26 @@ Our second bug report comes courtesy of an upset end-user.
 > **Other details:**
 > I’m never playing this game again if you don’t fix this!!!
 
+------
+
+## Extra Credit: Bug Report #3
+
+Our third bug report is one a fellow developer noticed in the course of playing the game.
+
+> **Summary:**
+> Hitting `h` (help) when you’re in the room with the spider allows the spider to attack you. You shouldn’t get attacked for hitting `h`. Same for `i`, I suppose.
+>
+> **Observed behavior:**
+> See above.
+>
+> **Expected behavior:**
+> Hitting `h` in the spider room should be a noop. I.e. the spider shouldn’t be able to attack you.
+>
+> **Steps to reproduce:**
+> 1. Start the game
+> 2. Go north into the spider room
+> 3. Hit `h` to see the list of commands
+> 4. Observe that the spider successfully attacks you
+>
+> **Other details:**
+> N/A

@@ -7,6 +7,8 @@ from time import sleep
 
 """
 
+Control flow:
+
 1. Read names of files in the current directory that end in `.txt`
 2. Present files to user as a numbered menu to choose from (or enter to quit)
 3. Compute the ARI (https://en.wikipedia.org/wiki/Automated_readability_index)
@@ -34,10 +36,24 @@ ari_scale = {
 
 
 def compute_ari(contents):
-    """Compute the automated readability index of a string
+    """Compute the automated readability index of a string.
 
-    >>> compute_ari('Four score and seven years ago, our fathers brought forth on this continent')
-    8
+    Expected scores validated at http://www.webpagefx.com/tools/read-able/
+
+    1. One really long word (34 characters):
+
+    >>> compute_ari('supercalifragilisticexpialidocious')
+    140
+
+    2. 7 short words, all 3 characters long:
+
+    >>> compute_ari('bad men can try but not win')
+    -3
+
+    3. Sentence of 3 of the smallest possible words:
+
+    >>> compute_ari('i o u')
+    -15
 
     """
 
@@ -96,8 +112,10 @@ def main():
     files = get_file_list()
     while True:
         prompt = create_prompt(files)
+
         print(prompt)
-        choice = input(prompt)
+        choice = input()
+
         if choice == 'q' or choice == '':
             print('Goodbye!')
             break

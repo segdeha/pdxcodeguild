@@ -18,20 +18,20 @@ Control flow:
 """
 
 ari_scale = {
-     1: {'age':   '5-6', 'grade_level': 'Kindergarten'},
-     2: {'age':   '6-7', 'grade_level':    '1st Grade'},
-     3: {'age':   '7-8', 'grade_level':    '2nd Grade'},
-     4: {'age':   '8-9', 'grade_level':    '3rd Grade'},
-     5: {'age':  '9-10', 'grade_level':    '4th Grade'},
-     6: {'age': '10-11', 'grade_level':    '5th Grade'},
-     7: {'age': '11-12', 'grade_level':    '6th Grade'},
-     8: {'age': '12-13', 'grade_level':    '7th Grade'},
-     9: {'age': '13-14', 'grade_level':    '8th Grade'},
-    10: {'age': '14-15', 'grade_level':    '9th Grade'},
-    11: {'age': '15-16', 'grade_level':   '10th Grade'},
-    12: {'age': '16-17', 'grade_level':   '11th Grade'},
-    13: {'age': '17-18', 'grade_level':   '12th Grade'},
-    14: {'age': '18-22', 'grade_level':      'College'}
+     1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
+     2: {'ages':   '6-7', 'grade_level':    '1st Grade'},
+     3: {'ages':   '7-8', 'grade_level':    '2nd Grade'},
+     4: {'ages':   '8-9', 'grade_level':    '3rd Grade'},
+     5: {'ages':  '9-10', 'grade_level':    '4th Grade'},
+     6: {'ages': '10-11', 'grade_level':    '5th Grade'},
+     7: {'ages': '11-12', 'grade_level':    '6th Grade'},
+     8: {'ages': '12-13', 'grade_level':    '7th Grade'},
+     9: {'ages': '13-14', 'grade_level':    '8th Grade'},
+    10: {'ages': '14-15', 'grade_level':    '9th Grade'},
+    11: {'ages': '15-16', 'grade_level':   '10th Grade'},
+    12: {'ages': '16-17', 'grade_level':   '11th Grade'},
+    13: {'ages': '17-18', 'grade_level':   '12th Grade'},
+    14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
 
@@ -79,13 +79,13 @@ def get_file_list():
 
 
 def get_file_contents(name_of_file):
-    # read in file contents
     with open(name_of_file, 'r') as f:
         contents = f.read()
     return contents
 
 
 def create_prompt(files):
+    """Given a list of filenames, return a formatted prompt string."""
     menu_of_files = ''
     menu_number = 1
     for filename in files:
@@ -110,17 +110,21 @@ q) Quit
 
 def main():
     files = get_file_list()
+    error_message = '\nPlease input a number between 1 and {}.'.format(len(files) - 1)
     while True:
-        prompt = create_prompt(files)
-
-        print(prompt)
+        print(create_prompt(files))
         choice = input()
-
         if choice == 'q' or choice == '':
             print('Goodbye!')
             break
         else:
-            choice = int(choice)
+            try:
+                choice = int(choice)
+            except ValueError:
+                print(error_message)
+                sleep(1)
+                continue
+
             if 0 < choice <= len(files):
                 filename = files[choice - 1]
                 ari = compute_ari(get_file_contents(filename))
@@ -130,14 +134,17 @@ def main():
 
 The ARI for the file, {filename}, is {ari}.
 This corresponds to a {grade_level} level of difficulty
-that is suitable for an average person {age} years old.
+that is suitable for an average person {ages} years old.
 
 --------------------------------------------------------""".format(
                     filename=filename,
                     ari=ari,
                     grade_level=ari_scale[ari_key]['grade_level'],
-                    age=ari_scale[ari_key]['age']
+                    ages=ari_scale[ari_key]['ages']
                 ))
+                sleep(1)
+            else:
+                print(error_message)
                 sleep(1)
             continue
 

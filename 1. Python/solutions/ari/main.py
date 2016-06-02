@@ -32,34 +32,14 @@ ari_scale = {
     14: {'age': '18-22', 'grade_level':      'College'}
 }
 
-files = [f for f in listdir('.') if f.endswith('.txt')]
 
-menu_of_files = ''
-menu_number = 1
-for f in files:
-    menu_of_files += """{menu_number}) {filename}\n""".format(
-        filename=f,
-        menu_number=menu_number
-    )
-    menu_number += 1
+def compute_ari(contents):
+    """Compute the automated readability index of a string
 
-prompt = """
-To compute its automated readability index,
-pick from one of the files below:
+    >>> compute_ari('Four score and seven years ago, our fathers brought forth on this continent')
+    8
 
-{menu_of_files}
-or
-
-q) Quit
-""".format(
-    menu_of_files=menu_of_files
-)
-
-
-def compute_ari(name_of_file):
-    # read in file contents
-    with open(name_of_file, 'r') as f:
-        contents = f.read()
+    """
 
     # replace all newlines with spaces
     contents = ' '.join(contents.split("\n"))
@@ -77,8 +57,46 @@ def compute_ari(name_of_file):
     return ceil((4.71 * (sum(characters) / len(words))) + (0.5 * (len(words) / len(sentences))) - 21.43)
 
 
+def get_file_list():
+    files = [f for f in listdir('.') if f.endswith('.txt')]
+    return files
+
+
+def get_file_contents(name_of_file):
+    # read in file contents
+    with open(name_of_file, 'r') as f:
+        contents = f.read()
+    return contents
+
+
+def create_prompt(files):
+    menu_of_files = ''
+    menu_number = 1
+    for filename in files:
+        menu_of_files += """{menu_number}) {filename}\n""".format(
+            filename=filename,
+            menu_number=menu_number
+        )
+        menu_number += 1
+    prompt = """
+To compute its automated readability index,
+pick from one of the files below:
+
+{menu_of_files}
+or
+
+q) Quit
+""".format(
+        menu_of_files=menu_of_files
+    )
+    return prompt
+
+
 def main():
+    files = get_file_list()
     while True:
+        prompt = create_prompt(files)
+        print(prompt)
         choice = input(prompt)
         if choice == 'q' or choice == '':
             print('Goodbye!')
@@ -87,7 +105,7 @@ def main():
             choice = int(choice)
             if 0 < choice <= len(files):
                 filename = files[choice - 1]
-                ari = compute_ari(filename)
+                ari = compute_ari(get_file_contents(filename))
                 ari_key = 14 if ari > 14 else ari
                 print("""
 --------------------------------------------------------
@@ -106,4 +124,7 @@ that is suitable for an average person {age} years old.
             continue
 
 if __name__ == '__main__':
+    from doctest import testmod
+
+    testmod()
     main()

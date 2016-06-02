@@ -143,6 +143,10 @@ that is suitable for an average person {ages} years old.
                     ages=ari_scale[ari_key]['ages']
                 ))
                 sleep(1)
+                if 'y' == input('\nTry again? (y/n) '):
+                    continue
+                else:
+                    break
             else:
                 print(error_message)
                 sleep(1)

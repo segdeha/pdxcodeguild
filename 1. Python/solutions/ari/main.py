@@ -124,7 +124,6 @@ def main():
                 print(error_message)
                 sleep(1)
                 continue
-
             if 0 < choice <= len(files):
                 filename = files[choice - 1]
                 ari = compute_ari(get_file_contents(filename))

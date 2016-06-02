@@ -1,18 +1,10 @@
 # Exercise: Compute Automated Readability Index
 
-The automated readability index (ARI) is a simple formula for computing the U.S. grade level for a given block of text.
-
-## Objective
-
-Compute the ARI for some text loaded in from a file.
-
-1. Create a new directory called `ari` in your code repo
-1. Create a `main.py` file in the `ari` directory for your program
-1. 
-1. 
-1. 
+The automated readability index (ARI) is a formula for computing the U.S. grade level for a given block of text.
 
 ------
+
+## Automated Readability Index Formula
 
 The general formula to compute the ARI is as follows:
 
@@ -38,4 +30,61 @@ Scores correspond to the following ages and grad levels:
     13     17-18    Twelfth grade
     14     18-22    College
 
+------
 
+## Objective
+
+Compute the ARI for some text loaded in from a file.
+
+1. Create a new directory called `ari` in your code repo
+1. Create a file called `main.py` file in the `ari` directory
+1. Download the following files to your `ari` directory:
+    - [geneology-of-morals.txt](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/1.%20Python/solutions/ari/geneology-of-morals.txt?token=AAAQ0iIWwUkVVY9qXnLdltRGDUI6TtjZks5XWdDdwA%3D%3D)
+    - [gettysburg-address.txt](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/1.%20Python/solutions/ari/gettysburg-address.txt?token=AAAQ0n7jSNNNtENrA1c-WeAS3tvussbtks5XWdGGwA%3D%3D)
+    - [jack-and-jill.txt](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/1.%20Python/solutions/ari/jack-and-jill.txt?token=AAAQ0g6lXHjuUsJxW2ZcFELjH72pHcXfks5XWdGewA%3D%3D)
+
+When the user runs `main.py`, they should be presented with a menu of choices of the above files to choose from that looks something like the following:
+
+    To compute its automated readability index,
+    pick from one of the files below:
+
+    1) geneology-of-morals.txt
+    2) gettysburg-address.txt
+    3) jack-and-jill.txt
+
+    or
+
+    q) Quit
+
+The list of files should be generated from the files in the `ari` directory that have `.txt` for their extension.
+
+After choosing one of the files, the output should look something like the following:
+
+    --------------------------------------------------------
+
+    The ARI for the file, gettysburg-address.txt, is 12.
+    This corresponds to a 11th Grade level of difficulty
+    that is suitable for an average person 16-17 years old.
+
+    --------------------------------------------------------
+
+Once you’ve computed the ARI score, you can use the following dictionary to look up the age range and grade level:
+
+    ari_scale = {
+         1: {'age':   '5-6', 'grade_level': 'Kindergarten'},
+         2: {'age':   '6-7', 'grade_level':    '1st Grade'},
+         3: {'age':   '7-8', 'grade_level':    '2nd Grade'},
+         4: {'age':   '8-9', 'grade_level':    '3rd Grade'},
+         5: {'age':  '9-10', 'grade_level':    '4th Grade'},
+         6: {'age': '10-11', 'grade_level':    '5th Grade'},
+         7: {'age': '11-12', 'grade_level':    '6th Grade'},
+         8: {'age': '12-13', 'grade_level':    '7th Grade'},
+         9: {'age': '13-14', 'grade_level':    '8th Grade'},
+        10: {'age': '14-15', 'grade_level':    '9th Grade'},
+        11: {'age': '15-16', 'grade_level':   '10th Grade'},
+        12: {'age': '16-17', 'grade_level':   '11th Grade'},
+        13: {'age': '17-18', 'grade_level':   '12th Grade'},
+        14: {'age': '18-22', 'grade_level':      'College'}
+    }
+
+Scores greater than 14 should be presented as having the same age and grade level as scores of 14.

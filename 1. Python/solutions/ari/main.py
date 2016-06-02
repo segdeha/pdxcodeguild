@@ -2,6 +2,8 @@
 
 from os import listdir
 from math import ceil
+from time import sleep
+
 
 """
 
@@ -41,7 +43,10 @@ for f in files:
     )
     menu_number += 1
 
-prompt = """\nTo compute its automated readability index, pick from one of the files below:\n
+prompt = """
+To compute its automated readability index,
+pick from one of the files below:
+
 {menu_of_files}
 or
 
@@ -86,15 +91,18 @@ def main():
                 ari_key = 14 if ari > 14 else ari
                 print("""
 --------------------------------------------------------
+
 The ARI for the file, {filename}, is {ari}.
 This corresponds to a {grade_level} level of difficulty
 that is suitable for an average person {age} years old.
+
 --------------------------------------------------------""".format(
                     filename=filename,
                     ari=ari,
                     grade_level=ari_scale[ari_key]['grade_level'],
                     age=ari_scale[ari_key]['age']
                 ))
+                sleep(1)
             continue
 
 if __name__ == '__main__':

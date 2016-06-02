@@ -14,7 +14,7 @@ In plain English, the score is computed by multiplying the number of characters 
 
 Scores correspond to the following ages and grad levels:
 
-    Score	Age     Grade Level
+    Score  Age      Grade Level
      1       5-6    Kindergarten
      2       6-7    First Grade
      3       7-8    Second Grade

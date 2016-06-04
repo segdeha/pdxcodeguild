@@ -1,19 +1,19 @@
 # HTML
 
-HTML stands for HyperText Markup Language. It was invented by [Sir Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) who was working at [CERN](http://home.cern), the European Organization for Nuclear Research, and wanted a way to share scientific papers among the scientists there.
+HyperText Markup Language (HTML) was invented by [Sir Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) who was working at [CERN](http://home.cern), the European Organization for Nuclear Research, and wanted a way to share scientific papers among the scientists there.
 
 ------
 
-HTML (the specification) describes a set of “tags” that can be used to add semantic infromation to the content of web pages.
+HTML ([the specification](https://www.w3.org/TR/html5/)) describes a set of “tags” that can be used to add semantic infromation to the content of web pages.
 
 Example:
 
     <h1>My Headline</h1>
-    <p>This is my awesome paragraph of text.</p>
+    <p>This is my <em>awesome</em> paragraph of text.</p>
 
-In the example above, `<h1></h1>` is a **header** tag. The text, `My Headline`, is the content. `<p></p>` is a **paragraph** tag. The text, `This is my awesome paragraph of text.`, is the content.
+In the example above, `<h1></h1>` is a **header** tag. The text, `My Headline`, is the content. Likewise, `<p></p>` is a **paragraph** tag. The text, `This is my awesome paragraph of text.`, is the content.
 
-Most (but not all!) tags are structured like this, with an **opening** and **closing** tag.
+Most tags (with a few exceptions) are structured like this, with an **opening** and **closing** tag.
 
 In HTML documents, web browsers treat any number of consecutive whitespace characters (spaces, newlines, and tabs) as a single space. Because of this behavior, if we didn’t include the tags around the content above, it would render like the following:
 
@@ -25,25 +25,25 @@ It’s the tags that tell the browser to render our example like the following:
 
 # My Headline
 
-This is my awesome paragraph of text.
+This is my _awesome_ paragraph of text.
 
 ------
 
 ## Moar Tags
 
-HTML has tags for a bunch of useful and common semantics.
+HTML provides tags for a host of common semantics.
 
 ------
 
 ### Headers
 
-HTML describes 7 levels of headers. This is a remnant from the original use case of scientific papers.
+HTML describes 6 levels of headers (`h1`, `h2`, … `h6`). This is a remnant from the original use case of scientific papers.
 
     <h1>My Headline</h1>
-    <h2>My Sub-Headline</h2>
-    <h3>My Sub-Sub-Headline</h3>
+    <h2>My Sub-Headline</h2>    
+    <h3> My Sub-Sub-Headline</h3>
 
-This renders as:
+Web browsers render the above as follows:
 
 # My Headline
 ## My Sub-Headline
@@ -61,7 +61,7 @@ The following describes an un-ordered list:
         <li>Item 3</li>
     </ul>
 
-This renders as:
+Web browsers render the above as follows:
 
 - Item 1
 - Item 2
@@ -75,7 +75,7 @@ The following describes an ordered list:
         <li>Item 3</li>
     </ol>
 
-This renders as:
+Web browsers render the above as follows:
 
 1. Item 1
 1. Item 2
@@ -87,13 +87,19 @@ This renders as:
 
 Links are what makes the web a web.
 
-    <a href="http://example.com">Go to a super cool site</a>
+    <a href="http://example.com">Go to my super cool site</a>
+
+Web browsers render the above as follows:
+
+[Go to my super cool site](http://example.com)
 
 This is our first example of a tag with an attribute.
 
 - The tag is `<a></a>`
 - The attribute is `href=""`
 - The value for the `href` attribute is `http://example.com`
+
+_Note: There are several tags that require certain attributes to be useful. For now, just understand that attributes allow us to set values that are used by the web browser to affect the rendering and functionality of certain tags._
 
 ------
 
@@ -103,7 +109,7 @@ Without the `<img>` tag, it would be a whole lot harder to share cat GIFs.
 
     <img src="creeper-cat.gif" alt="Creeper Cat">
 
-The above renders as follows:
+Web browsers render the above as follows:
 
 ![Creeper Cat](https://img.buzzfeed.com/buzzfeed-static/static/2015-11/2/11/enhanced/webdr06/anigif_enhanced-27866-1446482550-28.gif)
 
@@ -112,25 +118,20 @@ _Note: This is one of the tags in HTML that does not require a closing tag. I.e.
 The `<img>` tag takes a minimum of the following 2 attributes:
 
 - `src` — Relative or fully-qualified URL to an image resource (GIF, JPG, PNG, SVG, BMP, ICO)
+- `alt` — Alternative text for the image that will be read by screen readers
 
-------
+_Note: It may be appropriate to leave the `alt` attribute empty if the image is purely decorative, but you **always** need to include the attribute in your `<img>` tags!_
 
-### Document structure
-
-There are a few tags you can use to describe your document’s high-level structure. These typically don’t add styling information to the content.
+Images are sometimes put in `<figure></figure>` containers when they are intended to convey some important content, such as a chart or code snippet. Usually, they will be coupled with a `<figcaption></figcaption>` element that provides a textual description of the illustration.
 
 Example:
 
-    <div></div> <!-- generic container for content -->
-    <section></section> <!-- generic section of content -->
-    <article></article> <!-- self-contained piece of the document -->
-
-These each have intended uses, but in a lot of cases can be used interchangeably.
-
-The following tags describe sub-sets of the content:
-
-    <aside></aside> <!-- content tangential to main content -->
-    <figure></figure> <!-- container for an image, diagram, or code snippet; usually with a caption -->
+    <figure>
+        <img src="creeper-cat.gif" alt="Creeper Cat">
+        <figcaption>
+            <p></p>
+        </figcaption>
+    </figure>
 
 ------
 
@@ -142,6 +143,80 @@ Similar to Python, you can add comments to HTML code. HTML comments are structur
     
     <!-- this is a 
          multi-line comment -->
+
+------
+
+### Document structure
+
+There are a few tags you can use to describe your document’s high-level structure. These typically don’t add styling information to the content.
+
+Example:
+
+    <!-- self-contained piece of the document -->
+    <article></article>
+
+    <!-- container for a section of content -->
+    <section></section>
+
+    <!-- generic container for content -->
+    <div></div>
+
+Each of the above has an intended use, but in practice these tags can often be used interchangeably.
+
+HTML provides specific tags for common semantics related to headers, navigation, and footers on a web page.
+
+Example:
+
+    <header>
+        <h1>My Page’s Header</h1>
+        <nav>
+            <!-- nav links go here -->
+        </nav>
+    </header>
+
+    <footer>
+        <p>My page’s footer.</p>
+    </footer>
+
+The following tags describe sub-sets of the content:
+
+    <aside></aside> <!-- content tangential to main content -->
+    <figure></figure> <!-- container for an image, diagram, or code snippet; usually with a caption -->
+
+Putting all of these together, the content for a page might be structured something like the following:
+
+    <article>
+        <header>
+            <h1>My Page’s Header</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h1>Section 1 Header</h1>
+            <aside>
+                <p>Something tangential</p>
+            </aside>
+            <p>Some content</p>
+        </section>
+        <section>
+            <h1>Section 2 Header</h1>
+            <figure>
+                <img src="diagram.png" alt="Diagram showing something important">
+                <figcaption>
+                    <p>Something important is happening here</p>
+                </figcaption>
+            </figure>
+            <p>Some more content</p>
+        </section>
+        <footer>
+            <p>Copyright 2016, PDX Code Guild. All rights reserved.</p>
+        </footer>
+    </article>
 
 ------
 

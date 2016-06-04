@@ -4,7 +4,6 @@ from os import listdir
 from math import ceil
 from time import sleep
 
-
 """
 
 Control flow:

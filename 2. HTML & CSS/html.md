@@ -6,7 +6,7 @@ HyperText Markup Language (HTML) was invented by [Sir Tim Berners-Lee](https://e
 
 ## How Tags Work
 
-HTML ([the specification](https://www.w3.org/TR/html5/)) describes a set of “tags” that can be used to add [semantic infromation](https://en.wikipedia.org/wiki/Semantic_HTML) to the content of web pages.
+[HTML](https://www.w3.org/TR/html5/) describes a set of “tags” that can be used to add [semantic infromation](https://en.wikipedia.org/wiki/Semantic_HTML) to the content of web pages.
 
 Example:
 
@@ -43,19 +43,52 @@ HTML provides tags for a host of common semantics. These give the content struct
 
 ### Headers
 
-HTML describes 6 levels of headers (`h1`, `h2`, … `h6`). This number of headers is a remnant from the original use case of scientific papers, but it’s adequate for most situations.
+HTML describes 6 levels of headers (`<h1>`, `<h2>`, … `<h6>`). This number of headers is a remnant from the original use case of scientific papers, but it’s adequate for most situations.
 
 Example:
 
     <h1>My Headline</h1>
     <h2>My Sub-Headline</h2>    
-    <h3> My Sub-Sub-Headline</h3>
+    <h3>My Sub-Sub-Headline</h3>
 
 Web browsers render the above as follows:
 
 # My Headline
 ## My Sub-Headline
 ### My Sub-Sub-Headline
+
+------
+
+### Paragraphs
+
+The `<p></p>` tag might be the most common tag on the web. It is used to contain a paragraph of text.
+
+Example:
+
+    <p>
+        This is my paragraph of text. It is my
+        favorite because I wrote it. I can make
+        it as long as I want.
+    </p>
+
+Web browsers render the above as follows:
+
+This is my paragraph of text. It is my favorite because I wrote it. I can make it as long as I want.
+
+------
+
+### Emphasis
+
+There are two levels of emphasis you can add to words in HTML: _emphasis_ and **strong emphasis.**
+
+Example:
+
+    <em>Usually rendered as italics</em>
+    <strong>Usually rendered as bold</strong>
+
+Web browsers render the above as follows:
+
+_Usually rendered in italics_ **Usually rendered as bold**
 
 ------
 
@@ -105,9 +138,9 @@ Web browsers render the above as follows:
 
 This is our first example of a tag with an attribute.
 
-- The tag is `<a></a>`
-- The attribute is `href=""`
-- The value for the `href` attribute is `http://example.com`
+- The **tag** is `<a></a>`
+- The **attribute** is `href=""`
+- The **value** for the `href` attribute is `http://example.com`
 
 _Note: There are several tags that require certain attributes to be useful. For now, just understand that attributes allow us to set values that are used by the web browser to affect the rendering and functionality of certain tags._
 
@@ -130,16 +163,16 @@ The `<img>` tag **requires** the following 2 attributes:
 - `src` — Relative or fully-qualified URL to an image resource of one of the following types: GIF, JPG, PNG, SVG, BMP, ICO
 - `alt` — Alternative text for the image that will be read by screen readers
 
-_Note: It may be appropriate to leave the `alt` attribute empty if the image is purely decorative, but you **always** need to include the attribute in your `<img>` tags!_
+_Note: It may be appropriate to leave it empty if the image is purely decorative, but you **always** need to include the `alt` attribute in your `<img>` tags!_
 
-Images are sometimes put in `<figure></figure>` containers when they are intended to convey some important content, such as a chart or code snippet. Usually, they will be coupled with a `<figcaption></figcaption>` element that provides a textual description of the illustration.
+Images are sometimes put in `<figure></figure>` containers when they are intended to convey some important content, such as a chart or code snippet. In those cases, they will usually be coupled with a `<figcaption></figcaption>` element that provides a textual description of the illustration.
 
 Example:
 
     <figure>
         <img src="creeper-cat.gif" alt="Creeper Cat">
         <figcaption>
-            <p></p>
+            <p>Creepy cats are creepy.</p>
         </figcaption>
     </figure>
 
@@ -156,9 +189,9 @@ Similar to Python, you can add comments to HTML code. HTML comments are structur
 
 ------
 
-### Document structure
+### Content structure
 
-There are a few tags you can use to describe your document’s high-level structure. These typically don’t add styling information to the content.
+There are a few tags you can use to describe your content’s high-level structure. These typically don’t add much in the way of styling information.
 
 Example:
 
@@ -188,10 +221,14 @@ Example:
         <p>My page’s footer.</p>
     </footer>
 
-The following tags describe sub-sets of the content:
+Additionally, the following tags describe sub-sets of the content:
 
-    <aside></aside> <!-- content tangential to main content -->
-    <figure></figure> <!-- container for an image, diagram, or code snippet; usually with a caption -->
+    <!-- content tangential to main content -->
+    <aside></aside>
+
+    <!-- container for an image, diagram, or code snippet
+         usually with a caption -->
+    <figure></figure>
 
 Putting all of these together, the content for a page might be structured something like the following:
 
@@ -227,6 +264,12 @@ Putting all of these together, the content for a page might be structured someth
             <p>Copyright 2016, PDX Code Guild. All rights reserved.</p>
         </footer>
     </article>
+
+------
+
+## Extra Credit
+
+Use the [HTML element reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) to find tags not covered above, e.g., `<address></address>`, `<cite></cite>`, or `<dl></dl>` and use them appropriately in your document.
 
 ------
 

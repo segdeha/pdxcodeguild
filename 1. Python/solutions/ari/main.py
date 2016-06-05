@@ -1,4 +1,4 @@
-"""Read in a file and output the automated readability index"""
+"""Read in a file and output its automated readability index."""
 
 from os import listdir
 from math import ceil
@@ -72,12 +72,9 @@ def compute_ari(contents):
     return ceil((4.71 * (sum(characters) / len(words))) + (0.5 * (len(words) / len(sentences))) - 21.43)
 
 
-def get_file_list():
-    files = [f for f in listdir('.') if f.endswith('.txt')]
-    return files
-
-
 def get_file_contents(name_of_file):
+    """Return the contents of the given file as a string."""
+
     with open(name_of_file, 'r') as f:
         contents = f.read()
     return contents
@@ -85,14 +82,13 @@ def get_file_contents(name_of_file):
 
 def create_prompt(files):
     """Given a list of filenames, return a formatted prompt string."""
+
     menu_of_files = ''
-    menu_number = 1
-    for filename in files:
+    for i in range(len(files)):
         menu_of_files += """{menu_number}) {filename}\n""".format(
-            filename=filename,
-            menu_number=menu_number
+            filename=files[i],
+            menu_number=(i + 1)
         )
-        menu_number += 1
     prompt = """
 To compute its automated readability index,
 pick from one of the files below:
@@ -108,7 +104,7 @@ q) Quit
 
 
 def main():
-    files = get_file_list()
+    files = [f for f in listdir('.') if f.endswith('.txt')]
     error_message = '\nPlease input a number between 1 and {}.'.format(len(files) - 1)
     while True:
         print(create_prompt(files))

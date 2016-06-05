@@ -267,12 +267,6 @@ Putting all of these together, the content for a page might be structured someth
 
 ------
 
-## Extra Credit
-
-Use the [HTML element reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) to find tags not covered above, e.g., `<address></address>`, `<cite></cite>`, or `<dl></dl>` and use them appropriately in your document.
-
-------
-
 Sources:
 
 1. [HTML5](https://www.w3.org/TR/html5/) (the official spec)

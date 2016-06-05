@@ -4,18 +4,24 @@ HyperText Markup Language (HTML) was invented by [Sir Tim Berners-Lee](https://e
 
 ------
 
-HTML ([the specification](https://www.w3.org/TR/html5/)) describes a set of “tags” that can be used to add semantic infromation to the content of web pages.
+## How Tags Work
+
+HTML ([the specification](https://www.w3.org/TR/html5/)) describes a set of “tags” that can be used to add [semantic infromation](https://en.wikipedia.org/wiki/Semantic_HTML) to the content of web pages.
 
 Example:
 
     <h1>My Headline</h1>
     <p>This is my <em>awesome</em> paragraph of text.</p>
 
-In the example above, `<h1></h1>` is a **header** tag. The text, `My Headline`, is the content. Likewise, `<p></p>` is a **paragraph** tag. The text, `This is my awesome paragraph of text.`, is the content.
+In the example above, `<h1></h1>` is a **header** tag. The text, `My Headline`, is the content.
+
+Likewise, `<p></p>` is a **paragraph** tag. The text, `This is my awesome paragraph of text.`, is the content.
+
+The `<em></em>` tag adds **emphasis** to the word “awesome” in our sentence.
 
 Most tags (with a few exceptions) are structured like this, with an **opening** and **closing** tag.
 
-In HTML documents, web browsers treat any number of consecutive whitespace characters (spaces, newlines, and tabs) as a single space. Because of this behavior, if we didn’t include the tags around the content above, it would render like the following:
+In HTML documents, web browsers treat any number of consecutive whitespace characters (i.e. spaces, newlines, and tabs) as a single space. Because of this behavior, if we took out the tags around the content above, it would render like the following:
 
     My Headline This is my awesome paragraph of text.
 
@@ -31,13 +37,15 @@ This is my _awesome_ paragraph of text.
 
 ## Moar Tags
 
-HTML provides tags for a host of common semantics.
+HTML provides tags for a host of common semantics. These give the content structure and meaning. Always try to [find and use a semantic tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) if one is available for what you’re trying to convey.
 
 ------
 
 ### Headers
 
-HTML describes 6 levels of headers (`h1`, `h2`, … `h6`). This is a remnant from the original use case of scientific papers.
+HTML describes 6 levels of headers (`h1`, `h2`, … `h6`). This number of headers is a remnant from the original use case of scientific papers, but it’s adequate for most situations.
+
+Example:
 
     <h1>My Headline</h1>
     <h2>My Sub-Headline</h2>    
@@ -53,33 +61,33 @@ Web browsers render the above as follows:
 
 ### Lists
 
-The following describes an un-ordered list:
+The following describes an **un-ordered list:**
 
     <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
+        <li>Item A</li>
+        <li>Item B</li>
+        <li>Item C</li>
     </ul>
 
 Web browsers render the above as follows:
 
-- Item 1
-- Item 2
-- Item 3
+- Item A
+- Item B
+- Item C
 
-The following describes an ordered list:
+The following describes an **ordered list:**
 
     <ol>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
+        <li>Item A</li>
+        <li>Item B</li>
+        <li>Item C</li>
     </ol>
 
 Web browsers render the above as follows:
 
-1. Item 1
-1. Item 2
-1. Item 3
+1. Item A
+1. Item B
+1. Item C
 
 ------
 
@@ -87,7 +95,9 @@ Web browsers render the above as follows:
 
 Links are what makes the web a web.
 
-    <a href="http://example.com">Go to my super cool site</a>
+    <a href="http://example.com">
+        Go to my super cool site
+    </a>
 
 Web browsers render the above as follows:
 
@@ -105,7 +115,7 @@ _Note: There are several tags that require certain attributes to be useful. For 
 
 ### Images
 
-Without the `<img>` tag, it would be a whole lot harder to share cat GIFs.
+Without the `<img>` tag, it would be a whole lot harder to share cat GIFs. [#truth](https://twitter.com/search?q=%23truth)
 
     <img src="creeper-cat.gif" alt="Creeper Cat">
 
@@ -115,9 +125,9 @@ Web browsers render the above as follows:
 
 _Note: This is one of the tags in HTML that does not require a closing tag. I.e. there is no such thing as `</img>`._
 
-The `<img>` tag takes a minimum of the following 2 attributes:
+The `<img>` tag **requires** the following 2 attributes:
 
-- `src` — Relative or fully-qualified URL to an image resource (GIF, JPG, PNG, SVG, BMP, ICO)
+- `src` — Relative or fully-qualified URL to an image resource of one of the following types: GIF, JPG, PNG, SVG, BMP, ICO
 - `alt` — Alternative text for the image that will be read by screen readers
 
 _Note: It may be appropriate to leave the `alt` attribute empty if the image is purely decorative, but you **always** need to include the attribute in your `<img>` tags!_
@@ -224,3 +234,4 @@ Sources:
 
 1. [HTML5](https://www.w3.org/TR/html5/) (the official spec)
 1. [Supported image formats](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Supported_image_formats) from Mozilla Developer Network
+1. [HTML element reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) from Mozilla Developer Network

@@ -13,6 +13,9 @@ See the docstrings in the `__test__` variable for usage details.
 
 """
 
+import os
+import json
+
 __test__ = {
     'generic': """
 
@@ -173,9 +176,6 @@ def format_list_as_string(list_of_strings, conjunction='or'):
 
 def main(filename):
     """Prompt for user input, get a result from the data, print a nicely formatted answer."""
-
-    import os
-    import json
 
     # Get the directory in which the script is executing
     # This allows me to run main.py from a directory other than the one it sits in and have it still find data.json

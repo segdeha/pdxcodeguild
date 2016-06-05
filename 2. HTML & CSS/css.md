@@ -1,3 +1,3 @@
 # CSS
 
-Cascading Style Sheets (CSS) 
+Cascading Style Sheets (CSS) is

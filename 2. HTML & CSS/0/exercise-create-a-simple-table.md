@@ -6,9 +6,9 @@ Create a table of data using HTML.
 
 1. Log in to [CodePen](http://codepen.io)
 1. Create a new pen
-1. Add a table using the data below (or other data of your creation that lends itself to tabular display)
+1. Make a table using the names and Twitter handles of our scheduled guest speakers, listed below
 1. The top row should contain table header cells (`<th></th>`)
-1. The data rows should contain simple table cells (`<td></td>`)
+1. The data rows should contain non-header table cells (`<td></td>`)
 
 ------
 

@@ -1,6 +1,6 @@
 # Sass
 
-Sass stands for “Syntactically Awesome Style Sheets”. It provides a bunch of helpful, additional functionality to standard CSS.
+[Sass](http://sass-lang.com/) stands for “Syntactically Awesome Style Sheets”. It provides a bunch of helpful, additional functionality to standard CSS.
 
 _Note: There are two flavors of Sass syntax to choose from. We’re going to use what’s called **SCSS** because it’s more like regular CSS than the original, legacy Sass syntax._
 

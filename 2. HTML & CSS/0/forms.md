@@ -4,16 +4,18 @@ HTML forms are what allows us to collect information from users, enabling custom
 
 [There is a lot to forms](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms), but we’ll try to keep it relatively simple for now.
 
+------
+
 ## Forms Syntax
 
-Betcha can’t guess what the tag is for a form…. If you guessed `<form></form>`, you would be correct. The `<form></form>` takes a minimum of two attributes: `method` and `action`.
+Betcha can’t guess what the tag is for a form…. If you guessed `<form></form>`, you would be correct. The `<form></form>` tag takes a minimum of two attributes: `method` and `action`.
 
-- `method` — Describes the type of request to be made, either `GET` or `POST` (you should almost **never** use `GET` with a form!)
 - `action` — The URL to which the form will be submitted
+- `method` — Describes the type of request to be made, either `GET` or `POST` (**never** use `GET` with a form involving sensitive information, such as passwords!)
 
 ------
 
-Forms consist of one or more of several types of form fields including text inputs, radio buttons, checkboxes, select lists, and buttons. Each has specific uses. _Be careful to use form fields as intended, otherwise you’re likely to throw off your users!_
+Forms consist of one or more of various types of form fields including text inputs, radio buttons, checkboxes, select lists, and buttons. Each has specific uses. _Be careful to use form fields as intended, otherwise you’re likely to throw off your users!_
 
 ------
 
@@ -64,12 +66,12 @@ Radio buttons are used to allow the user to choose exactly one item from a group
 Example:
 
     <p>Select our favorite day of the week:</p>
-    <input type="radio" name="fav-day" value="sat" checked> Saturday
     <input type="radio" name="fav-day" value="sun"> Sunday
     <input type="radio" name="fav-day" value="tue"> Tuesday
     <input type="radio" name="fav-day" value="wed"> Wednesday
     <input type="radio" name="fav-day" value="thu"> Thursday
     <input type="radio" name="fav-day" value="fri"> Friday
+    <input type="radio" name="fav-day" value="sat" checked> Saturday
 
 _Notice that the radio buttons above all share the same name. This is what tells the browser to restrict the user to choosing only one of the set._
 
@@ -100,7 +102,7 @@ Example:
         <option value="WA">Washington</option>
     </select>
 
-Select lists can take an optional attribute that allows the user to select multiple options.
+Select lists can take the optional `multiple` attribute that allows the user to select multiple options.
 
 Example:
 

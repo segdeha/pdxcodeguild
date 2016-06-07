@@ -26,7 +26,7 @@ Cascading Style Sheets is used to implement style and design. Its capabilities a
 
 ### JavaScript
 
-JavaScript (_not_ [Javascript](http://javascriptnotjavascript.com/)) is the _lingua franca_ of the web. It’s possible to build complex web applications entirely using JavaScript from the backend (Node.js, Express, MongoDB) to the frontend (React, Angular, Ember). For purposes of this course, we will be using JavaScript to enhance our web pages with behaviors that improve the user experience.
+JavaScript (_not_ [Javascript](http://javascriptnotjavascript.com/)) is the _lingua franca_ of the web. It’s possible to build complex web applications entirely using JavaScript, from the backend (Node.js, Express, MongoDB) to the frontend (React, Angular, Ember). For purposes of this course, we will be using JavaScript to [enhance](https://en.wikipedia.org/wiki/Progressive_enhancement) our web pages with behaviors that improve the user experience.
 
 ------
 

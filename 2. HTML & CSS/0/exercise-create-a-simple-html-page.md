@@ -12,4 +12,4 @@ Create a simple page in HTML to get familiar with how tags work.
 
 ## Extra Credit
 
-Use the [HTML element reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) to find tags not covered in [the HTML lesson](https://github.com/segdeha/pdxcodeguild/blob/master/2.%20HTML%20%26%20CSS/html.md), e.g., `<address></address>`, `<cite></cite>`, or `<dl></dl>` and use them appropriately in your document.
+Use the [HTML element reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) to find tags not covered in [the HTML lesson](https://github.com/segdeha/pdxcodeguild/blob/master/2.%20HTML%20%26%20CSS/html.md) (e.g., `<address></address>`, `<cite></cite>`, or `<dl></dl>`) and use them appropriately in your document.

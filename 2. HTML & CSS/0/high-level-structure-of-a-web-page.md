@@ -9,7 +9,9 @@ The following is the minimum, correct code for a complete web page:
             <title>My Awesome Page</title>
         </head>
         <body>
+
             <!-- content goes here -->
+
         </body>
     </html>
 

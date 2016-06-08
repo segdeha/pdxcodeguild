@@ -7,7 +7,7 @@ Become familiar with [Semantic UI](http://semantic-ui.com/) by using the CSS fra
 1. Create a directory called `onion-article` in your code folder
 1. Download [index.html](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/2.%20HTML%20%26%20CSS/solutions/onion-article/index.html?token=AAAQ0sDeCS_scoxdD1LzuHPfYZdpzMYlks5XYMgXwA%3D%3D) and [semantic.min.css](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/2.%20HTML%20%26%20CSS/solutions/onion-article/semantic.min.css?token=AAAQ0o1TLpvUMC22nr1nf-KEGW3AhwETks5XYMgbwA%3D%3D) to your new `onion-article` folder
 1. Open `onion-article/index.html` in a web browser (i.e. Chrome) and in your text editor (i.e. Atom)
-1. Un-comment the `<link>` tag in the `<head></head>` of `index.html` and reload `onion-article/index.html` to see what Semantic UI changes automatically
+1. Un-comment the `<link>` and `<script></script>` tags in the `<head></head>` of `index.html` and reload `onion-article/index.html` to see what Semantic UI changes automatically
 1. **Carefully review the source for `onion-article/index.html` for comments telling you how different elements are supposed to be formatted**
 1. Use the [Semantic UI Documentation](http://semantic-ui.com/introduction/getting-started.html) to look up classes you can use from the framework to achieve the desired effects
 

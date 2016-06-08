@@ -31,4 +31,4 @@ Sources:
 1. Mozilla Developer Network’s [CSS documentation](https://developer.mozilla.org/en-US/docs/Web/CSS)
 1. W3C “home page” on [Cascading Style Sheets](https://www.w3.org/Style/CSS/)
 1. [CSS selectors](http://quirksmode.org/css/selectors/) on QuirksMode
-1. [Learn HTML &amp; CSS](http://www.frontendhandbook.com/learning/html-css.html) section of the Frontend Handbook
+1. [Learn HTML & CSS](http://www.frontendhandbook.com/learning/html-css.html) section of the Frontend Handbook

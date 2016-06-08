@@ -20,7 +20,7 @@ The CSS specification, starting with version 1, has defined a box in CSS as havi
     |                                                 |
     ---------------------------------------------------
 
-The CSS `width` property is used to set the width of the **content** box. The amount of space the box takes up on the page is therefore the sum of the following:
+The CSS `width` and `height` properties are used to set the dimensions of the **content** box. The **amount of space the box takes up on the page** is therefore the sum of the following:
 
 - Computed values of the `width` and `height` properties
 - Combined computed values of the `padding` property
@@ -69,13 +69,13 @@ The following is how Microsoft decided to calculate the width of a box:
     |   <----------------- Width ----------------->   |
     ---------------------------------------------------
 
-I.e. (pun intended) Microsoft calculated the width as the sum of the following:
+I.e. (pun intended) Microsoft calculated the **width & height** as the sum of the following:
 
 - Computed values of the `width` and `height` properties
 - Combined computed values of the `padding` property
 - Combined computed thickness of any borders
 
-And the space the box takes up on the page as the above plus the computed values of the `margin` property.
+Therefore, **the space the box takes up on the page** is the above plus the computed values of the `margin` property.
 
 ------
 

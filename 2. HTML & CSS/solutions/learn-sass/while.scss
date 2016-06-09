@@ -1,0 +1,7 @@
+$i: 1;
+@while $i < 7 {
+    h#{$i} {
+        font-size: 24px - 3px * $i;
+    }
+    $i: $i + 1;
+}

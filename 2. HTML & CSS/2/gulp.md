@@ -32,5 +32,20 @@ Let me know if you have trouble with this. We’re going to depend heavily on th
 
 ## Install Gulp File
 
-Gulp needs a file (usually named `gulpfile.js`) to tell it exactly what to do when it’s run. For now, you can download this [gulpfile.js](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/2.%20HTML%20%26%20CSS/solutions/gulpfile.js?token=AAAQ0gG0ojJVJ3qspSzbBxyBGfiO5ZWHks5XYtRswA%3D%3D) to the same directory where you ran the `npm` commands above.
+Gulp needs a file (usually named `gulpfile.js`) to tell it exactly what to do when it’s run. For now, you can download this [gulpfile.js](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/2.%20HTML%20%26%20CSS/solutions/gulpfile.js?token=AAAQ0kG4t523ux6A5qOuyRM35aVe8EzYks5XYt8awA%3D%3D) to the same directory where you ran the `npm` commands above.
 
+------
+
+## Verify Gulp is Working
+
+Let’s make sure we have everything wired up correctly.
+
+1. `cd` into the same directory as your `gulpfile.js`
+1. In that directory, create a new directory called `sass`, and inside that directory create new directories called `src` and `dest`
+1. Into `sass/src`, download [example.scss](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/2.%20HTML%20%26%20CSS/solutions/sass/src/example.scss?token=AAAQ0oBYKvxZ9LacmkqxoqzK9Kg7LSNcks5XYuAIwA%3D%3D)
+1. From the same directory as your `gulpfile.js`, run `gulp`
+1. Look in `sass/dest`; you should see a new file called `example.css`; open the file and observe that there is a `color` attribute set to `red`
+1. In `sass/src/example.scss`, change `red` to `blue` for the value of the `$color` variable
+1. Look again at `sass/dest/example.css` to make sure the value of the `color` attribute is now `blue`
+
+If all of the above worked, you’re all set! If not, let me know and we’ll troubleshoot together.

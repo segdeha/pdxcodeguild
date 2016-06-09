@@ -32,5 +32,5 @@ Let me know if you have trouble with this. We’re going to depend heavily on th
 
 ## Install Gulp File
 
-Gulp needs a file (usually named `gulpfile.js`) to tell it exactly what to do when it’s run. For now, you can download this [gulpfile.js]() to the same directory where you ran the `npm` commands above.
+Gulp needs a file (usually named `gulpfile.js`) to tell it exactly what to do when it’s run. For now, you can download this [gulpfile.js](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/2.%20HTML%20%26%20CSS/solutions/gulpfile.js?token=AAAQ0gG0ojJVJ3qspSzbBxyBGfiO5ZWHks5XYtRswA%3D%3D) to the same directory where you ran the `npm` commands above.
 

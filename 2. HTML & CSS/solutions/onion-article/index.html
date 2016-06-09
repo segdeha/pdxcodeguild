@@ -3,29 +3,149 @@
     <head>
         <meta charset="utf-8">
         <title>The latest news from The Onion, America’s finest news source.</title>
-        <!-- <link rel="stylesheet" href="semantic.css"> -->
+        <link rel="stylesheet" href="semantic.css">
         <style type="text/css">
 
-        /* your styles go here! */
+        .onion {
+            color: #006b3a;
+        }
+
+        header h1 {
+            margin-bottom: 5px;
+        }
+
+        .ui.grid + main.grid {
+            margin-left: 1em;
+            margin-right: 1em;
+            margin-top: 42px;
+        }
+
+        .ui.grid .four.wide.column.sidebar {
+            border-left: solid 1px rgba(34, 36, 38, 0.15);
+        }
+
+        .ui.container.full-width {
+            width: 100%;
+        }
+
+        article section p:last-child {
+            margin-bottom: 2em;
+        }
+
+        .signup, footer {
+            padding: 2em 0;
+        }
+
+        .signup {
+            background: #f5f7f7;
+            margin-top: 1em;
+        }
+            .signup h4 {
+                text-transform: uppercase;
+            }
+            .signup .fieldset {
+                padding: 1em 0;
+            }
+                .signup .fieldset.narrow {
+                    margin: 0 auto;
+                    width: 25%;
+                }
+            .signup input[type="checkbox"] {
+                margin-right: 0.5em;
+            }
+
+        footer {
+            background: #242424;
+        }
+            footer p {
+                color: #6f6f6f;
+                font-style: italic;
+                margin: 1em auto;
+                max-width: 400px;
+            }
 
         </style>
-        <!-- <script defer type="text/javascript" src="semantic.js"></script> -->
+        <script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script defer type="text/javascript" src="semantic.js"></script>
     </head>
     <body>
         <header>
-            <!-- form should be aligned to the right -->
-            <form action="http://www.theonion.com/search" method="GET">
-                <input name="q" id="search-input" type="text" placeholder="Search...">
-                <button>Search</button>
-            </form>
             <h1>
                 <!-- logo should be 50% size and aligned to the left -->
                 <img src="http://assets3.onionstatic.com/onionstatic/onion/static/images/onion_logo.png" alt="The Onion, America’s finest news source.">
             </h1>
+            <!-- form should be aligned to the right -->
+            <form action="http://www.theonion.com/search" method="GET">
+                <input name="q" id="search-input" type="text" placeholder="Search...">
+                <button class="ui button">Search</button>
+            </form>
         </header>
         <!-- the main content container should be a maximum of 1000px wide -->
         <!-- the main content container should be center aligned (but the text within it left aligned) -->
         <main>
+            <section>
+                <!-- article should be visually separated from other content -->
+                <article>
+                    <!-- aside should be in a narrow column to the left of the main article -->
+                    <aside>
+                        <p>
+                            NEWS IN BRIEF<br>
+                            June 16, 2014
+                        </p>
+                        <p>
+                            VOL 50 ISSUE 24<br>
+                            Local · Workplace · Office
+                        </p>
+                    </aside>
+                    <section>
+                        <h1>Employee Executes Daring 3:30 P.M. Escape From Office</h1>
+                        <figure>
+                            <!-- image should be reduced in size to something that fits better with the article -->
+                            <img src="http://i.onionstatic.com/onion/2652/7/16x9/1600.jpg" alt="">
+                        </figure>
+                        <p>
+                            BINGHAMTON, NY—In a risky maneuver requiring precise timing and careful preparation, LifeTech Medical Devices employee Trevor Sadler, 32, executed a daring 3:30 p.m. escape from his office Monday afternoon, sources confirmed. “All right, it’s go time,” Sadler said to himself moments before furtively slipping out of his cubicle and taking a circuitous route to the back stairwell leading out to the parking lot where his car would be waiting. “I’m leaving my monitor on, and there’s a full glass of water sitting on my desk so it’ll seem like I’m still in the building. And I won’t bring my laptop bag with me. That way, if anyone sees me leave, I’ll look like I’m just stepping out for a minute. Then I should be home free.” At press time, Sadler had been drawn into an unexpected conversation with a coworker about an upcoming sales meeting, forcing the would-be fugitive to hastily snap the man’s neck and drag his body into the supply closet.
+                        </p>
+                    </section>
+                </article>
+                <!-- article should be visually separated from other content -->
+                <article>
+                    <!-- aside should be in a narrow column to the left of the main article -->
+                    <aside>
+                        <p>
+                            NEWS<br>
+                            March 19, 2014
+                        </p>
+                        <p>
+                            VOL 50 ISSUE 11<br>
+                            News · Education · Parents · Kids
+                        </p>
+                    </aside>
+                    <section>
+                        <h1>Intrepid Middle-Class Parents Embark On Daring Search For Mythical Perfect School District</h1>
+                        <figure>
+                            <!-- image should be reduced in size to something that fits better with the article -->
+                            <img src="http://i.onionstatic.com/onion/2562/7/16x9/1600.jpg" alt="">
+                            <figcaption>The Lindens believe the school district of lore, which is said to prepare every pupil for college success and boast a state-of-the-art digital media lab, is out there somewhere.</figcaption>
+                        </figure>
+                        <p>RICHMOND, VA—Sources confirmed that a harrowing journey commenced today at first light, when middle-class parents of two Ken and Deborah Linden courageously set off to find the perfect school district, a mythical realm of top-ranked, well-rounded education that many say only exists in legend.</p>
+                        <p>The quest, which the Lindens said could last weeks, months, or even years, is expected to take the fearless couple to the farthest reaches of the metropolitan area as they search for the fabled school system with an 8-to-1 student-teacher ratio, highly competitive SAT scores, and lavishly funded programs for the gifted and talented.</p>
+                        <p>“Though our path may be treacherous, our will is unshakable and we embark with hopeful spirits in pursuit of this long-lost domain of nationally recognized elementary and secondary schools,” said Deborah Linden, who has reportedly spent many long nights poring over maps, standardized test data, and copies of U.S. News &amp; World Report. “Whatever pitfalls we encounter—be they lottery-based admissions policies or steep home prices—we will not rest until our children are enrolled.”</p>
+                        <p>“We will find this hallowed place where Mandarin is offered in addition to French and Spanish, and where nearly a quarter of graduates attend their first-choice Ivy League college,” she continued, “or we will die trying.”</p>
+                        <blockquote>
+                            <p>“When I close my eyes I can almost envision the quiz bowl team prepping for regional finals.”</p>
+                        </blockquote>
+                        <p>According to lore, the mysterious school district—located in a remote clearing in the suburbs that only a chosen few are able to see—offers a robust, wide-ranging curriculum that prophets claim includes “all the AP classes—all of them. More than one could ever possibly take.” If legends are to be believed, the teachers in every classroom in the district hold an advanced degree, often a doctorate, and the day’s lessons are displayed on Smart Boards synced to each student’s school-issued iPad.</p>
+                        <p>It has even been prophesied that there are unlimited opportunities to participate in extracurricular activities—from advanced computer programming clubs to organized weekly community service projects—that look good on a scholarship application.</p>
+                        <p>“There are some who believe the perfect school district does not exist—that it is just an old tale handed down in whispered tones at PTA meetings and Kaplan Test Prep centers, and nothing more,” said Ken Linden, resolutely staring off into the distance. “But we know it is out there somewhere, and we believe its manifold rewards will be visited upon the children of those able to secure an open spot. Many have faltered in this quest, but we will succeed. We must succeed.”</p>
+                        <p>“When I close my eyes I can almost envision the quiz bowl team prepping for regional finals,” he added.</p>
+                        <p>Fleeing as they are a blighted elementary school district that does not feed into their town’s good high school, the Lindens told reporters they know well the risks their mission entails. The couple said that a year ago they were convinced they had discovered the mythic realm in Barterfeld, VA, but their hopes were cruelly dashed when they read about a 2011 bullying incident at one of its schools, forcing them to begin the daunting quest anew.</p>
+                        <p>They confirmed the same fate befell them last fall, when they believed Rundlett County Public Schools to be the storied district of legend, only to find out later that its senior-year internship programs were insufficiently rigorous, and that its reputation for math, while good, could be better.</p>
+                        <p>“Each time we thought we had finally found this long-foretold-of scholastic paradise it turned out to be no more than a mirage,” Deborah Linden said. “I know our journey may seem misguided, even mad to some, but these legendary places of learning where one-on-one counseling and tutoring are available from pre-K onward promise far too much for us to let them slip from our grasp.”</p>
+                        <p>“’Cause there’s no way we’re letting our kids go to Richmond South,” she added. “That dump doesn’t even have an HD video production studio.”</p>
+                    </section>
+                </article>
+            </section>
             <!-- links to other news stories should be aligned to the right -->
             <!-- links container should be a maximum of 300px wide -->
             <section>
@@ -44,63 +164,6 @@
                     <li><a href="http://www.theonion.com/article/doomsday-clock-pushed-one-minute-midnight-after-ar-53011">Doomsday Clock Pushed To One Minute To Midnight After Arby’s Threatens Launch Of 3-Cheese Jalapeño Beef ’N Bacon Melt</a></li>
                 </ul>
             </section>
-            <!-- article should be visually separated from other content -->
-            <article>
-                <!-- aside should be in a narrow column to the left of the main article -->
-                <aside>
-                    <p>
-                        NEWS IN BRIEF<br>
-                        June 16, 2014
-                    </p>
-                    <p>
-                        VOL 50 ISSUE 24<br>
-                        Local · Workplace · Office
-                    </p>
-                </aside>
-                <h1>Employee Executes Daring 3:30 P.M. Escape From Office</h1>
-                <figure>
-                    <!-- image should be reduced in size to something that fits better with the article -->
-                    <img src="http://i.onionstatic.com/onion/2652/7/16x9/1600.jpg" alt="">
-                </figure>
-                <p>
-                    BINGHAMTON, NY—In a risky maneuver requiring precise timing and careful preparation, LifeTech Medical Devices employee Trevor Sadler, 32, executed a daring 3:30 p.m. escape from his office Monday afternoon, sources confirmed. “All right, it’s go time,” Sadler said to himself moments before furtively slipping out of his cubicle and taking a circuitous route to the back stairwell leading out to the parking lot where his car would be waiting. “I’m leaving my monitor on, and there’s a full glass of water sitting on my desk so it’ll seem like I’m still in the building. And I won’t bring my laptop bag with me. That way, if anyone sees me leave, I’ll look like I’m just stepping out for a minute. Then I should be home free.” At press time, Sadler had been drawn into an unexpected conversation with a coworker about an upcoming sales meeting, forcing the would-be fugitive to hastily snap the man’s neck and drag his body into the supply closet.
-                </p>
-            </article>
-            <!-- article should be visually separated from other content -->
-            <article>
-                <!-- aside should be in a narrow column to the left of the main article -->
-                <aside>
-                    <p>
-                        NEWS<br>
-                        March 19, 2014
-                    </p>
-                    <p>
-                        VOL 50 ISSUE 11<br>
-                        News · Education · Parents · Kids
-                    </p>
-                </aside>
-                <h1>Intrepid Middle-Class Parents Embark On Daring Search For Mythical Perfect School District</h1>
-                <figure>
-                    <!-- image should be reduced in size to something that fits better with the article -->
-                    <img src="http://i.onionstatic.com/onion/2562/7/16x9/1600.jpg" alt="">
-                    <figcaption>The Lindens believe the school district of lore, which is said to prepare every pupil for college success and boast a state-of-the-art digital media lab, is out there somewhere.</figcaption>
-                </figure>
-                <p>RICHMOND, VA—Sources confirmed that a harrowing journey commenced today at first light, when middle-class parents of two Ken and Deborah Linden courageously set off to find the perfect school district, a mythical realm of top-ranked, well-rounded education that many say only exists in legend.</p>
-                <p>The quest, which the Lindens said could last weeks, months, or even years, is expected to take the fearless couple to the farthest reaches of the metropolitan area as they search for the fabled school system with an 8-to-1 student-teacher ratio, highly competitive SAT scores, and lavishly funded programs for the gifted and talented.</p>
-                <p>“Though our path may be treacherous, our will is unshakable and we embark with hopeful spirits in pursuit of this long-lost domain of nationally recognized elementary and secondary schools,” said Deborah Linden, who has reportedly spent many long nights poring over maps, standardized test data, and copies of U.S. News &amp; World Report. “Whatever pitfalls we encounter—be they lottery-based admissions policies or steep home prices—we will not rest until our children are enrolled.”</p>
-                <p>“We will find this hallowed place where Mandarin is offered in addition to French and Spanish, and where nearly a quarter of graduates attend their first-choice Ivy League college,” she continued, “or we will die trying.”</p>
-                <blockquote>
-                    <p>“When I close my eyes I can almost envision the quiz bowl team prepping for regional finals.”</p>
-                </blockquote>
-                <p>According to lore, the mysterious school district—located in a remote clearing in the suburbs that only a chosen few are able to see—offers a robust, wide-ranging curriculum that prophets claim includes “all the AP classes—all of them. More than one could ever possibly take.” If legends are to be believed, the teachers in every classroom in the district hold an advanced degree, often a doctorate, and the day’s lessons are displayed on Smart Boards synced to each student’s school-issued iPad.</p>
-                <p>It has even been prophesied that there are unlimited opportunities to participate in extracurricular activities—from advanced computer programming clubs to organized weekly community service projects—that look good on a scholarship application.</p>
-                <p>“There are some who believe the perfect school district does not exist—that it is just an old tale handed down in whispered tones at PTA meetings and Kaplan Test Prep centers, and nothing more,” said Ken Linden, resolutely staring off into the distance. “But we know it is out there somewhere, and we believe its manifold rewards will be visited upon the children of those able to secure an open spot. Many have faltered in this quest, but we will succeed. We must succeed.”</p>
-                <p>“When I close my eyes I can almost envision the quiz bowl team prepping for regional finals,” he added.</p>
-                <p>Fleeing as they are a blighted elementary school district that does not feed into their town’s good high school, the Lindens told reporters they know well the risks their mission entails. The couple said that a year ago they were convinced they had discovered the mythic realm in Barterfeld, VA, but their hopes were cruelly dashed when they read about a 2011 bullying incident at one of its schools, forcing them to begin the daunting quest anew.</p>
-                <p>They confirmed the same fate befell them last fall, when they believed Rundlett County Public Schools to be the storied district of legend, only to find out later that its senior-year internship programs were insufficiently rigorous, and that its reputation for math, while good, could be better.</p>
-                <p>“Each time we thought we had finally found this long-foretold-of scholastic paradise it turned out to be no more than a mirage,” Deborah Linden said. “I know our journey may seem misguided, even mad to some, but these legendary places of learning where one-on-one counseling and tutoring are available from pre-K onward promise far too much for us to let them slip from our grasp.”</p>
-                <p>“’Cause there’s no way we’re letting our kids go to Richmond South,” she added. “That dump doesn’t even have an HD video production studio.”</p>
-            </article>
         </main>
         <!-- newsletter section should be set off with a different background color -->
         <!-- contents of the newsletter section should be center aligned -->
@@ -109,21 +172,13 @@
             <p>Give your spam filter something to do.</p>
             <form action="http://www.email.theonion.com/signuponion/signup.action" method="get">
                 <input type="hidden" name="src" value="theonion.com">
-                <fieldset>
-                    <!-- the two delivery options should sit side by side -->
-                    <label>
-                        <input type="checkbox" value="1" name="listid">
-                        Daily Headlines
-                    </label>
-                    <label>
-                        <input type="checkbox" checked value="2" name="listid">
-                        Weekly Update
-                    </label>
-                </fieldset>
-                <p>
-                    <input type="email" name="email" placeholder="Enter Email Address">
-                    <button type="submit">&gt;</button>
-                </p>
+                <!-- the two delivery options should sit side by side -->
+                <input type="checkbox" value="1" name="listid">
+                <label>Daily Headlines</label>
+                <input type="checkbox" checked value="2" name="listid">
+                <label>Weekly Update</label>
+                <input type="email" name="email" placeholder="Enter Email Address">
+                <button class="ui button" type="submit">&gt;</button>
             </form>
         </section>
         <!-- footer should be set off with a different background color than either the articles or the newsletter section -->
@@ -136,5 +191,10 @@
                 &copy; Copyright 2016 Onion Inc. All rights reserved
             </p>
         </footer>
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function ( evt ) {
+            /* custom javascript can go here */
+        })
+        </script>
     </body>
 </html>

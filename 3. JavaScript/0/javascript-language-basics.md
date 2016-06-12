@@ -21,6 +21,55 @@ The above is functionally equivalent to the following:
 
     function myFunc(a,b){var c=a+b;return c>10;}
 
+_Of course, we code for readability over conciseness, but removing extra whitespace is a common build step (called “minification”) before deploying JavaScript and CSS to the web._
+
+------
+
+## Primitives
+
+[Primitives](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) are JavaScript types that are not objects and have no methods. Examples include strings, numbers, and booleans, but also include `undefined` and `null`. They are the values, the data.
+
+Examples:
+
+    2 // number
+    2.2222222 // number
+    '2' // string
+    true // boolean
+    undefined
+    null
+
+------
+
+## Types
+
+JavaScript is what is called a “loosely typed” language. Unlike Python, manually casting values to specific types is rarely needed. JavaScript, supports the following types:
+
+- `string` — Text (JavaScript is _mostly_ Unicode clean, except regular expressions)
+- `number` — JavaScript makes no distinction between ints and floats
+- `boolean` — Either `true` or `false`
+- `Undefined` — A variable that has not been given a value
+- `Null` — Similar to `Undefined`, but usually used to show that a variable is intentionally not defined
+- `Object` — The only type that is not a “primitive” and the basis for everything in the language that is not a primitive
+
+### Mini-excercise: Understanding type coercion
+
+JavaScript will attempt to coerce your data to the correct type depending on the operation you are trying to execute. In the browser console or in a Node shell, try the following:
+
+    2 + 2 // 4
+    'two' + 'two' // 'twotwo'
+    2 + '2' // '22'
+    2 * '2' // 4
+
+------
+
+## Objects
+
+In JavaScript, anything that is not a primitive is an object. That includes functions, arrays, regular expressions, etc. Much like Python classes, objects are containers for properties (values) and methods (functions).
+
+JavaScript’s concept of objects is more flexible than most languages. For example, you can create a function in JavaScript and then attach arbitrary properties to it like any other object.
+
+
+
 ------
 
 ## Variables
@@ -103,6 +152,8 @@ Example:
     my_array[ 1 ]; // 'b'
     my_object[ 'c' ]; // 3
 
+_Associative arrays (equivalent to Python dictionaries) are just objects in JavaScript. See the section below for more about objects._
+
 ------
 
 ## Comments
@@ -117,25 +168,10 @@ Example:
 
 ------
 
-## Types
-
-JavaScript is what is called a “loosely typed” language. Unlike Python, manually casting values to various types is rarely needed. JavaScript, supports the following types:
-
-- `string` — Text
-- `number` — JavaScript makes no distinction between ints and floats
-- `boolean` — Either `true` or `false`
-- `Undefined` — A variable that has not been given a value
-- `Null` — Similar to `Undefined`, but usually used to show that a variable is intentionally not defined
-- `Object` — The only type that is not a “primitive” and the basis for everything in the language that is not a primitive
-
-------
-
-## Objects
-
-Objects deserve their own section because they are so ubiquitous in JavaScript.
-
-------
-
 Sources:
 
+1. [Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
 1. [JavaScript data types and data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+1. [Unicode and JavaScript](http://www.2ality.com/2013/09/javascript-unicode.html)
+
+

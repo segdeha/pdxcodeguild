@@ -1,6 +1,6 @@
 # Anatomy of a Web Page
 
-Web pages consist of HTML, CSS, and JavaScript. They’re like birthday cakes.
+Web pages consist of HTML, CSS, and JavaScript. They’re kind of like birthday cakes.
 
 ------
 
@@ -21,3 +21,27 @@ And it’s totally possible to go crazy with JavaScript and make a cake that’s
 ![Crazy cake](https://s-media-cache-ak0.pinimg.com/736x/35/1b/0a/351b0aa8774276354c8e6d24b6fc53c9.jpg)
 
 ------
+
+We’ve seen the following basic structure of a web page before:
+
+    <!doctype html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>My Awesome Page</title>
+            <link href="styles.css">
+            <script defer src="behaviors.js"></script>
+        </head>
+        <body>
+            <h1>My Awesome Page</h1>
+            <p>Stuff I want to say.</p>
+        </body>
+    </html>
+
+- HTML is responsible for providing semantic structure to the content of the page.
+- CSS provides presentation to the content
+- JavaScript provides dynamic, interactive behaviors to the page
+
+------
+
+All three of HTML, CSS, and JavaScript are just text files written in different syntaxes. Web browsers know how to interpret all three and allow them to work together to provide a unified experience of what we call a web page.

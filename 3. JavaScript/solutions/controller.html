@@ -13,7 +13,7 @@
             left: 100px;
             position: absolute;
             top: 100px;
-            transition: transform 0.5s;
+            transition: transform 0.25s ease-in-out;
             width: 64px;
         }
             #ball.top.left      { transform: translate3d(  0 ,   0 , 0) }
@@ -71,6 +71,7 @@
         /* Requires knowledge of the following:
            - DOM selector methods
            - Event listener methods
+           - Event delegation
            - Element.matches method
            - Element.className property
         */

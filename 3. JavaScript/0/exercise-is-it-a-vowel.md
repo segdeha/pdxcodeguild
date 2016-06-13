@@ -12,11 +12,15 @@ Get familiar with basic JavaScript constructs by writing a program that prompts 
 
 ## Helpful hints
 
+#### prompt
+
 Use the built-in function `prompt` to ask the user for input. The result of `prompt` should be assigned to a variable.
 
 Example:
 
     var input = prompt('Enter a character');
+
+#### alert
 
 Use the built-in function `alert` to tell the user the result.
 
@@ -24,12 +28,16 @@ Example:
 
     alert('The character you entered is a vowel');
 
+#### indexOf
+
 Similar to the `index` method on Python lists, JavaScript arrays have a method called [indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) that returns the array index of the value or `-1` if the value is not present.
 
 Example:
 
     ['a'].indexOf('a') // 0
     ['a'].indexOf('b') // -1
+
+You could use the `indexOf` method to detect whether the user’s input is one of the items in an array of vowels.
 
 ------
 

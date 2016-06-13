@@ -82,3 +82,4 @@ Example:
 Sources:
 
 1. [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+1. [Regular Expressions in JavaScript](https://www.sitepoint.com/expressions-javascript/)

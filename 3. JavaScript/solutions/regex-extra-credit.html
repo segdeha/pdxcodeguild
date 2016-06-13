@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Regular Expressions Extra Credit</title>
+        <style type="text/css">
+
+        /* styles go here */
+
+        </style>
+    </head>
+    <body>
+
+        <h1>Regular Expressions Extra Credit</h1>
+
+        <script type="text/javascript">
+
+        var regex = /^(\d{3})\-?(\d{2})\-?(\d{4})$/;
+
+        function allZeroes(str) {
+            var allZeroes = true;
+            for (var i = 0; i < str.length; i += 1) {
+                if (str.charAt(i) !== '0') {
+                    allZeroes = false;
+                    break;
+                }
+            }
+            return allZeroes;
+        }
+
+        function main() {
+            var isSSN = true;
+            var input = prompt('Enter a fake SSN');
+            var matches;
+
+            if (!input) {
+                return;
+            }
+            else {
+                matches = input.match(regex);
+            }
+
+            // matches the entire string
+            if (matches) {
+                for (var i = 1; i < matches.length; i += 1) {
+                    if (allZeroes(matches[i])) {
+                        isSSN = false;
+                    }
+                }
+                if (matches[1] === '666') {
+                    isSSN = false;
+                }
+                if (matches[1] > 899) {
+                    isSSN = false;
+                }
+            }
+
+            displayResult(isSSN);
+        }
+
+        function displayResult(isSSN) {
+            if (isSSN) {
+                alert('That looks like a SSN.');
+            }
+            else {
+                alert('That does not look like a SSN.');
+            }
+            main();
+        }
+
+        main();
+
+        </script>
+    </body>
+</html>

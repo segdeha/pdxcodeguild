@@ -15,59 +15,53 @@
 
         <script type="text/javascript">
 
-        var regex = /^(\d{3})\-?(\d{2})\-?(\d{4})$/;
+        // pure functions FTW!
+        function isSSN(input) {
+            var isSSN = true;
+            var regex = /^(\d{3})\-?(\d{2})\-?(\d{4})$/;
+            var matches = input.match(regex);
 
-        function allZeroes(str) {
-            var allZeroes = true;
-            for (var i = 0; i < str.length; i += 1) {
-                if (str.charAt(i) !== '0') {
-                    allZeroes = false;
-                    break;
+            if (!matches) { // tests whether the entire string matched
+                isSSN = false;
+            }
+            else if (matches[1] === '666') {
+                isSSN = false;
+            }
+            else if (matches[1] > 899) {
+                isSSN = false;
+            }
+            // do the most costly comparison last
+            else {
+                // start at 1 because there’s no need to test the full match
+                for (var i = 1; i < matches.length; i += 1) {
+                    if (/^0+$/.test(matches[i])) {
+                        isSSN = false;
+                        break;
+                    }
                 }
             }
-            return allZeroes;
+
+            return isSSN;
         }
 
         function main() {
-            var isSSN = true;
-            var input = prompt('Enter a fake SSN');
-            var matches;
+            var input = prompt('Enter a fake SSN (or [enter] to quit)');
 
+            // user either entered an empty string or clicked cancel (input === null)
             if (!input) {
                 return;
             }
-            else {
-                matches = input.match(regex);
-            }
 
-            // matches the entire string
-            if (matches) {
-                for (var i = 1; i < matches.length; i += 1) {
-                    if (allZeroes(matches[i])) {
-                        isSSN = false;
-                    }
-                }
-                if (matches[1] === '666') {
-                    isSSN = false;
-                }
-                if (matches[1] > 899) {
-                    isSSN = false;
-                }
-            }
-
-            displayResult(isSSN);
+            showResult(isSSN(input));
         }
 
-        function displayResult(isSSN) {
-            if (isSSN) {
-                alert('That looks like a SSN.');
-            }
-            else {
-                alert('That does not look like a SSN.');
-            }
+        function showResult(isSSN) {
+            var alertString = isSSN ? 'That looks like a SSN.' : 'That does not look like a SSN.';
+            alert(alertString);
             main();
         }
 
+        // prompt user for the first time
         main();
 
         </script>

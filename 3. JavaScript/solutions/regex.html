@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Regular Expressions</title>
+        <style type="text/css">
+
+        /* styles go here */
+
+        </style>
+    </head>
+    <body>
+
+        <h1>Regular Expressions</h1>
+
+        <script type="text/javascript">
+
+        var input = prompt('Enter a fake SSN');
+
+        var regex = /^\d{3}\-?\d{2}\-?\d{4}$/;
+
+        if (regex.test(input)) {
+          alert('That looks like a SSN.');
+        }
+        else {
+          alert('That does not look like a SSN.');
+        }
+
+        </script>
+    </body>
+</html>

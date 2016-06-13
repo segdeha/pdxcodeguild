@@ -26,7 +26,7 @@
         do {
             var input = prompt('Enter a character (or [return] to quit)');
 
-            if (!input) {
+            if (!input) { // '' or undefined
                 break;
             }
             else if (vowel_charcodes.indexOf(input.charCodeAt(0)) > -1) {

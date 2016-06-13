@@ -52,12 +52,10 @@
                 return;
             }
 
-            showResult(isSSN(input));
-        }
+            // if i were my manager, i'd make me refactor this....
+            alert(isSSN(input) ? 'That looks like a SSN.' : 'That does not look like a SSN.');
 
-        function showResult(isSSN) {
-            var alertString = isSSN ? 'That looks like a SSN.' : 'That does not look like a SSN.';
-            alert(alertString);
+            // start over
             main();
         }
 

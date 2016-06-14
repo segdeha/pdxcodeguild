@@ -48,13 +48,21 @@
         function main() {
             var input = prompt('Enter a fake SSN (or [enter] to quit)');
 
-            // user either entered an empty string or clicked cancel (input === null)
+            // user either entered an empty string or clicked cancel
+            // (input === null)
             if (!input) {
                 return;
             }
 
-            // if i were my manager, i'd make me refactor this....
-            alert(isSSN(input) ? 'That looks like a SSN.' : 'That does not look like a SSN.');
+            var result;
+            if (isSSN(input)) {
+                result = 'That looks like a SSN.';
+            }
+            else {
+                result = 'That does not look like a SSN.';
+            }
+
+            alert(result);
 
             // start over
             main();

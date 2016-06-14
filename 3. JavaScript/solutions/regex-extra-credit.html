@@ -17,9 +17,10 @@
 
         // pure functions FTW!
         function isSSN(input) {
+            var ssn = /^(\d{3})\-?(\d{2})\-?(\d{4})$/;
+            var zeroes = /^0+$/;
+            var matches = input.match(ssn);
             var isSSN = true;
-            var regex = /^(\d{3})\-?(\d{2})\-?(\d{4})$/;
-            var matches = input.match(regex);
 
             if (!matches) { // tests whether the entire string matched
                 isSSN = false;
@@ -27,14 +28,14 @@
             else if (matches[1] === '666') {
                 isSSN = false;
             }
-            else if (matches[1] > 899) {
+            else if (matches[1] > 899) { // type coercion FTW!
                 isSSN = false;
             }
             // do the most costly comparison last
             else {
                 // start at 1 because there’s no need to test the full match
                 for (var i = 1; i < matches.length; i += 1) {
-                    if (/^0+$/.test(matches[i])) {
+                    if (zeroes.test(matches[i])) {
                         isSSN = false;
                         break;
                     }

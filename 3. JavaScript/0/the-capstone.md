@@ -1,8 +1,8 @@
 # The Capstone
 
-The capstone project is the most exciting part of the course! It’s also the most challenging!
+The capstone project is the most exciting part of the course! It’s also the most challenging….
 
-It’s where you finally get to use all of the technologies we’ve been studying together to create something of your choosing. It will be the anchor of your portfolio when you start looking for internships and jobs.
+The capstone is where you finally get to use all of the technologies we’ve been studying together to create something of **your** choosing. It will be the anchor of your portfolio when you start looking for internships and jobs.
 
 **In other words, the capstone is the most important part of the course!**
 
@@ -58,7 +58,7 @@ The formal schedule for working on your capstone is:
 
 From this point forward, if you finish exercises/assignments early, please work on your capstone; brainstorm ideas, plan out implementations, etc.
 
-We will be set aside the entire day that proposals are due to work on them. _Start working on them before then!_ Anticipate it taking around **6 to 12 hours** to thoroughly investigate and document your proposal idea.
+We will set aside the entire day that proposals are due (6/29) to work on them. _Start working on them before then!_ Anticipate it taking around **6 to 12 hours** to thoroughly investigate and document your proposal idea.
 
 On or around 7/25, the focus of the class will shift from being a classroom setting to more of a co-working space with me, Jasmine, and your fellow students as resources.
 
@@ -69,13 +69,13 @@ On or around 7/25, the focus of the class will shift from being a classroom sett
 1. Create a new repo on GitHub called `capstone`
 1. Create 2 documents at the root of the repo: `README.md` and `PROPOSAL.md`
 
-`README.md` will be used to document how someone (me!) can get your site/app up and running. It should include the following:
+`README.md` will be used to document how someone (me!) can get your site/web app up and running. It should include the following:
 
 - The name of the site or application
 - One or two sentences that describe its purpose
 - Setup steps/technical requirements
-- Basic guide to how to use the app
+- Basic guide to how to use the app (for end users)
 
-`PROPOSAL.md`, as the name implies, will be where you document your actual capstone proposal.
+`PROPOSAL.md`, as the name implies, will be where you document your actual capstone proposal. We will go over what to cover in the proposal closer to the date.
 
 As you work on your capstone, push everything you create to this GitHub repo. It’s an easy way to back up your work and it’s how you’ll be turning in your proposal.

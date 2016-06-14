@@ -78,7 +78,8 @@
 
         var ball = document.getElementById('ball');
 
-        document.getElementById('control-pad').addEventListener('mouseover', function (evt) {
+        document.getElementById('control-pad')
+            .addEventListener('mouseover', function (evt) {
             if (evt.target.matches('#control-pad > div')) {
                 ball.className = evt.target.className;
             }

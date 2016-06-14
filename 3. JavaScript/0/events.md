@@ -70,5 +70,3 @@ Sources:
 
 1. [Event reference](https://developer.mozilla.org/en-US/docs/Web/Events)
 1. [Touch events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
-
-

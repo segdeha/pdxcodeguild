@@ -75,7 +75,28 @@ What’s returned by `querySelectorAll` is what’s called a “NodeList”. It�
 Some of the common things you might want to do with a DOM element once you select it include the following:
 
 - Change the class names assigned to it
-- Add or remove an event listener
+- Add or remove an [event listener](https://github.com/segdeha/pdxcodeguild/blob/master/3.%20JavaScript/0/events.md)
+- Change the contents of the element
+- Test whether an element matches a selector
+
+The following are examples of each:
+
+    // add a class name to the selected element
+    document.querySelector('#my-div')
+        .classList.add('selected')
+
+    // add an event listener to the element
+    document.getElementById('my-span')
+        .addEventListener('mouseover', function (evt) {
+        console.log('The mouse is over the span!');
+    })
+
+    // assign new content to the `innerHTML` property
+    document.querySelector('p:last-child')
+        .innerHTML = 'This is the last paragraph.';
+
+    // test whether the element matches a different selector
+    document.querySelector('h1 > a').matches('h1 a') // true
 
 ------
 

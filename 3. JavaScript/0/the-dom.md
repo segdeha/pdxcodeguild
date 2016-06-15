@@ -77,6 +77,7 @@ Some of the common things you might want to do with a DOM element once you selec
 - Change the class names assigned to it
 - Add or remove an [event listener](https://github.com/segdeha/pdxcodeguild/blob/master/3.%20JavaScript/0/events.md)
 - Change the contents of the element
+- Change CSS styles directly with JavaScript
 - Test whether an element matches a selector
 
 The following are examples of each:
@@ -94,6 +95,9 @@ The following are examples of each:
     // assign new content to the `innerHTML` property
     document.querySelector('p:last-child')
         .innerHTML = 'This is the last paragraph.';
+
+    // change the element’s font size
+    document.querySelector('h1').style.fontSize = '48px';
 
     // test whether the element matches a different selector
     document.querySelector('h1 > a').matches('h1 a') // true

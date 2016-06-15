@@ -12,10 +12,18 @@ Some supermarkets have automatic change dispensers. Let’s write code that figu
     * Calculate the number of quarters necessary first.
     * Then calculate the number of dimes, nickels, and pennies. If you do it in that order, you will minimize the number of coins.
 
-**Hint:** This is easiest done by updating a _running total_ of number of cents left to be put into coins. Also remember that the `//` operator divides and removes any remainder.
+**Hint:** This is easiest done by updating a _running total_ of number of cents left to be put into coins.
+
+_Note: The `//` operator in JavaScript does not do what it does in Python, so you’ll need to find another way, e.g., using the `Math.floor` method._
 
 ------
 
 ## Extra Credit
 
 * Instead of assuming your “cash register” has an unlimited number of coins of each type, randomly generate how many of each type of coin you have to work with before computing the change to give and adjust what coins you return based on what’s available; experiment with how many to generate, but start with 0 to 9 of each type
+
+------
+
+Sources:
+
+1. [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) on Mozilla Developer Network

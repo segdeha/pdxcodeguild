@@ -1,0 +1,22 @@
+header.ui.menu {
+    background-color: rgb(175, 38, 0);
+    padding: 1em 2em;
+}
+    header h1 {
+        color: white;
+        font: 700 48px/1.25 Atma, 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: rgb(255, 170, 0);
+    }
+
+.ui.fixed.menu + .ui.grid {
+    padding: 7.5rem 1rem 1rem;
+}
+
+figcaption {
+    margin: 1em 0 0;
+}
+
+footer {
+    padding: 2rem;
+}

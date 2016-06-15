@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>El Burrito Grande Order Form</title>
+        <link href="https://fonts.googleapis.com/css?family=Atma:700" rel="stylesheet">
+        <link rel="stylesheet" href="semantic.css">
+        <link rel="stylesheet" href="styles.css">
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script defer src="semantic.js"></script>
+        <script defer data-main="app" src="require.js"></script>
+    </head>
+    <body>
+        <header class="ui fixed menu">
+            <h1>El Burrito Grande Order Form</h1>
+        </header>
+        <section class="ui grid">
+            <section class="four wide column">
+                <figure class="ui raised segment">
+                    <img class="ui medium rounded image" src="http://assets.kraftfoods.com/recipe_images/opendeploy/113694_640x428.jpg" alt="">
+                    <figcaption>Would you like fries with that?</figcaption>
+                </figure>
+            </section>
+            <section class="eight wide column">
+                <h2>Customize Your Burrito</h2>
+                <form class="ui form">
+                    <h3 class="ui block header">Your Burrito’s Details</h3>
+                    <h4>Included in your 6 bucks</h4>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <select>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                            <label>Tortilla</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="ingredients" value="beans" class="hidden">
+                            <label>Beans</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="ingredients" value="cheese" class="hidden">
+                            <label>Cheese</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="ingredients" value="salsa" class="hidden">
+                            <label>Salsa</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="ingredients" value="sour cream" class="hidden">
+                            <label>Sour Cream</label>
+                        </div>
+                    </div>
+                    <h4>Extras @ $0.50 each</h4>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="ingredients" value="guacamole" class="hidden">
+                            <label>Guacamole</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="ingredients" value="scrambled-egg" class="hidden">
+                            <label>Scrambled Egg</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="ingredients" value="potatoes" class="hidden">
+                            <label>Home Fried Potatoes</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="ingredients" value="olives" class="hidden">
+                            <label>Olives</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="ingredients" value="sauteed-onions" class="hidden">
+                            <label>Sautéed Onions</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="ingredients" value="jalapenos" class="hidden">
+                            <label>Jalapeño Peppers</label>
+                        </div>
+                    </div>
+                    <h3 class="ui block header">Your Details</h3>
+                    <div class="field">
+                        <label>First Name</label>
+                        <input type="text" name="first-name" placeholder="First Name">
+                    </div>
+                    <div class="field">
+                        <label>Last Name</label>
+                        <input type="text" name="last-name" placeholder="Last Name">
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="terms" value="agree" class="hidden">
+                            <label>I agree to the Terms and Conditions</label>
+                        </div>
+                    </div>
+                    <button class="ui button" type="submit">Submit</button>
+                </form>
+            </section>
+            <section class="four wide column">
+                <h2>Order Total</h2>
+                <div id="ingredients"></div>
+                <div id="total_cost"></div>
+            </section>
+        </section>
+        <div class="ui divider"></div>
+        <footer>
+            <p>Copywrong &copy; 2016. No rights reserved.</p>
+        </footer>
+    </body>
+</html>

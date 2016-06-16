@@ -3,9 +3,18 @@
 from functools import partial
 from random    import randint, choice
 
+import heapq
+
+def isorted(iterable):
+    lst = list(iterable)
+    heapq.heapify(lst)
+    pop = heapq.heappop
+    while lst:
+        yield pop(lst)
+
 def setup(size):
     newint = partial(randint, 0)
-    li     = sorted((newint(size) for _ in range(size)))
+    li     = isorted((newint(size) for _ in range(size)))
     target = li[(-size // 4) + newint(size//4)]
     return li, target
 

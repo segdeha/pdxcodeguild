@@ -1,9 +1,10 @@
 header.ui.menu {
     background-color: rgb(175, 38, 0);
+    box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12), 0 2px 10px 0 rgba(34, 36, 38, 0.08);
+    color: white;
     padding: 1em 2em;
 }
     header h1 {
-        color: white;
         font: 700 48px/1.25 Atma, 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
         -webkit-text-stroke-width: 3px;
         -webkit-text-stroke-color: rgb(255, 170, 0);
@@ -13,10 +14,53 @@ header.ui.menu {
     padding: 7.5rem 1rem 1rem;
 }
 
+.ui.form .inline.fields .field > .ui.checkbox {
+    margin: 0 0.85714286em 0 0;
+}
+
+ul.ui.list {
+    margin: 1em 0;
+}
+
+.ui.list:not(.horizontal) > .item {
+    padding: 0.5em 1.25em;
+}
+
+.order-total {
+    position: fixed !important;
+    width: 20%;
+}
+
+#credit-card {
+    width: 257px;
+}
+
+#ccv {
+    width: 60px;
+}
+
+#zip {
+    width: 75px;
+}
+
+label.error {
+    background-color: #fff6f6 !important;
+    box-shadow: 0px 0px 0px 1px #e0b4b4 inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    color: #912d2b !important;
+    padding: 0.25em 0.5em;
+}
+
 figcaption {
+    font-style: italic;
     margin: 1em 0 0;
 }
 
 footer {
-    padding: 2rem;
+    padding: 1rem 2rem 2rem;
+}
+
+#copywrong {
+    display: inline-block;
+    -webkit-transform: scale(-1, 1);
+            transform: scaleX(-1, 1);
 }

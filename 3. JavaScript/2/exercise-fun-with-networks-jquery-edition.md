@@ -30,6 +30,6 @@ _Hint: It might help you understand the structure of the returned JSON to run it
 
 ## Advanced
 
-- Format each entry as a card with the user’s photo floated to the right, like the following:
+- Format each entry as a card with the user’s photo floated to the right and the email linked, like the following:
 
-![]()
+![Formatted cards](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/3.%20JavaScript/assets/formatted-cards.png?token=AAAQ0tmgdigKwRV2ncAqZjjuppeay6loks5XcbVawA%3D%3D)

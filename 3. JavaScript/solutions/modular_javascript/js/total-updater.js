@@ -17,4 +17,10 @@
  * or each of those things cost.
  * @return {void}
  */
-function updateTotal(form, output, costs) {}
+define(function () {
+    function updateTotal(form, output, costs) {
+        // do your work here
+        // alert('updateTotal');
+    }
+    return updateTotal;
+});

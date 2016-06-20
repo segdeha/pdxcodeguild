@@ -15,4 +15,10 @@
  * @param {Array.<string>} ingredients Array of names of the ingredients
  * @return {void}
  */
-function updateIngredients(form, output, ingredients) {}
+define(function () {
+    function updateIngredients(form, output, ingredients) {
+        // do your work here
+        // alert('updateIngredients');
+    }
+    return updateIngredients;
+});

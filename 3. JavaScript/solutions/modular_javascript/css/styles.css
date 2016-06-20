@@ -50,6 +50,11 @@ label.error {
     padding: 0.25em 0.5em;
 }
 
+.ui.checkbox label.error:before {
+    left: 4px;
+    top: 4px;
+}
+
 figcaption {
     font-style: italic;
     margin: 1em 0 0;

@@ -25,6 +25,10 @@
  * @return {Boolean} Returns `true` if the form validation passed, `false` if it
  *     didn’t
  */
-function validate(form, requiredFields) {
-    return true;
-}
+define(function () {
+    function validate(form, requiredFields) {
+        // do your work here
+        // alert('validate');
+    }
+    return validate;
+});

@@ -1,0 +1,47 @@
+
+<html>
+<form>
+    Roman: <input type="text" name="roman" value="">
+</form>
+<div id="result"></div>
+<script type="text/javascript">
+
+var romans = {
+    I : 1,
+    V : 5,
+    X : 10,
+    L : 50,
+    C : 100,
+    D : 500,
+    M : 1000
+}
+
+var result, input;
+
+result = document.getElementById('result');
+input  = document.querySelector('input');
+
+function getDecimalFromRomanNumeral(romanNumeral) {
+    var decimal;
+    decimal = 0;
+    for (var i = 0; i < romanNumeral.length; ++i) {
+        if (romanNumeral[i + 1] && romans[romanNumeral[i]] < romans[romanNumeral[i + 1]]) {
+            decimal += romans[romanNumeral[i + 1]] - romans[romanNumeral[i]];
+            ++i;
+        }
+        else {
+            decimal += romans[romanNumeral[i]];
+        }
+    }
+    return decimal;
+}
+
+document.querySelector('form').addEventListener('submit', function (e) {
+    var roman, decimal;
+    roman   = input.value = input.value.toUpperCase();
+    decimal = getDecimalFromRomanNumeral(roman);
+    result.innerHTML += decimal + '<br>';
+    e.preventDefault();
+});
+
+</script>

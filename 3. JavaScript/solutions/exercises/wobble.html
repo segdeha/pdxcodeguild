@@ -17,16 +17,19 @@
             font-weight: 100;
         }
         figure {
-            animation-duration: 0.35s;
+            animation-duration: 0.4s;
             animation-iteration-count: infinite;
             animation-name: wobble;
+            animation-timing-function: ease-in-out;
             display: inline-block;
             margin: 1em;
+            transform-origin: 50% 30%;
             width: 64px;
         }
         /* offset the 2nd icon just a bit */
         figure:last-child {
             animation-delay: 0.1s;
+            transform-origin: 50% 20%;
         }
         figcaption {
             text-align: center;
@@ -37,9 +40,9 @@
         }
         @keyframes wobble {
               0% { transform: rotate( 0   ) translate3d( 0,    0,   0) }
-             25% { transform: rotate( 3deg) translate3d( 1px,  0,   0) }
+             25% { transform: rotate( 2deg) translate3d( 1px,  0,   0) }
              50% { transform: rotate(-1deg) translate3d( 0,   -1px, 0) }
-             75% { transform: rotate( 3deg) translate3d(-1px,  0  , 0) }
+             75% { transform: rotate( 1deg) translate3d(-1px,  0  , 0) }
             100% { transform: rotate(-2deg) translate3d(-1px, -1px, 0) }
         }
         </style>

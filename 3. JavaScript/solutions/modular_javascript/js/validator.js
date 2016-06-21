@@ -20,6 +20,7 @@
  *     </ul>
  * </div>
  * @param {DOM element} form Reference to the DOM element for the <form></form>
+ *
  * @param {Array.<string>} requiredFields Array of the names of the fields that
  *     are required to have values
  * @return {Boolean} Returns `true` if the form validation passed, `false` if it
@@ -27,8 +28,25 @@
  */
 define(function () {
     function validate(form, requiredFields) {
-        // do your work here
-        // alert('validate');
+      var name = form['name']
+        if (name = null);
+          printError(0)
+        else if (name != null);
+         return name = true
+
+        //alert('validate');
+    }
+
+    function printError() {
+      var err = form.getElementById('errors');
+      err.classList.add('errors');
+      err.innerHTML = errors[];
+    }
+
+    function clearError() {
+      var err = form.getElementById('errors');
+      err.innerHTML = '';
+      err.classList.remove('errors');
     }
     return validate;
 });

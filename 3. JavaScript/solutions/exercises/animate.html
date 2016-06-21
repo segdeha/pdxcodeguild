@@ -1,27 +1,24 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <style type="text/css">
-
-    h1 {
-      -webkit-transition: -webkit-transform 1s;
-    }
-      h1.active {
-        -webkit-transform: translate3d(100px, 0, 0);
-      }
-
-    </style>
-  </head>
-  <body>
-    <h1>foo</h1>
-    <script type="text/javascript">
-
-    var event = 'ontouchend' in window ? 'touchend' : 'mouseup'
-
-    document.querySelector('h1').addEventListener(event, function (e) {
-      this.className = this.className === 'active' ? '' : 'active'
-    })
-
-    </script>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title>foo</title>
+        <style type="text/css">
+        h1 {
+            transition: transform 1s;
+        }
+        h1.active {
+            transform: translate3d(100px, 0, 0);
+        }
+        </style>
+    </head>
+    <body>
+        <h1>foo</h1>
+        <p>Click on “foo” to animate it.</p>
+        <script type="text/javascript">
+        document.querySelector('h1').addEventListener('click', function (e) {
+            this.className = this.className === 'active' ? '' : 'active'
+        })
+        </script>
+    </body>
 </html>

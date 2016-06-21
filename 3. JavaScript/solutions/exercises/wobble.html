@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wobble Animation</title>
+        <style type="text/css">
+        body {
+            /* give the text an Apple-like style */
+            font: 200 12px/1.5 "Helvetica Neue", Sans-Serif;
+            margin: auto;
+            margin-top: 20%;
+            text-align: center;
+            width: 50%;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: 100;
+        }
+        figure {
+            animation-duration: 0.35s;
+            animation-iteration-count: infinite;
+            animation-name: wobble;
+            display: inline-block;
+            margin: 1em;
+            width: 64px;
+        }
+        /* offset the 2nd icon just a bit */
+        figure:last-child {
+            animation-delay: 0.1s;
+        }
+        figcaption {
+            text-align: center;
+        }
+        img {
+            height: 64px;
+            width: 64px;
+        }
+        @keyframes wobble {
+              0% { transform: rotate( 0   ) translate3d( 0,    0,   0) }
+             25% { transform: rotate( 3deg) translate3d( 1px,  0,   0) }
+             50% { transform: rotate(-1deg) translate3d( 0,   -1px, 0) }
+             75% { transform: rotate( 3deg) translate3d(-1px,  0  , 0) }
+            100% { transform: rotate(-2deg) translate3d(-1px, -1px, 0) }
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Wobble Animation</h1>
+        <figure>
+            <img src="app-icon-camera.png" alt="">
+            <figcaption>Camera</figcaption>
+        </figure>
+        <figure>
+            <img src="app-icon-music.png" alt="">
+            <figcaption>Music</figcaption>
+        </figure>
+    </body>
+</html>

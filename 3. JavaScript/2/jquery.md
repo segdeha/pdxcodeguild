@@ -21,7 +21,7 @@ When he wrote jQuery, Resig did two things that were pretty brilliant for 2006 a
 1. Leveraged chaining to simplify working with DOM elements
 1. Provided a plugin API so people could extend jQuery with isolated pieces of code (there are some [seriously cool plugins](http://www.creativebloq.com/jquery/top-jquery-plugins-6133175) out there)
 
-The jQuery project also published [jQuery Mobile](http://jquerymobile.com/), one of the first and most complete mobile JavaScript frameworks.
+The jQuery project also published [jQuery Mobile](http://jquerymobile.com/), one of the first and most complete mobile JavaScript frameworks, and [jQuery UI](https://jqueryui.com/), a robust set of UI widgets you can use in your pages.
 
 ------
 
@@ -61,6 +61,12 @@ Chain several operations:
         })
     ;
 
+Set an event handler:
+
+    $('h1').click(function () {
+        alert('I was clicked!');
+    });
+
 Make an [Ajax](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started) request:
 
     $.ajax({
@@ -70,12 +76,6 @@ Make an [Ajax](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started) re
         alert(data);
     });
 
-Set an event handler:
-
-    $('h1').click(function () {
-        alert('I was clicked!');
-    });
-
 ------
 
 Sources:
@@ -83,3 +83,4 @@ Sources:
 1. [Official jQuery Documentation](http://jquery.com/)
 1. [jQAPI - Alternative jQuery Documentation Browser](http://jqapi.com/)
 1. [jQuery Mobile](http://jquerymobile.com/)
+1. [jQuery UI](https://jqueryui.com/)

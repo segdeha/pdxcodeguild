@@ -1,25 +1,35 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Number Formatter</title>
+        <style type="text/css">
+        body {
+            font: 16px/1.5 Helvetica, Sans-Serif;
+            padding: 0.5em 1em;
+        }
+        </style>
+    </head>
     <body>
-        <input type="text"><br>
-        <textarea></textarea>
+        <h1>Number Formatter</h1>
+        <p>Type in a number below:</p>
+        <p><input name="input"></p>
+        <p><input name="result" disabled></p>
         <script type="text/javascript">
-        var comma, input, txtarea
+        var input_input  = document.querySelector('[name=input]')
+        var result_input = document.querySelector('[name=result]')
 
-        comma   = ','
-        input   = document.querySelector('input')
-        txtarea = document.querySelector('textarea')
+        input_input.focus();
 
         function keyup(evt) {
-            var value, result
-            result = ''
-            value  = ('' + input.value).split('')
+            var result = ''
+            var value  = ('' + input_input.value).split('')
             while (value.length > 3) {
-                result       = comma + value.slice(-3).join('') + result
+                result       = ',' + value.slice(-3).join('') + result
                 value.length = value.length - 3
             }
-            result        = value.join('') + result
-            txtarea.value = result
+            result = value.join('') + result
+            result_input.value = result
         }
 
         document.addEventListener('keyup', keyup)

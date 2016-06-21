@@ -26,7 +26,7 @@ IIFE stands for “immediately invoked function expression”. The term was coin
         }
 
         function myPublicMethod() {
-            alert(my_private_var);
+            console.log(my_private_var);
         }
 
         return {
@@ -38,8 +38,8 @@ IIFE stands for “immediately invoked function expression”. The term was coin
     myModule.my_private_var // undefined
     myModule.my_public_var // 'foo'
 
-    myModule.myPrivateMethod // undefined
-    myModule.myPublicMethod // alert(42);
+    myModule.myPrivateMethod() // TypeError
+    myModule.myPublicMethod() // 42;
 
 The advantage of the above is that the module is able to maintain its own state without other code accidentally (or intentionally!) futzing (that’s a technical term) with it.
 

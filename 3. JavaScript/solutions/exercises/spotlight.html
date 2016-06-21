@@ -1,27 +1,37 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Spotlight</title>
         <style type="text/css">
-        body {
-            background: #0f4d8f url(nyan.png) left top no-repeat;
+        html, body {
             margin: 0;
+            min-height: 100%;
+            min-width: 100%;
             padding: 0;
+        }
+        body {
+            background: #0f4d8f url(nyan.png) center center no-repeat;
+            background-size: cover;
         }
         div {
             background: #0f4d8f;
-            height: 600px;
-            width: 800px;
+        }
+        body, div {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
         }
         </style>
     </head>
     <body>
         <div></div>
         <script type="text/javascript">
-        var el
-        el = document.querySelector('div')
+        var el = document.querySelector('div')
         el.addEventListener('mousemove', function (e) {
-            this.style.cssText = 'background: -webkit-gradient(radial, ' + e.pageX + ' ' + e.pageY + ', 0, ' + e.pageX + ' ' + e.pageY + ', 100, from(rgba(255,255,255,0)), color-stop(50%, rgba(255,255,255,0)), to(#0f4d8f));'
+            this.style.cssText = `background: -webkit-gradient(radial, ${e.pageX} ${e.pageY}, 0, ${e.pageX} ${e.pageY}, 100, from(rgba(255,255,255,0)), color-stop(50%, rgba(255,255,255,0)), to(#0f4d8f));`
         })
         el.addEventListener('mouseout', function (e) {
             this.style.cssText = ''

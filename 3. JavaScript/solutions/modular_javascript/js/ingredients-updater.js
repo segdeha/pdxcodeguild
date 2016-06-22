@@ -18,8 +18,6 @@
 define(function () {
     function updateIngredients(form, output, ingredients) {
         // do your work here
-        var html = '<ul></ul>'; // formatted text string
-        output.innerHTML = html; // update value of output html element to html string
         // alert('updateIngredients');
     }
     return updateIngredients;

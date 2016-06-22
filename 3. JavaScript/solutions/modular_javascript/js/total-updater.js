@@ -21,37 +21,31 @@ define(function () {
     function updateTotal(form, output, costs) {
       // Setup
       // ----------------------
-      // Cost Variables
+        // Cost Variables
       var baseCost = 6;
       var extraCost = 0;
       var deliveryCost = 0;
       var totalCost = 0;
+      var perItemCost = costs['extra-ingredients'];
 
-      // DOM Nodes
-      var extraIngredientsNode = form['extra-ingredients']
-      var deliveryNode = form['delivery']
-      // Remember output is passed to the function
+        // Node List
+      var checked = form.querySelectorAll('.checked [name=extra-ingredients]')
+
+        // DOM Node
+      var deliveryNode = form.querySelector('[name=delivery]');
 
       // Transform
       // ----------------------
-      // Get extraCost value
-      for (var i = 0; i < extraIngredientsNode.length; i ++ ){
+        // Get extraCost value
+      extraCost = perItemCost * checked.length;
 
-          // Get DOMTokenList of Parent div and if checked add 0.5 to extraCost
-          var node = extraIngredientsNode[i].parentNode.classList;
-          var array = Array.prototype.slice.call(node);
-          if (array.indexOf('checked') + 1 ){ // add one because 0 is valid.
-            extraCost += costs['extra-ingredients'];
-          }
-
-      }
-
-      // Get deliveryCost value
-      if (deliveryNode.value == 'delivery'){
+        // Get deliveryCost value
+      if (form.elements.delivery.value === 'delivery'){
           extraCost += costs['delivery'];
       }
 
-      // output
+      // Output
+      // ----------------------
       totalCost = baseCost + extraCost + deliveryCost;
       output.innerHTML = `<strong>Total:</strong> $${totalCost.toFixed(2)}`;
 

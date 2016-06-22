@@ -29,24 +29,16 @@
 define(function () {
     function validate(form, requiredFields) {
       var name = form['name']
-        if (name = null);
-          printError(0)
-        else if (name != null);
-         return name = true
+      var creditCard = form['credit-card']
+      var ccv = form['ccv']
+      var zip = form['zip']
+      var agreetc = form['terms']
+        // if (name = null);
+        //   printError(0)
+        // else if (name != null);
+        //  return name = true
 
         //alert('validate');
-    }
-
-    function printError() {
-      var err = form.getElementById('errors');
-      err.classList.add('errors');
-      err.innerHTML = errors[];
-    }
-
-    function clearError() {
-      var err = form.getElementById('errors');
-      err.innerHTML = '';
-      err.classList.remove('errors');
     }
     return validate;
 });

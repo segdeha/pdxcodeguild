@@ -19,8 +19,40 @@
  */
 define(function () {
     function updateTotal(form, output, costs) {
-        // do your work here
-        // alert('updateTotal');
+      // Setup
+      // ----------------------
+      // Cost Variables
+      var baseCost = 6;
+      var extraCost = 0;
+      var deliveryCost = 0;
+      var totalCost = 0;
+
+      // DOM Nodes
+      var extraIngredientsNode = form['extra-ingredients']
+      var deliveryNode = form['delivery']
+      // Remember output is passed to the function
+
+      // Transform
+      // ----------------------
+      // Get extraCost value
+      for (var i = 0; i < extraIngredientsNode.length; i ++ ){
+
+          // Get DOMTokenList of Parent div and if checked add 0.5 to extraCost
+          var node = extraIngredientsNode[i].parentNode.classList;
+          var array = Array.prototype.slice.call(node);
+          if (array.indexOf('checked') + 1 ){ // add one because 0 is valid.
+            extraCost += 0.50
+          }
+
+      }
+
+      // Get deliveryCost value
+      // form['delivery']
+
+      // output
+      totalCost = baseCost + extraCost + deliveryCost;
+      output.innerHTML = `<strong>Total:</strong> $${totalCost.toFixed(2)}`;
+
     }
     return updateTotal;
 });

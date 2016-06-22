@@ -27,15 +27,19 @@
  *     didn’t
  */
 function isNotEmpty(value) {
-  if (value != null)
-    isValidName(value)
+  if (value !== null)
+    return true
   else {
     return false
   }
 }
 
 function isValidName(value) {
-
+  if (/^[a-zA-Z\s]*$/.test(value))
+    return true
+  else {
+    return false
+  }
 }
 
 function isValidCC() {}
@@ -47,8 +51,14 @@ function isChecked() {}
 define(function () {
     function validate(form, requiredFields) {
       for (var i = 0; i < requiredFields.length; i++) {
-        var value = form[requiredFields[i]].value;
-        isNotEmpty(value);
+        var value = (form[requiredFields[i]].value);
+          isNotEmpty(value) {
+            if (value = true)
+              isValidName(value)
+            else {
+              printError()
+            }
+          }
         }
       }
       // var name = form['i'].value
@@ -62,19 +72,19 @@ define(function () {
         //  return name = true
 
         //alert('validate');
-    }
+
     return validate;
 
-    function printError(str) {
-      var err = document.getElementById('error');
-      err.classList.add('error');
-      err.innerHTML = str;
-    }
-
-    function clearError() {
-      var err = document.getElementById('error');
-      err.innerHTML = '';
-      err.classList.remove('error');
-    }
+    // function printError(str) {
+    //   var err = document.getElementById('error');
+    //   err.classList.add('error');
+    //   err.innerHTML = str;
+    // }
+    //
+    // function clearError() {
+    //   var err = document.getElementById('error');
+    //   err.innerHTML = '';
+    //   err.classList.remove('error');
+    // }
 
 });

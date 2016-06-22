@@ -41,13 +41,15 @@ define(function () {
           var node = extraIngredientsNode[i].parentNode.classList;
           var array = Array.prototype.slice.call(node);
           if (array.indexOf('checked') + 1 ){ // add one because 0 is valid.
-            extraCost += 0.50
+            extraCost += costs['extra-ingredients'];
           }
 
       }
 
       // Get deliveryCost value
-      // form['delivery']
+      if (deliveryNode.value == 'delivery'){
+          extraCost += costs['delivery'];
+      }
 
       // output
       totalCost = baseCost + extraCost + deliveryCost;

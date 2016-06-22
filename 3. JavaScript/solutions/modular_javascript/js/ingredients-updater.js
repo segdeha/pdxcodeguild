@@ -18,6 +18,21 @@
 define(function () {
     function updateIngredients(form, output, ingredients) {
         // do your work here
+
+    var selectors = [];
+      selector.push(selector);
+
+    ingredients.forEach(function(value) {
+      var selector = '.checked [name= ' + value + ']';
+
+        var nodes = document.querySelectorAll(selectors.join(','));
+
+      console.log(nodes)
+
+    });
+
+
+
         // alert('updateIngredients');
     }
     return updateIngredients;

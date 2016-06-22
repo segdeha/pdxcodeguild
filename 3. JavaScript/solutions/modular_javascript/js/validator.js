@@ -42,9 +42,21 @@ function isValidName(value) {
   }
 }
 
-function isValidCC() {}
+function isValidCC() {
+  if (/^$/.test(value))
+    return true
+  else {
+    return false
+  }
+}
 
-function isValidCCV() {}
+function isValidCCV() {
+  if (/^$/.test(value))
+    return true
+  else {
+    return false
+  }
+}
 
 function isChecked() {}
 

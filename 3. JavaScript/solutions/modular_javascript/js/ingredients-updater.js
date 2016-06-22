@@ -20,18 +20,17 @@ define(function () {
         // do your work here
 
     var selectors = [];
-      selector.push(selector);
 
     ingredients.forEach(function(value) {
-      var selector = '.checked [name= ' + value + ']';
-
-        var nodes = document.querySelectorAll(selectors.join(','));
-
-      console.log(nodes)
-
+      var selector = '.checked [name=' + value + ']';
+      selectors.push(selector);
     });
 
+      // console.log( selectors.join(', '))
 
+      var nodes = document.querySelectorAll(selectors.join(', '));
+
+      output.innerHTML = '<ul><li>tortilla</li><li>meat</li><li>included-ingredients</li><li>extra-ingredients</>'
 
         // alert('updateIngredients');
     }

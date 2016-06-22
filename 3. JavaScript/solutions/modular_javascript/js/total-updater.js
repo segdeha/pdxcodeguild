@@ -53,7 +53,7 @@ define(function () {
 
       // output
       totalCost = baseCost + extraCost + deliveryCost;
-      output.textContent = `Total: $${totalCost.toFixed(2)}`;
+      output.innerHTML = `<strong>Total:</strong> $${totalCost.toFixed(2)}`;
 
     }
     return updateTotal;

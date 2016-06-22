@@ -26,13 +26,36 @@
  * @return {Boolean} Returns `true` if the form validation passed, `false` if it
  *     didn’t
  */
+function isNotEmpty(value) {
+  if (value != null)
+    isValidName(value)
+  else {
+    return false
+  }
+}
+
+function isValidName(value) {
+
+}
+
+function isValidCC() {}
+
+function isValidCCV() {}
+
+function isChecked() {}
+
 define(function () {
     function validate(form, requiredFields) {
-      var name = form['name']
-      var creditCard = form['credit-card']
-      var ccv = form['ccv']
-      var zip = form['zip']
-      var agreetc = form['terms']
+      for (var i = 0; i < requiredFields.length; i++) {
+        var value = form[requiredFields[i]].value;
+        isNotEmpty(value);
+        }
+      }
+      // var name = form['i'].value
+      // var creditCard = form['credit-card']
+      // var ccv = form['ccv']
+      // var zip = form['zip']
+      // var agreetc = form['terms']
         // if (name = null);
         //   printError(0)
         // else if (name != null);
@@ -41,4 +64,17 @@ define(function () {
         //alert('validate');
     }
     return validate;
+
+    function printError(str) {
+      var err = document.getElementById('error');
+      err.classList.add('error');
+      err.innerHTML = str;
+    }
+
+    function clearError() {
+      var err = document.getElementById('error');
+      err.innerHTML = '';
+      err.classList.remove('error');
+    }
+
 });

@@ -26,12 +26,12 @@ ul.ui.list {
     padding: 0.5em 1.25em;
 }
 
-/*
-.order-total {
-    position: fixed !important;
-    width: 20%;
+@media (min-width: 600px){
+    .order-total {
+        position: fixed !important;
+        width: 100%;
+    }
 }
-*/ 
 
 #credit-card {
     width: 257px;

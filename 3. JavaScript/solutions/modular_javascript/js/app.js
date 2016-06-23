@@ -6,26 +6,35 @@ requirejs(
         './total-updater',
         './validator'
     ],
-    function ($, semantic, updateIngredients, updateTotal, validate) {
+    function ($, semantic, updateIngredients, updateTotal, validate, thanks) {
 
     // initialize semantic-ui checkboxes and radio buttons
     $('.ui.checkbox').checkbox()
 
-    var form = document.querySelector('form');
-    var total_output = document.getElementById('total_cost');
-    var ingredients_output = document.getElementById('ingredients');
+    var total_output, ingredients_output, thanks_output, ingredients, requiredFields;
     var costs = { 'extra-ingredients': 0.5, 'delivery': 5 };
-    var ingredients = ['tortilla', 'meat', 'included-ingredients', 'extra-ingredients'];
-    var requiredFields = ['name', 'credit-card', 'ccv', 'zip', 'terms'];
+    var form = document.querySelector('form');
 
-    form.addEventListener('change', function (evt) {
-        updateTotal(form, total_output, costs);
-        updateIngredients(form, ingredients_output, ingredients);
-    });
+    if (form) {
+        total_output = document.getElementById('total_cost');
+        ingredients_output = document.getElementById('ingredients');
+        costs = { 'extra-ingredients': 0.5, 'delivery': 5 };
+        ingredients = ['tortilla', 'meat', 'included-ingredients', 'extra-ingredients'];
+        requiredFields = ['name', 'credit-card', 'cvv', 'zip', 'terms'];
 
-    form.addEventListener('submit', function (evt) {
-        // prevent the form from submitting when the user hits the submit button
-        evt.preventDefault();
-        validate(form, requiredFields);
-    });
+        form.addEventListener('change', function (evt) {
+            updateTotal(form, total_output, costs);
+            updateIngredients(form, ingredients_output, ingredients);
+        });
+
+        form.addEventListener('submit', function (evt) {
+            // prevent the form from submitting when the user hits the submit button
+            evt.preventDefault();
+            return validate(form, requiredFields);
+        });
+    }
+    else {
+        thanks_output = document.getElementById('order-details');
+        thanks(thanks_output, costs);
+    }
 });

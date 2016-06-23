@@ -42,31 +42,55 @@ function isValidName(value) {
   }
 }
 
-function isValidCC() {
-  if (/^$/.test(value))
+function isValidCC(value) {
+  if (/^(\d{16}\-?|\s?)$/|(/^(\d{15}\-?|\s)$/).test(value))
     return true
   else {
     return false
   }
 }
 
-function isValidCCV() {
-  if (/^$/.test(value))
+function isValidCCV(value) {
+  if (/^(\d{3})$/.test(value))
     return true
   else {
     return false
   }
 }
 
-function isChecked() {}
+function isValidZip(value) {
+  if (/^(\d{5})$/.test(value))
+    return true
+  else {
+    return false
+  }
+}
+
+function isChecked(value) {
+  if (value !== null)
+    return true
+  else {
+    return false
+  }
+}
 
 define(function () {
     function validate(form, requiredFields) {
       for (var i = 0; i < requiredFields.length; i++) {
         var value = (form[requiredFields[i]].value);
           isNotEmpty(value) {
-            if (value = true)
-              isValidName(value)
+            if (value = true) {
+              if (i = 'name')
+                isValidName(value)
+              else if (i = 'credit-card')
+                isValidCC(value)
+              else if (i = 'ccv')
+                isValidCCV(value)
+              else if (i = 'zip')
+                isValidZip(value)
+              else if (i = 'terms')
+                isChecked(value)
+            }
             else {
               printError()
             }

@@ -18,6 +18,7 @@
  * @return {void}
  */
 define(function () {
+<<<<<<< HEAD
     function updateTotal(form, output, costs) {
       // Setup
       // ----------------------
@@ -33,22 +34,38 @@ define(function () {
 
         // DOM Node
       var deliveryNode = form.querySelector('[name=delivery]');
+=======
+    function calculateCost(costs, numberOfExtras, isBeingDelivered) {
+        var baseCost = 6;
+        var extraCost = 0;
+        var deliveryCost = 0;
+>>>>>>> master
 
-      // Transform
-      // ----------------------
         // Get extraCost value
-      extraCost = perItemCost * checked.length;
+        extraCost = costs['extra-ingredients'] * numberOfExtras;
 
         // Get deliveryCost value
+<<<<<<< HEAD
       if (form.elements.delivery.value === 'delivery'){
           deliveryCost = costs['delivery'];
       }
+=======
+        if (isBeingDelivered){
+            extraCost += costs['delivery'];
+        }
+>>>>>>> master
 
-      // Output
-      // ----------------------
-      totalCost = baseCost + extraCost + deliveryCost;
-      output.innerHTML = `<strong>Total:</strong> $${totalCost.toFixed(2)}`;
-
+        return (baseCost + extraCost + deliveryCost).toFixed(2);
     }
-    return updateTotal;
+    function updateTotal(form, output, costs) {
+        var numberOfExtras   = form.querySelectorAll('.checked [name=extra-ingredients]').length;
+        var isBeingDelivered = (form.elements.delivery.value === 'delivery');
+        var totalCost        = calculateCost(costs, numberOfExtras, isBeingDelivered);
+
+        output.innerHTML = `<strong>Total:</strong> $${totalCost}`;
+    }
+    return {
+        updateTotal: updateTotal,
+        calculateCost: calculateCost
+    };
 });

@@ -101,19 +101,21 @@ define(['./total-updater'], function (totalUpdater) {
         var totalCost        = totalUpdater.calculateCost(costs, numberOfExtras, isBeingDelivered);
         var deliveryOption   = isBeingDelivered ? 'delivery' : 'in-store pick-up';
 
-        var html = `
-            <ul class="ui relaxed list">
-                ${lis.join('')}
-            </ul>
-            <p>
-                Your order is set for <strong>${deliveryOption}.</strong>
-            </p>
-            <h3 class="ui block header">
-                Total Cost: $${totalCost}
-            </h3>
-        `;
+        if (lis.length > 0) {
+            var html = `
+                <ul class="ui relaxed list">
+                    ${lis.join('')}
+                </ul>
+                <p>
+                    Your order is set for <strong>${deliveryOption}.</strong>
+                </p>
+                <h3 class="ui block header">
+                    Total Cost: $${totalCost}
+                </h3>
+            `;
 
-        output.innerHTML = html;
+            output.innerHTML = html;
+        }
     }
     return thanks;
 });

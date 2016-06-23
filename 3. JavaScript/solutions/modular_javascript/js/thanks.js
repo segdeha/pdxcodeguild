@@ -24,25 +24,95 @@
  * or each of those things cost.
  * @return {void}
  */
-define(function () {
-    // based on: http://stackoverflow.com/a/3855394/11577
-    var qs = (function(a) {
-        if (a === '') return null;
-        var b = {};
-        var r = /\+/g;
-        for (var i = 0; i < a.length; i += 1) {
-            var p = a[i].split('=', 2);
-            if (p.length === 1) {
-                b[p[0]] = '';
+define(['./total-updater'], function (totalUpdater) {
+    function thanks(output, costs) {
+        var ingredients = [
+            'tortilla',
+            'meat',
+            'included-ingredients',
+            'extra-ingredients'
+        ];
+
+        var humanReadable = {
+            'white': 'White Flour Tortilla', 'wheat': 'Wheat Flour Tortilla',
+            'spinach': 'Spinach Tortilla', 'corn': 'Corn Tortilla (gluten-free)',
+            'carnitas': 'Carnitas', 'chicken': 'Chicken', 'sofritas': 'Sofritas (tofu)',
+            'beans': 'Beans', 'cheese': 'Cheese', 'salsa': 'Salsa', 'sour cream': 'Sour Cream',
+            'guacamole': 'Guacamole', 'scrambled-egg': 'Scrambled Egg', 'potatoes': 'Home Fried Potatoes',
+            'sun-dried-tomatoes': 'Sun-dried Tomatoes', 'olives': 'Olives',
+            'sauteed-mushrooms': 'Sautéed Mushrooms', 'sauteed-onions': 'Sautéed Onions',
+            'jalapenos': 'Jalapeño Peppers'
+        };
+
+        // parse the browser's query string
+        // based on: http://stackoverflow.com/a/3855394/11577
+        // (but changed to handle multiple instances any particular name)
+        var qs = (function(nvps) { // nvps == name value pairs
+            if (nvps === '') {
+                return null;
             }
-            else {
-                b[p[0]] = decodeURIComponent(p[1].replace(r, ' '));
+            var rzlt = {};
+            var rgxp = /\+/g;
+            nvps.forEach(function (nvp) {
+                var pair = nvp.split('=', 2); // limit to 2 items
+                if (pair.length > 1) {
+                    // if the key already exists, make the values into an array
+                    if (rzlt[pair[0]]) {
+                        // if it's ready an array, just add the new value
+                        if (Array.isArray(rzlt[pair[0]])) {
+                            rzlt[pair[0]].push(pair[1]);
+                        }
+                        // convert the value into an array and add the new value
+                        else {
+                            rzlt[pair[0]] = [
+                                rzlt[pair[0]],
+                                pair[1]
+                            ];
+                        }
+                    }
+                    // create a new key
+                    else {
+                        rzlt[pair[0]] = decodeURIComponent(pair[1].replace(rgxp, ' '));
+                    }
+                }
+            });
+            return rzlt;
+        })(window.location.search.substr(1).split('&'));
+
+        var lis  = [];
+        for (var key in qs) {
+            if (ingredients.indexOf(key) > -1) {
+                if (Array.isArray(qs[key])) {
+                    qs[key].forEach(function (value) {
+                        lis.push(`<li class="item">${humanReadable[value]}</li>`);
+                    });
+                }
+                else {
+                    lis.push(`<li class="item">${humanReadable[qs[key]]}</li>`);
+                }
             }
         }
-        return b;
-    })(window.location.search.substr(1).split('&'));
 
-    function thanks(output, costs) {
+        var costs            = { 'extra-ingredients': 0.5, 'delivery': 5 }; // TODO expose this from a module to make things ore DRY
+        var numberOfExtras   = qs['extra-ingredients'] ? qs['extra-ingredients'].length : 0;
+        var isBeingDelivered = qs['delivery'] === 'delivery';
+        var totalCost        = totalUpdater.calculateCost(costs, numberOfExtras, isBeingDelivered);
+        var deliveryOption   = isBeingDelivered ? 'delivery' : 'in-store pick-up';
+
+        var html = `
+            <ul class="ui relaxed list">
+                ${lis.join('')}
+            </ul>
+            <p>
+                Your order is set for <strong>${deliveryOption}.</strong>
+            </p>
+            <h3 class="ui block header">
+                Total Cost: $${totalCost}
+            </h3>
+        `;
+
+        output.innerHTML = html;
+
     }
     return thanks;
 });

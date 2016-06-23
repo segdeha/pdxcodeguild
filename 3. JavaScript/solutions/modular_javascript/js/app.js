@@ -4,9 +4,10 @@ requirejs(
         './semantic',
         './ingredients-updater',
         './total-updater',
-        './validator'
+        './validator',
+        './thanks'
     ],
-    function ($, semantic, updateIngredients, updateTotal, validate, thanks) {
+    function ($, semantic, updateIngredients, totalUpdater, validate, thanks) {
 
     // initialize semantic-ui checkboxes and radio buttons
     $('.ui.checkbox').checkbox()
@@ -18,19 +19,20 @@ requirejs(
     if (form) {
         total_output = document.getElementById('total_cost');
         ingredients_output = document.getElementById('ingredients');
-        costs = { 'extra-ingredients': 0.5, 'delivery': 5 };
+        costs = { 'extra-ingredients': 0.5, 'delivery': 5 }; // TODO expose this from a module to make things ore DRY
         ingredients = ['tortilla', 'meat', 'included-ingredients', 'extra-ingredients'];
         requiredFields = ['name', 'credit-card', 'cvv', 'zip', 'terms'];
 
         form.addEventListener('change', function (evt) {
-            updateTotal(form, total_output, costs);
+            totalUpdater.updateTotal(form, total_output, costs);
             updateIngredients(form, ingredients_output, ingredients);
         });
 
         form.addEventListener('submit', function (evt) {
-            // prevent the form from submitting when the user hits the submit button
-            evt.preventDefault();
-            return validate(form, requiredFields);
+            if (!validate(form, requiredFields)) {
+                // prevent the form from submitting when the user hits the submit button
+                evt.preventDefault();
+            }
         });
     }
     else {

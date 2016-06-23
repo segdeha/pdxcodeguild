@@ -78,8 +78,8 @@ define(function () {
     function validate(form, requiredFields) {
       for (var i = 0; i < requiredFields.length; i++) {
         var value = (form[requiredFields[i]].value);
-          isNotEmpty(value) {
-            if (value = true) {
+          isNotEmpty(value)
+            if (true) {
               if (i = 'name')
                 isValidName(value)
               else if (i = 'credit-card')
@@ -94,7 +94,7 @@ define(function () {
             else {
               printError()
             }
-          }
+
         }
       }
       // var name = form['i'].value

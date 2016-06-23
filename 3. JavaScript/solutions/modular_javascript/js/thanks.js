@@ -33,7 +33,7 @@ define(['./total-updater'], function (totalUpdater) {
             'extra-ingredients'
         ];
 
-        var humanReadable = {
+        var humanReadable = { // TODO expose this from a module to make things more DRY
             'white': 'White Flour Tortilla', 'wheat': 'Wheat Flour Tortilla',
             'spinach': 'Spinach Tortilla', 'corn': 'Corn Tortilla (gluten-free)',
             'carnitas': 'Carnitas', 'chicken': 'Chicken', 'sofritas': 'Sofritas (tofu)',
@@ -44,6 +44,7 @@ define(['./total-updater'], function (totalUpdater) {
             'jalapenos': 'Jalapeño Peppers'
         };
 
+        // TODO expose this from a module
         // parse the browser's query string
         // based on: http://stackoverflow.com/a/3855394/11577
         // (but changed to handle multiple instances any particular name)
@@ -93,9 +94,10 @@ define(['./total-updater'], function (totalUpdater) {
             }
         }
 
-        var costs            = { 'extra-ingredients': 0.5, 'delivery': 5 }; // TODO expose this from a module to make things ore DRY
+        var costs            = { 'extra-ingredients': 0.5, 'delivery': 5 }; // TODO expose this from a module to make things more DRY
         var numberOfExtras   = qs['extra-ingredients'] ? qs['extra-ingredients'].length : 0;
         var isBeingDelivered = qs['delivery'] === 'delivery';
+
         var totalCost        = totalUpdater.calculateCost(costs, numberOfExtras, isBeingDelivered);
         var deliveryOption   = isBeingDelivered ? 'delivery' : 'in-store pick-up';
 
@@ -112,7 +114,6 @@ define(['./total-updater'], function (totalUpdater) {
         `;
 
         output.innerHTML = html;
-
     }
     return thanks;
 });

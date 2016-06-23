@@ -35,6 +35,30 @@ ul.ui.list {
     width: 257px;
 }
 
+#cc-type {
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 25px 16px;
+    height: 16px;
+    margin: 10px;
+    width: 25px;
+}
+    #cc-type.visa, #cc-type.mastercard, #cc-type.discover, #cc-type.amex {
+        display: inline-block;
+    }
+    #cc-type.visa {
+        background-image: url(../img/cc-visa-32px.png);
+    }
+    #cc-type.mastercard {
+        background-image: url(../img/cc-mastercard-32px.png);
+    }
+    #cc-type.discover {
+        background-image: url(../img/cc-discover-32px.png);
+    }
+    #cc-type.amex {
+        background-image: url(../img/cc-american-express-32px.png);
+    }
+
 #ccv {
     width: 60px;
 }

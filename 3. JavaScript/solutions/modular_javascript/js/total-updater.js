@@ -19,8 +19,36 @@
  */
 define(function () {
     function updateTotal(form, output, costs) {
-        // do your work here
-        // alert('updateTotal');
+      // Setup
+      // ----------------------
+        // Cost Variables
+      var baseCost = 6;
+      var extraCost = 0;
+      var deliveryCost = 0;
+      var totalCost = 0;
+      var perItemCost = costs['extra-ingredients'];
+
+        // Node List
+      var checked = form.querySelectorAll('.checked [name=extra-ingredients]')
+
+        // DOM Node
+      var deliveryNode = form.querySelector('[name=delivery]');
+
+      // Transform
+      // ----------------------
+        // Get extraCost value
+      extraCost = perItemCost * checked.length;
+
+        // Get deliveryCost value
+      if (form.elements.delivery.value === 'delivery'){
+          extraCost += costs['delivery'];
+      }
+
+      // Output
+      // ----------------------
+      totalCost = baseCost + extraCost + deliveryCost;
+      output.innerHTML = `<strong>Total:</strong> $${totalCost.toFixed(2)}`;
+
     }
     return updateTotal;
 });

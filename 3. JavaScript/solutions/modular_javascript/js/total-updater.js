@@ -26,7 +26,7 @@ define(function () {
       var extraCost = 0;
       var deliveryCost = 0;
       var totalCost = 0;
-      var perItemCost = costs['extra-ingredients'];
+      var perItemCost = costs['extra-ingredients']; // .50
 
         // Node List
       var checked = form.querySelectorAll('.checked [name=extra-ingredients]')
@@ -41,7 +41,7 @@ define(function () {
 
         // Get deliveryCost value
       if (form.elements.delivery.value === 'delivery'){
-          extraCost += costs['delivery'];
+          deliveryCost = costs['delivery'];
       }
 
       // Output

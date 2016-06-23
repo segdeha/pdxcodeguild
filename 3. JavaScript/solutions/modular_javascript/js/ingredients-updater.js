@@ -42,9 +42,7 @@ define(function () {
       lis.push('<li>' + humanReadable[node.value] +  '</li>'); // push each ingredient onto lis
   });
   var html = '<ul>' + lis.join('') + '</ul>'; // make a string
-  output.innerHTML= html;
-
-        // alert('updateIngredients');
+  output.innerHTML = html; // send the string to html
     }
     return updateIngredients;
 });

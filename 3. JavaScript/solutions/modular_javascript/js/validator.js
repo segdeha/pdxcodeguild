@@ -43,10 +43,19 @@ function isValidName(value) {
 }
 
 function isValidCC(value) {
-  if (/^(\d{16}\-?|\s?)$/|(/^(\d{15}\-?|\s)$/).test(value))
-    return true
-  else {
-    return false
+  if (/^3/) {
+    if ((/^(\d{15}\-?|\s)$/).test(value))
+      return true
+    else {
+      return false
+    }
+  }
+  if (/^4/)|(/^5/)|(/^6/) {
+    if (/^(\d{16}\-?|\s?)$/).test(value))
+      return true
+    else {
+      return false
+    }
   }
 }
 
@@ -80,15 +89,15 @@ define(function () {
         var value = (form[requiredFields[i]].value);
           isNotEmpty(value)
             if (true) {
-              if (i = 'name')
+              if (requiredFields[i] === 'name')
                 isValidName(value)
-              else if (i = 'credit-card')
+              else if (requiredFields[i] === 'credit-card')
                 isValidCC(value)
-              else if (i = 'ccv')
+              else if (requiredFields[i] === 'ccv')
                 isValidCCV(value)
-              else if (i = 'zip')
+              else if (requiredFields[i] === 'zip')
                 isValidZip(value)
-              else if (i = 'terms')
+              else if (requiredFields[i] === 'terms')
                 isChecked(value)
             }
             else {
@@ -97,16 +106,6 @@ define(function () {
 
         }
       }
-      // var name = form['i'].value
-      // var creditCard = form['credit-card']
-      // var ccv = form['ccv']
-      // var zip = form['zip']
-      // var agreetc = form['terms']
-        // if (name = null);
-        //   printError(0)
-        // else if (name != null);
-        //  return name = true
-
         //alert('validate');
 
     return validate;

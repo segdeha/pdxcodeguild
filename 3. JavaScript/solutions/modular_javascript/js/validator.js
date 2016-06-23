@@ -44,6 +44,7 @@ function isValidName(value) {
 
 function isValidCC(value) {
   if (/^3/) {
+    cc_type =
     if ((/^(\d{15}\-?|\s)$/).test(value))
       return true
     else {

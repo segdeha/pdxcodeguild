@@ -26,13 +26,6 @@
  * @return {Boolean} Returns `true` if the form validation passed, `false` if it
  *     didn’t
  */
-function isNotEmpty(value) {
-  if (value !== "")
-    return true
-  else {
-    return false
-  }
-}
 
 function isValidName(value) {
   if (/^[a-zA-Z\s]*$/.test(value))
@@ -43,26 +36,48 @@ function isValidName(value) {
 }
 
 function isValidCC(value) {
-  if (/^3/) {
-    cc_type =
-    if ((/^(\d{15}\-?|\s)$/).test(value))
-      return true
-    else {
-      return false
+  if (string.length === 15) {
+    if (/^3/) {
+      cc_type = 'amex';
+        if ((/^(\d{15}\-?|\s)$/).test(value))
+          return true
     }
   }
-  if ((/^4/)|(/^5/)|(/^6/)) {
-    if ((/^(\d{16}\-?|\s?)$/).test(value))
-      return true
-    else {
-      return false
+  else if (string.length === 16) {
+    if (/^4/) {
+      cc_type = 'visa';
+      if ((/^(\d{16}\-?|\s?)$/).test(value))
+        return true
     }
+  }
+  else if (string.length === 16) {
+    if (/^5/) {
+      cc_type = 'mastercard';
+      if ((/^(\d{16}\-?|\s?)$/).test(value))
+        return true
+    }
+  }
+  else if (string.length === 16) {
+    if (/^6/) {
+      cc_type = 'discover';
+      if ((/^(\d{16}\-?|\s?)$/).test(value))
+        return true
+    }
+  }
+  else {
+      return false
   }
 }
 
-function isValidCCV(value) {
-  if (/^(\d{3})$/.test(value))
+function isValidCCV(type, value) {
+  if (type === 'amex') {
+    if (/^\d{4}$/.test(value))
+      return true
+  }
+  else if (type === 'visa' || type === 'mastercard' || type === 'discover') {
+    if (/^(\d{3})$/.test(value))
     return true
+  }
   else {
     return false
   }
@@ -85,10 +100,13 @@ function isChecked(value) {
 }
 
 define(function () {
+    var cc_type ;
+    function ccType() {
+      return cc_type
+    }
     function validate(form, requiredFields) {
-      var html ;
+      var html = ;
       var isok = true;
-      var cc_type ;
       requiredFields.forEach(function(field) {
         switch(field) {
           case 'name':
@@ -102,7 +120,7 @@ define(function () {
               break;
             }
           case 'ccv':
-            if (!isValidCCV(form[field].value)) {
+            if (!isValidCCV(cc_type, form[field].value)) {
               isok = false;
               break;
             }
@@ -117,6 +135,7 @@ define(function () {
               break;
             }
         }
+        return isok
       });
       // for (var i = 0; i < requiredFields.length; i++) {
       //   var value = (form[requiredFields[i]].value);
@@ -142,7 +161,10 @@ define(function () {
       }
         //alert('validate');
 
-    return validate;
+    return {
+      validate:validate,
+      ccType:ccType
+    };
 
     // function printError(str) {
     //   var err = document.getElementById('error');

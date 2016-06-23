@@ -105,7 +105,10 @@ define(function () {
       return cc_type
     }
     function validate(form, requiredFields) {
-      var html = ;
+      var html = `<i class="close icon">
+                  </i><div class="header">Please correct the following errors before
+                       proceeding.</div>
+                  <ul id="errors" class="list">`;
       var isok = true;
       requiredFields.forEach(function(field) {
         switch(field) {
@@ -137,28 +140,7 @@ define(function () {
         }
         return isok
       });
-      // for (var i = 0; i < requiredFields.length; i++) {
-      //   var value = (form[requiredFields[i]].value);
-      //     isNotEmpty(value)
-      //       if (true) {
-      //         if (requiredFields[i] === 'name')
-      //           isValidName(value)
-      //         else if (requiredFields[i] === 'credit-card')
-      //           isValidCC(value)
-      //         else if (requiredFields[i] === 'ccv')
-      //           isValidCCV(value)
-      //         else if (requiredFields[i] === 'zip')
-      //           isValidZip(value)
-      //         else if (requiredFields[i] === 'terms')
-      //           isChecked(value)
-      //       }
-      //       return
-      //       else {
-      //         printError()
-      //       }
-      //
-      //   }
-      }
+    }
         //alert('validate');
 
     return {

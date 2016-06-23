@@ -25,6 +25,13 @@ requirejs(
         form.addEventListener('change', function (evt) {
             updateTotal(form, total_output, costs);
             updateIngredients(form, ingredients_output, ingredients);
+            // that updates class based on credit
+
+            // update credit card icon on page
+            var ccType = validator.ccType();
+            var span = form.querySelector('#cc-type');
+            span.className = undefined; // clear current class
+            span.className = ccType; // update current class
         });
 
         form.addEventListener('submit', function (evt) {

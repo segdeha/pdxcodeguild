@@ -27,7 +27,7 @@
  *     didn’t
  */
 function isNotEmpty(value) {
-  if (value !== null)
+  if (value !== "")
     return true
   else {
     return false
@@ -50,8 +50,8 @@ function isValidCC(value) {
       return false
     }
   }
-  if (/^4/)|(/^5/)|(/^6/) {
-    if (/^(\d{16}\-?|\s?)$/).test(value))
+  if ((/^4/)|(/^5/)|(/^6/)) {
+    if ((/^(\d{16}\-?|\s?)$/).test(value))
       return true
     else {
       return false
@@ -76,7 +76,7 @@ function isValidZip(value) {
 }
 
 function isChecked(value) {
-  if (value !== null)
+  if (value !== "")
     return true
   else {
     return false
@@ -85,26 +85,59 @@ function isChecked(value) {
 
 define(function () {
     function validate(form, requiredFields) {
-      for (var i = 0; i < requiredFields.length; i++) {
-        var value = (form[requiredFields[i]].value);
-          isNotEmpty(value)
-            if (true) {
-              if (requiredFields[i] === 'name')
-                isValidName(value)
-              else if (requiredFields[i] === 'credit-card')
-                isValidCC(value)
-              else if (requiredFields[i] === 'ccv')
-                isValidCCV(value)
-              else if (requiredFields[i] === 'zip')
-                isValidZip(value)
-              else if (requiredFields[i] === 'terms')
-                isChecked(value)
+      var html ;
+      var isok = true;
+      var cc_type ;
+      requiredFields.forEach(function(field) {
+        switch(field) {
+          case 'name':
+            if (!isValidName(form[field].value)) {
+              isok = false;
+              break;
             }
-            else {
-              printError()
+          case 'credit-card':
+            if (!isValidCC(form[field].value)) {
+              isok = false;
+              break;
             }
-
+          case 'ccv':
+            if (!isValidCCV(form[field].value)) {
+              isok = false;
+              break;
+            }
+          case 'zip':
+            if (!isValidZip(form[field].value)) {
+              isok = false;
+              break;
+            }
+          case 'terms':
+            if (!isChecked(form[field].value)) {
+              isok = false;
+              break;
+            }
         }
+      });
+      // for (var i = 0; i < requiredFields.length; i++) {
+      //   var value = (form[requiredFields[i]].value);
+      //     isNotEmpty(value)
+      //       if (true) {
+      //         if (requiredFields[i] === 'name')
+      //           isValidName(value)
+      //         else if (requiredFields[i] === 'credit-card')
+      //           isValidCC(value)
+      //         else if (requiredFields[i] === 'ccv')
+      //           isValidCCV(value)
+      //         else if (requiredFields[i] === 'zip')
+      //           isValidZip(value)
+      //         else if (requiredFields[i] === 'terms')
+      //           isChecked(value)
+      //       }
+      //       return
+      //       else {
+      //         printError()
+      //       }
+      //
+      //   }
       }
         //alert('validate');
 

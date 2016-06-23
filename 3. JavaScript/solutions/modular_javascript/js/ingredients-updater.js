@@ -18,19 +18,31 @@
 define(function () {
     function updateIngredients(form, output, ingredients) {
         // do your work here
-
-    var selectors = [];
-
+    var selectors = []; //make an array of CHECKED values
     ingredients.forEach(function(value) {
-      var selector = '.checked [name=' + value + ']';
-      selectors.push(selector);
+      var selector = '.checked [name=' + value + ']';// loop over the CHECKED boxes
+      selectors.push(selector); //push the checked items into selctors array
     });
-
-      // console.log( selectors.join(', '))
-
-      var nodes = document.querySelectorAll(selectors.join(', '));
-
-      output.innerHTML = '<ul><li>tortilla</li><li>meat</li><li>included-ingredients</li><li>extra-ingredients</>'
+      var nodes = document.querySelectorAll(selectors.join(', ')); // join the CHECKED values with commas
+      nodes = Array.prototype.slice.call(nodes); // turns the nodes variable into an array in a snap!
+    var humanReadable = {
+      'white': 'White Flour',
+      'wheat': 'Wheat Flour',
+      'spinach': 'Spinach',
+      'corn': 'Corn (gluten-free)',
+      'carnitas': 'Carnitas',
+      'chicken': 'Chicken',
+      'sofritas': 'Sofritas (tofu)',
+      'beans': 'Beans', 'cheese': 'Cheese', 'salsa': 'Salsa', 'sour cream': 'Sour Cream',
+      'guacamole': 'Guacamole', 'scrambled-egg': 'Scrambled Egg', 'potatoes': 'Home Fried Potatoes',
+      'sun-dried-tomatoes': 'Sun-dried Tomatoes', 'olives': 'Olives', 'sauteed-mushrooms': 'Sautéed Mushrooms',
+      'sauteed-onions': 'Sautéed Onions', 'jalapenos': 'Jalapeño Peppers'  };
+  var lis = []; // create array to push innerHTML to.
+  nodes.forEach(function (node) { // loop over ingredients array
+      lis.push('<li>' + humanReadable[node.value] +  '</li>'); // push each ingredient onto lis
+  });
+  var html = '<ul>' + lis.join('') + '</ul>'; // make a string
+  output.innerHTML= html;
 
         // alert('updateIngredients');
     }

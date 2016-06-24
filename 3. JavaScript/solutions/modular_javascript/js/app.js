@@ -7,7 +7,7 @@ requirejs(
         './validator',
         './thanks'
     ],
-    function ($, semantic, updateIngredients, totalUpdater, validate, thanks) {
+    function ($, semantic, updateIngredients, totalUpdater, validator, thanks) {
 
     // initialize semantic-ui checkboxes and radio buttons
     $('.ui.checkbox').checkbox()
@@ -26,10 +26,19 @@ requirejs(
         form.addEventListener('change', function (evt) {
             totalUpdater.updateTotal(form, total_output, costs);
             updateIngredients(form, ingredients_output, ingredients);
-        });
+            // that updates class based on credit
+
+            // update credit card icon on page
+            var field = form.querySelector('#credit-card');
+            var ccType = validator.creditCardType(field.value);
+            var span = form.querySelector('#cc-type');
+            span.className = ccType;
+
+            }
+        );
 
         form.addEventListener('submit', function (evt) {
-            if (!validate(form, requiredFields)) {
+            if (!validator.validate(form, requiredFields)) {
                 // prevent the form from submitting when the user hits the submit button
                 evt.preventDefault();
             }

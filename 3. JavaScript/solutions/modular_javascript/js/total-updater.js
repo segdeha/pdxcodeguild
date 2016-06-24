@@ -18,6 +18,7 @@
  * @return {void}
  */
 define(function () {
+
     function calculateCost(costs, numberOfExtras, isBeingDelivered) {
         var baseCost = 6;
         var extraCost = 0;
@@ -28,7 +29,7 @@ define(function () {
 
         // Get deliveryCost value
         if (isBeingDelivered){
-            extraCost += costs['delivery'];
+            deliveryCost = costs['delivery'];
         }
 
         return (baseCost + extraCost + deliveryCost).toFixed(2);

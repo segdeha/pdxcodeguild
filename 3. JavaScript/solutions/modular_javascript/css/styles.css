@@ -74,7 +74,7 @@ label.error {
     padding: 0.25em 0.5em;
 }
 
-.ui.checkbox label.error:before {
+.ui.checkbox label.error:before, .ui.checkbox label.error:after {
     left: 4px;
     top: 4px;
 }
@@ -92,4 +92,8 @@ footer {
     display: inline-block;
     -webkit-transform: scale(-1, 1);
             transform: scaleX(-1, 1);
+}
+
+#error-messages {
+    display: none;
 }

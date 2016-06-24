@@ -33,11 +33,7 @@ define(function() {
     }
 
     function isValidCC(type,value) {
-        var cleanValue = value.replace(/\D/,'');
-        while (cleanValue.test(/\D/)){
-            cleanValue = value.replace(/\D/,'');
-        }
-        console.log(cleanValue)
+        var cleanValue = value.replace(/\D/g,'');
         if (cleanValue.length === 15) {
             if (type === 'amex') {
                 if (/^(\d{15}\-?|\s)$/.test(value))

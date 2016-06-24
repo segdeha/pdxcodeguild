@@ -18,42 +18,19 @@
  * @return {void}
  */
 define(function () {
-<<<<<<< HEAD
-    function updateTotal(form, output, costs) {
-      // Setup
-      // ----------------------
-        // Cost Variables
-      var baseCost = 6;
-      var extraCost = 0;
-      var deliveryCost = 0;
-      var totalCost = 0;
-      var perItemCost = costs['extra-ingredients']; // .50
 
-        // Node List
-      var checked = form.querySelectorAll('.checked [name=extra-ingredients]')
-
-        // DOM Node
-      var deliveryNode = form.querySelector('[name=delivery]');
-=======
     function calculateCost(costs, numberOfExtras, isBeingDelivered) {
         var baseCost = 6;
         var extraCost = 0;
         var deliveryCost = 0;
->>>>>>> master
 
         // Get extraCost value
         extraCost = costs['extra-ingredients'] * numberOfExtras;
 
         // Get deliveryCost value
-<<<<<<< HEAD
-      if (form.elements.delivery.value === 'delivery'){
-          deliveryCost = costs['delivery'];
-      }
-=======
         if (isBeingDelivered){
-            extraCost += costs['delivery'];
+            deliveryCost = costs['delivery'];
         }
->>>>>>> master
 
         return (baseCost + extraCost + deliveryCost).toFixed(2);
     }

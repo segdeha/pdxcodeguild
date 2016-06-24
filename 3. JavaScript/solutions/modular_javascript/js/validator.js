@@ -40,12 +40,12 @@ define(function() {
         console.log(cleanValue)
         if (cleanValue.length === 15) {
             if (type === 'amex') {
-                if ((/^(\d{15}\-?|\s)$/).test(value))
+                if (/^(\d{15}\-?|\s)$/.test(value))
                     return true
             }
         } else if (cleanValue.length === 16) {
             if (type === 'visa' || type === 'mastercard' || type === 'discover') {
-                if ((/^(\d{16}\-?|\s?)$/).test(value))
+                if (/^(\d{16}\-?|\s?)$/.test(value))
                     return true
             }
         } else {

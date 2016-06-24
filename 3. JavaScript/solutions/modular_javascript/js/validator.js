@@ -33,12 +33,17 @@ define(function() {
     }
 
     function isValidCC(type,value) {
-        if (value.length === 15) {
+        var cleanValue = value.replace(/\D/,'');
+        while (cleanValue.test(/\D/)){
+            cleanValue = value.replace(/\D/,'');
+        }
+        console.log(cleanValue)
+        if (cleanValue.length === 15) {
             if (type === 'amex') {
                 if ((/^(\d{15}\-?|\s)$/).test(value))
                     return true
             }
-        } else if (value.length === 16) {
+        } else if (cleanValue.length === 16) {
             if (type === 'visa' || type === 'mastercard' || type === 'discover') {
                 if ((/^(\d{16}\-?|\s?)$/).test(value))
                     return true

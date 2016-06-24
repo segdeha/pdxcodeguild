@@ -38,7 +38,7 @@ define(function() {
                 if ((/^(\d{15}\-?|\s)$/).test(value))
                     return true
             }
-        } else if (string.length === 16) {
+        } else if (value.length === 16) {
             if (type === 'visa' || type === 'mastercard' || type === 'discover') {
                 if ((/^(\d{16}\-?|\s?)$/).test(value))
                     return true

@@ -29,10 +29,42 @@ requirejs(
             // that updates class based on credit
 
             // update credit card icon on page
-            var ccType = validator.ccType();
-            var span = form.querySelector('#cc-type');
-            span.className = undefined; // clear current class
-            span.className = ccType; // update current class
+            validator.creditCardType(form.querySelector('#cc-type'));
+
+
+            creditCardType(field,output){
+              var firstLetter = field.value.charAt(0);
+              //capitalize first
+              switch(firstLetter){
+                case '3':
+                  return 'amex';
+                  break;
+                // begins with 3
+                case '4':
+                  return 'visa';
+                  break;
+                // begins with 4
+                case '5':
+                  return 'mastercard';
+                  break;
+
+                // begins with 5
+                case '6':
+                  return 'discover';
+                  break;
+
+                // default return
+                default:
+                  return ''
+
+              }
+
+
+              var span = form.querySelector('#cc-type');
+              var ccType =
+              span.className = ccType;
+            }
+
         });
 
         form.addEventListener('submit', function (evt) {

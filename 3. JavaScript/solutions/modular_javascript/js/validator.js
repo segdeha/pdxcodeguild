@@ -26,140 +26,130 @@
  * @return {Boolean} Returns `true` if the form validation passed, `false` if it
  *     didn’t
  */
-
-
-define(function () {
+define(function() {
 
     function isValidName(value) {
-      if (/^[a-zA-Z\s]*$/.test(value))
-        return true
-      else {
-        return false
-      }
+        return /^[a-zA-Z\s]+$/.test(value);
     }
 
     function isValidCC(value) {
-      if (string.length === 15) {
-        if (type === 'amex') {
-          if ((/^(\d{15}\-?|\s)$/).test(value))
-            return true
+        if (string.length === 15) {
+            if (type === 'amex') {
+                if ((/^(\d{15}\-?|\s)$/).test(value))
+                    return true
+            }
+        } else if (string.length === 16) {
+            if (type === 'visa' || type === 'mastercard' || type === 'discover') {
+                if ((/^(\d{16}\-?|\s?)$/).test(value))
+                    return true
+            }
+        } else {
+            return false
         }
-      }
-      else if (string.length === 16) {
-        if (type === 'visa' || type === 'mastercard' || type === 'discover'){
-          if ((/^(\d{16}\-?|\s?)$/).test(value))
-            return true
-        }
-      }
-      else {
-          return false
-      }
     }
 
     function isValidCVV(type, value) {
-      if (type === 'amex') {
-        if (/^\d{4}$/.test(value))
-          return true
-      }
-      else if (type === 'visa' || type === 'mastercard' || type === 'discover') {
-        if (/^(\d{3})$/.test(value))
-        return true
-      }
-      else {
-        return false
-      }
+        if (type === 'amex') {
+            if (/^\d{4}$/.test(value))
+                return true
+        } else if (type === 'visa' || type === 'mastercard' || type === 'discover') {
+            if (/^(\d{3})$/.test(value))
+                return true
+        } else {
+            return false
+        }
     }
 
     function isValidZip(value) {
-      if (/^(\d{5})$/.test(value))
-        return true
-      else {
-        return false
-      }
-    }
-
-    function isChecked(value) {
-      if (value !== "")
-        return true
-      else {
-        return false
-      }
+        if (/^(\d{5})$/.test(value))
+            return true
+        else {
+            return false
+        }
     }
 
     // Get credit card type based on field type string
-    function creditCardType(field){
-      var firstNumber = field.charAt(0);
-      //capitalize first
-      switch(firstNumber){
-        case '3':
-          return 'amex';
-          break;
-        case '4':
-          return 'visa';
-          break;
-        case '5':
-          return 'mastercard';
-          break;
-        case '6':
-          return 'discover';
-          break;
-        default:
-          return ''
+    function creditCardType(field) {
+        var firstNumber = field.charAt(0);
+        //capitalize first
+        switch (firstNumber) {
+            case '3':
+                return 'amex';
+                break;
+            case '4':
+                return 'visa';
+                break;
+            case '5':
+                return 'mastercard';
+                break;
+            case '6':
+                return 'discover';
+                break;
+            default:
+                return ''
 
-      }}
+        }
+    }
 
 
     function validate(form, requiredFields) {
-      requiredFields.forEach(function(field) {
-        var ccType = creditCardType(form[field].value);
-        switch(field) {
-          case 'name':
-            if (!isValidName(form[field].value)) {
-              lis.push(`<li>Enter your name.</li>`);
-              break;
-            }
-          case 'credit-card':
-            // store credit card type for cvv
-            if (ccType = ""){
-              lis.push(`<li>Enter a credit card number.</li>`);
-              break;
-            }
-            else if (!isValidCC(ccType, form[field].value)) {
-              lis.push(`<li>Enter a credit card number.</li>`);
-              break;
-            }
-          case 'ccv':
-            if (!isValidCVV(ccType, form[field].value)) {
-              lis.push(`<li>Enter your credit card’s verification number
- *             (<a href="https://www.cvvnumber.com/">CVV</a>).</li>`);
-              break;
-            }
-          case 'zip':
-            if (!isValidZip(form[field].value)) {
-              lis.push(`<li>Enter the ZIP Code associated with the credit card.</li>`);
-              break;
-            }
-          case 'terms':
-            if (!isChecked(form[field].value)) {
-              lis.push(`<li>Agree to the Terms &amp; conditions.</li>`);
-              break;
-            }
-        }
-        return lis
-      });
-      var html = (`
-        <i class="close icon"></i>
-        <div class="header">Please correct the following errors before
-           proceeding.</div>
-        <ul id="errors" class="list">${lis.join('')}</ul>`);
-      var lis = [];
 
-    }
-        //alert('validate');
+        var lis = [];
+        var ccType = creditCardType(form['credit-card'].value);
+
+        requiredFields.forEach(function(field) {
+
+            switch (field) {
+                case 'name':
+                    if (!isValidName(form[field].value)) {
+                        lis.push(`<li>Enter your name.</li>`);
+                        form[field].parentNode.querySelector('label').classList.add('error');
+                    }
+                    break;
+                case 'credit-card':
+                    // store credit card type for cvv
+                    if (ccType === "" || !isValidCC(ccType, form[field].value) ) {
+                        lis.push(`<li>Enter a credit card number.</li>`);
+                        form[field].parentNode.querySelector('label').classList.add('error');
+                    }
+                    break;
+                case 'cvv':
+                    if (!isValidCVV(ccType, form[field].value) || form[field].value == '') {
+                        lis.push(`<li>Enter your credit card’s verification number <a href="https://www.cvvnumber.com/">CVV</a>).</li>`)
+                        form[field].parentNode.querySelector('label').classList.add('error');
+                    }
+                    break;
+                case 'zip':
+                    if (!isValidZip(form[field].value)) {
+                        lis.push(`<li>Enter the ZIP Code associated with the credit card.</li>`);
+                        form[field].parentNode.querySelector('label').classList.add('error');
+                    }
+                    break;
+                case 'terms':
+                    if (!(form[field].checked)) {
+                        lis.push(`<li>Agree to the Terms &amp; conditions.</li>`);
+                        form[field].parentNode.querySelector('label').classList.add('error');
+                    }
+                    break;
+            }
+
+        });
+
+        var html = (`<i class="close icon"></i><div class="header">
+    Please correct the following errors before proceeding.</div>
+    <ul id="errors" class="list">${lis.join('')}</ul>`);
+
+        var errorMessage = document.getElementById('error-messages');
+        errorMessage.innerHTML = html;
+        errorMessage.style.display = 'block';
+
+        return lis.length === 0;
+
+    } //alert('validate');
 
     return {
-      validate:validate,
-      creditCardType:creditCardType
+        validate: validate,
+        creditCardType: creditCardType
     };
 
     // function printError(str) {

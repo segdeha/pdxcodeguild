@@ -7,7 +7,7 @@ requirejs(
         './validator',
         './thanks'
     ],
-    function ($, semantic, updateIngredients, totalUpdater, validate, thanks) {
+    function ($, semantic, updateIngredients, totalUpdater, validator, thanks) {
 
     // initialize semantic-ui checkboxes and radio buttons
     $('.ui.checkbox').checkbox()
@@ -38,7 +38,7 @@ requirejs(
         );
 
         form.addEventListener('submit', function (evt) {
-            if (!validate(form, requiredFields)) {
+            if (!validator.validate(form, requiredFields)) {
                 // prevent the form from submitting when the user hits the submit button
                 evt.preventDefault();
             }

@@ -27,119 +27,122 @@
  *     didn’t
  */
 
-function isValidName(value) {
-  if (/^[a-zA-Z\s]*$/.test(value))
-    return true
-  else {
-    return false
-  }
-}
-
-function isValidCC(value) {
-  if (string.length === 15) {
-    if (/^3/) {
-      cc_type = 'amex';
-        if ((/^(\d{15}\-?|\s)$/).test(value))
-          return true
-    }
-  }
-  else if (string.length === 16) {
-    if (/^4/) {
-      cc_type = 'visa';
-      if ((/^(\d{16}\-?|\s?)$/).test(value))
-        return true
-    }
-  }
-  else if (string.length === 16) {
-    if (/^5/) {
-      cc_type = 'mastercard';
-      if ((/^(\d{16}\-?|\s?)$/).test(value))
-        return true
-    }
-  }
-  else if (string.length === 16) {
-    if (/^6/) {
-      cc_type = 'discover';
-      if ((/^(\d{16}\-?|\s?)$/).test(value))
-        return true
-    }
-  }
-  else {
-      return false
-  }
-}
-
-function isValidCCV(type, value) {
-  if (type === 'amex') {
-    if (/^\d{4}$/.test(value))
-      return true
-  }
-  else if (type === 'visa' || type === 'mastercard' || type === 'discover') {
-    if (/^(\d{3})$/.test(value))
-    return true
-  }
-  else {
-    return false
-  }
-}
-
-function isValidZip(value) {
-  if (/^(\d{5})$/.test(value))
-    return true
-  else {
-    return false
-  }
-}
-
-function isChecked(value) {
-  if (value !== "")
-    return true
-  else {
-    return false
-  }
-}
 
 define(function () {
+
+    function isValidName(value) {
+      if (/^[a-zA-Z\s]*$/.test(value))
+        return true
+      else {
+        return false
+      }
+    }
+
+    function isValidCC(value) {
+      if (string.length === 15) {
+        if (/^3/) {
+          cc_type = 'amex';
+            if ((/^(\d{15}\-?|\s)$/).test(value))
+              return true
+        }
+      }
+      else if (string.length === 16) {
+        if (/^4/) {
+          cc_type = 'visa';
+          if ((/^(\d{16}\-?|\s?)$/).test(value))
+            return true
+        }
+      }
+      else if (string.length === 16) {
+        if (/^5/) {
+          cc_type = 'mastercard';
+          if ((/^(\d{16}\-?|\s?)$/).test(value))
+            return true
+        }
+      }
+      else if (string.length === 16) {
+        if (/^6/) {
+          cc_type = 'discover';
+          if ((/^(\d{16}\-?|\s?)$/).test(value))
+            return true
+        }
+      }
+      else {
+          return false
+      }
+    }
+
+    function isValidCCV(type, value) {
+      if (type === 'amex') {
+        if (/^\d{4}$/.test(value))
+          return true
+      }
+      else if (type === 'visa' || type === 'mastercard' || type === 'discover') {
+        if (/^(\d{3})$/.test(value))
+        return true
+      }
+      else {
+        return false
+      }
+    }
+
+    function isValidZip(value) {
+      if (/^(\d{5})$/.test(value))
+        return true
+      else {
+        return false
+      }
+    }
+
+    function isChecked(value) {
+      if (value !== "")
+        return true
+      else {
+        return false
+      }
+    }
+
+
     var cc_type ;
     function ccType() {
       return cc_type
     }
+
+
     function validate(form, requiredFields) {
-      var html = `<i class="close icon">
-                  </i><div class="header">Please correct the following errors before
-                       proceeding.</div>
-                  <ul id="errors" class="list">`;
-      var isok = true;
       requiredFields.forEach(function(field) {
         switch(field) {
           case 'name':
             if (!isValidName(form[field].value)) {
-              isok = false;
+              lis.push(`<li>Enter your name.</li>`);
               break;
             }
           case 'credit-card':
             if (!isValidCC(form[field].value)) {
-              isok = false;
+              lis.push(`<li>Enter a credit card number.</li>`);
               break;
             }
           case 'ccv':
             if (!isValidCCV(cc_type, form[field].value)) {
-              isok = false;
+              lis.push(`<li>Enter your credit card’s verification number
+ *             (<a href="https://www.cvvnumber.com/">CVV</a>).</li>`);
               break;
             }
           case 'zip':
             if (!isValidZip(form[field].value)) {
-              isok = false;
+              lis.push(`<li>Enter the ZIP Code associated with the credit card.</li>`);
               break;
             }
           case 'terms':
             if (!isChecked(form[field].value)) {
-              isok = false;
+              lis.push(`<li>Agree to the Terms &amp; conditions.</li>`);
               break;
             }
         }
-        return isok
+        return lis
       });
+      var lis = [];
+
     }
         //alert('validate');
 

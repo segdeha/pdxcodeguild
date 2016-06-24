@@ -147,6 +147,11 @@ define(function () {
         }
         return lis
       });
+      var html = (`
+        <i class="close icon"></i>
+        <div class="header">Please correct the following errors before
+           proceeding.</div>
+        <ul id="errors" class="list">${lis.join('')}</ul>`);
       var lis = [];
 
     }

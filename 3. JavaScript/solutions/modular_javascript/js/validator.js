@@ -34,18 +34,14 @@ define(function() {
 
     function isValidCC(type,value) {
         var cleanValue = value.replace(/\D/g,'');
-        if (cleanValue.length === 15) {
-            if (type === 'amex') {
-                if (/^(\d{15}\-?|\s)$/.test(value))
-                    return true
-            }
-        } else if (cleanValue.length === 16) {
-            if (type === 'visa' || type === 'mastercard' || type === 'discover') {
-                if (/^(\d{16}\-?|\s?)$/.test(value))
-                    return true
-            }
-        } else {
-            return false
+        if (type === 'amex') {
+            return /^\d{15}$/.test(cleanValue);
+        }
+        else if (type === 'visa' || type === 'mastercard' || type === 'discover') {
+            return /^\d{16}$/.test(cleanValue);
+        }
+        else {
+            return false;
         }
     }
 
@@ -92,6 +88,13 @@ define(function() {
         }
     }
 
+    function addErrorClass(form, field) {
+        form[field].parentNode.querySelector('label').classList.add('error');
+    }
+
+    function removeErrorClass(form, field) {
+        form[field].parentNode.querySelector('label').classList.remove('error');
+    }
 
     function validate(form, requiredFields) {
 
@@ -103,43 +106,43 @@ define(function() {
             switch (field) {
                 case 'name':
                     if (!isValidName(form[field].value)) {
-                        lis.push(`<li>Enter your name.</li>`);
-                        form[field].parentNode.querySelector('label').classList.add('error');
+                        lis.push('<li>Enter your name.</li>');
+                        addErrorClass(form, field);
                     } else {
-                        form[field].parentNode.querySelector('label').classList.remove('error')
+                        removeErrorClass(form, field);
                     }
                     break;
                 case 'credit-card':
                     // store credit card type for cvv
-                    if (ccType === "" || !isValidCC(ccType, form[field].value) ) {
-                        lis.push(`<li>Enter a credit card number.</li>`);
-                        form[field].parentNode.querySelector('label').classList.add('error');
+                    if (ccType === '' || !isValidCC(ccType, form[field].value) ) {
+                        lis.push('<li>Enter a credit card number.</li>');
+                        addErrorClass(form, field);
                     } else {
-                        form[field].parentNode.querySelector('label').classList.remove('error')
+                        removeErrorClass(form, field);
                     }
                     break;
                 case 'cvv':
-                    if (!isValidCVV(ccType, form[field].value) || form[field].value == '') {
-                        lis.push(`<li>Enter your credit card’s verification number <a href="https://www.cvvnumber.com/">CVV</a>).</li>`)
-                        form[field].parentNode.querySelector('label').classList.add('error');
+                    if (!isValidCVV(ccType, form[field].value) || form[field].value === '') {
+                        lis.push('<li>Enter your credit card’s verification number <a href="https://www.cvvnumber.com/">CVV</a>).</li>')
+                        addErrorClass(form, field);
                     } else {
-                        form[field].parentNode.querySelector('label').classList.remove('error')
+                        removeErrorClass(form, field);
                     }
                     break;
                 case 'zip':
                     if (!isValidZip(form[field].value)) {
-                        lis.push(`<li>Enter the ZIP Code associated with the credit card.</li>`);
-                        form[field].parentNode.querySelector('label').classList.add('error');
+                        lis.push('<li>Enter the ZIP Code associated with the credit card.</li>');
+                        addErrorClass(form, field);
                     } else {
-                        form[field].parentNode.querySelector('label').classList.remove('error')
+                        removeErrorClass(form, field);
                     }
                     break;
                 case 'terms':
                     if (!(form[field].checked)) {
-                        lis.push(`<li>Agree to the Terms &amp; conditions.</li>`);
-                        form[field].parentNode.querySelector('label').classList.add('error');
+                        lis.push('<li>Agree to the Terms &amp; conditions.</li>');
+                        addErrorClass(form, field);
                     } else {
-                        form[field].parentNode.querySelector('label').classList.remove('error')
+                        removeErrorClass(form, field);
                     }
                     break;
             }

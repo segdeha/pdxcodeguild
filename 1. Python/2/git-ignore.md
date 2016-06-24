@@ -30,3 +30,5 @@ The following is a good starting point for your own `.gitignore` file:
     __pycache__
     # Django default database
     db.sqlite3
+    # PyCharm project directory
+    .idea

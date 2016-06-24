@@ -32,7 +32,7 @@ define(function() {
         return /^[a-zA-Z\s]+$/.test(value);
     }
 
-    function isValidCC(value) {
+    function isValidCC(type,value) {
         if (value.length === 15) {
             if (type === 'amex') {
                 if ((/^(\d{15}\-?|\s)$/).test(value))
@@ -104,6 +104,8 @@ define(function() {
                     if (!isValidName(form[field].value)) {
                         lis.push(`<li>Enter your name.</li>`);
                         form[field].parentNode.querySelector('label').classList.add('error');
+                    } else {
+                        form[field].parentNode.querySelector('label').classList.remove('error')
                     }
                     break;
                 case 'credit-card':
@@ -111,24 +113,32 @@ define(function() {
                     if (ccType === "" || !isValidCC(ccType, form[field].value) ) {
                         lis.push(`<li>Enter a credit card number.</li>`);
                         form[field].parentNode.querySelector('label').classList.add('error');
+                    } else {
+                        form[field].parentNode.querySelector('label').classList.remove('error')
                     }
                     break;
                 case 'cvv':
                     if (!isValidCVV(ccType, form[field].value) || form[field].value == '') {
                         lis.push(`<li>Enter your credit card’s verification number <a href="https://www.cvvnumber.com/">CVV</a>).</li>`)
                         form[field].parentNode.querySelector('label').classList.add('error');
+                    } else {
+                        form[field].parentNode.querySelector('label').classList.remove('error')
                     }
                     break;
                 case 'zip':
                     if (!isValidZip(form[field].value)) {
                         lis.push(`<li>Enter the ZIP Code associated with the credit card.</li>`);
                         form[field].parentNode.querySelector('label').classList.add('error');
+                    } else {
+                        form[field].parentNode.querySelector('label').classList.remove('error')
                     }
                     break;
                 case 'terms':
                     if (!(form[field].checked)) {
                         lis.push(`<li>Agree to the Terms &amp; conditions.</li>`);
                         form[field].parentNode.querySelector('label').classList.add('error');
+                    } else {
+                        form[field].parentNode.querySelector('label').classList.remove('error')
                     }
                     break;
             }

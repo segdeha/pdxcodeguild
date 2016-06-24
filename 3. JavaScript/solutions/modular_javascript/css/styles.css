@@ -74,7 +74,7 @@ label.error {
     padding: 0.25em 0.5em;
 }
 
-.ui.checkbox label.error:before {
+.ui.checkbox label.error:before, .ui.checkbox label.error:after {
     left: 4px;
     top: 4px;
 }

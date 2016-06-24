@@ -33,7 +33,7 @@ define(function() {
     }
 
     function isValidCC(value) {
-        if (string.length === 15) {
+        if (value.length === 15) {
             if (type === 'amex') {
                 if ((/^(\d{15}\-?|\s)$/).test(value))
                     return true
@@ -145,23 +145,11 @@ define(function() {
 
         return lis.length === 0;
 
-    } //alert('validate');
+    }
 
     return {
         validate: validate,
         creditCardType: creditCardType
     };
-
-    // function printError(str) {
-    //   var err = document.getElementById('error');
-    //   err.classList.add('error');
-    //   err.innerHTML = str;
-    // }
-    //
-    // function clearError() {
-    //   var err = document.getElementById('error');
-    //   err.innerHTML = '';
-    //   err.classList.remove('error');
-    // }
 
 });

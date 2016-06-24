@@ -102,11 +102,27 @@ define(function () {
       }
     }
 
+    // Get credit card type based on field type string
+    function creditCardType(field){
+      var firstNumber = field.charAt(0);
+      //capitalize first
+      switch(firstNumber){
+        case '3':
+          return 'amex';
+          break;
+        case '4':
+          return 'visa';
+          break;
+        case '5':
+          return 'mastercard';
+          break;
+        case '6':
+          return 'discover';
+          break;
+        default:
+          return ''
 
-    var cc_type ;
-    function ccType() {
-      return cc_type
-    }
+      }}
 
 
     function validate(form, requiredFields) {
@@ -118,7 +134,10 @@ define(function () {
               break;
             }
           case 'credit-card':
-            if (!isValidCC(form[field].value)) {
+            // store credit card type for cvv
+            var ccType = creditCardType(form[field].value);
+            // check if blank
+            if (!isValidCC(ccType, form[field].value)) {
               lis.push(`<li>Enter a credit card number.</li>`);
               break;
             }
@@ -148,7 +167,7 @@ define(function () {
 
     return {
       validate:validate,
-      ccType:ccType
+      creditCardType:creditCardType
     };
 
     // function printError(str) {

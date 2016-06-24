@@ -40,29 +40,13 @@ define(function () {
 
     function isValidCC(value) {
       if (string.length === 15) {
-        if (/^3/) {
-          cc_type = 'amex';
-            if ((/^(\d{15}\-?|\s)$/).test(value))
-              return true
-        }
-      }
-      else if (string.length === 16) {
-        if (/^4/) {
-          cc_type = 'visa';
-          if ((/^(\d{16}\-?|\s?)$/).test(value))
+        if (type === 'amex') {
+          if ((/^(\d{15}\-?|\s)$/).test(value))
             return true
         }
       }
       else if (string.length === 16) {
-        if (/^5/) {
-          cc_type = 'mastercard';
-          if ((/^(\d{16}\-?|\s?)$/).test(value))
-            return true
-        }
-      }
-      else if (string.length === 16) {
-        if (/^6/) {
-          cc_type = 'discover';
+        if (type === 'visa' || type === 'mastercard' || type === 'discover'){
           if ((/^(\d{16}\-?|\s?)$/).test(value))
             return true
         }
@@ -72,7 +56,7 @@ define(function () {
       }
     }
 
-    function isValidCCV(type, value) {
+    function isValidCVV(type, value) {
       if (type === 'amex') {
         if (/^\d{4}$/.test(value))
           return true
@@ -127,6 +111,7 @@ define(function () {
 
     function validate(form, requiredFields) {
       requiredFields.forEach(function(field) {
+        var ccType = creditCardType(form[field].value);
         switch(field) {
           case 'name':
             if (!isValidName(form[field].value)) {
@@ -135,14 +120,16 @@ define(function () {
             }
           case 'credit-card':
             // store credit card type for cvv
-            var ccType = creditCardType(form[field].value);
-            // check if blank
-            if (!isValidCC(ccType, form[field].value)) {
+            if (ccType = ""){
+              lis.push(`<li>Enter a credit card number.</li>`);
+              break;
+            }
+            else if (!isValidCC(ccType, form[field].value)) {
               lis.push(`<li>Enter a credit card number.</li>`);
               break;
             }
           case 'ccv':
-            if (!isValidCCV(cc_type, form[field].value)) {
+            if (!isValidCVV(ccType, form[field].value)) {
               lis.push(`<li>Enter your credit card’s verification number
  *             (<a href="https://www.cvvnumber.com/">CVV</a>).</li>`);
               break;

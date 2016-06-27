@@ -23,19 +23,18 @@ requirejs(
         ingredients = ['tortilla', 'meat', 'included-ingredients', 'extra-ingredients'];
         requiredFields = ['name', 'credit-card', 'cvv', 'zip', 'terms'];
 
-        form.addEventListener('change', function (evt) {
-            totalUpdater.updateTotal(form, total_output, costs);
-            updateIngredients(form, ingredients_output, ingredients);
-            // that updates class based on credit
-
+        form.addEventListener('keyup', function (evt) {
             // update credit card icon on page
             var field = form.querySelector('#credit-card');
             var ccType = validator.creditCardType(field.value);
             var span = form.querySelector('#cc-type');
             span.className = ccType;
+        });
 
-            }
-        );
+        form.addEventListener('change', function (evt) {
+            totalUpdater.updateTotal(form, total_output, costs);
+            updateIngredients(form, ingredients_output, ingredients);
+        });
 
         form.addEventListener('submit', function (evt) {
             if (!validator.validate(form, requiredFields)) {

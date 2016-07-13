@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+
+{# templates/notes.html #}
+{% extends "base.html" %}
+
+{% block content %}
+     <div>
+        {% for note in notes %}
+
+                {{ note.user }}
+                {{ note.created }}
+                {{ note.modified }}
+                {{ note.note }}
+
+        {% endfor %}
+      </div>
+{% endblock content %}
+</body>
+</html>
+

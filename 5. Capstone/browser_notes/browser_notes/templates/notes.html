@@ -1,25 +1,26 @@
-<!doctype html>
-<html class="no-js" lang="en">
-<head>
-    <meta charset="utf-8"/>
-</head>
-<body>
-
 {# templates/notes.html #}
 {% extends "base.html" %}
 
-{% block content %}
-     <div>
+{% block content %}<br>
+    {# A search box #}
+    <div class="ui input">
+        <input type="text" placeholder="Search...">
+    </div>
+     <div class="ui raised very padded text container segment">
+        {# the for loop iterates over each note #}
         {% for note in notes %}
 
-                {{ note.user }}
+            <br>
+                {{ note.user }}<br>
                 {{ note.created }}
+            <br>
+            <div class="right floated left aligned eight wide column">
+                {{ note.note }}<br>
                 {{ note.modified }}
-                {{ note.note }}
+            </div>
 
         {% endfor %}
       </div>
 {% endblock content %}
-</body>
-</html>
+
 

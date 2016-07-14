@@ -7,7 +7,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-
+# imported views parameters below
+from browser_notes.users.views import notes
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
@@ -17,7 +18,9 @@ urlpatterns = [
 
     # User management
     url(r'^users/', include('browser_notes.users.urls', namespace='users')),
-    url(r'^accounts/', include('allauth.urls')),
+                  url(r'^accounts/', include('allauth.urls')),
+    #  Added the line below for notes
+    url(r'^notes/', notes, name='notes'),
 
     # Your stuff: custom urls includes go here
 

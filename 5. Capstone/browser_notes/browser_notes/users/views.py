@@ -7,7 +7,8 @@ from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import User
-
+from .models import Note
+from django.shortcuts import render
 
 class UserDetailView(LoginRequiredMixin, DetailView):
     model = User
@@ -46,3 +47,12 @@ class UserListView(LoginRequiredMixin, ListView):
     # These next two lines tell the view to index lookups by username
     slug_field = 'username'
     slug_url_kwarg = 'username'
+
+
+# Below is the view function for the Note model
+
+def notes(request):
+    notes = Note.objects.filter(user=request.user)
+    return render(request, 'notes.html', {"notes":notes})
+
+

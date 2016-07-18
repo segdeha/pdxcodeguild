@@ -16,7 +16,7 @@ JavaScript events propagate from the top of the tree down through the elements (
 
 Once an event reaches its target element, it then “bubbles” back up through the DOM tree.
 
-![Event bubble phase](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/3.%20JavaScript/assets/event-flow-bubble.png?raw=true)
+![Event bubble phase](https://github.com/segdeha/pdxcodeguild/blob/master/3.%20JavaScript/assets/event-flow-bubble.png?raw=true)
 
 One implication of the way events flow is that we can listen for an event at a higher level of the tree than the element we’re actually targeting.
 

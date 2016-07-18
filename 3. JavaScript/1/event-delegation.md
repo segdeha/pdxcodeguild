@@ -28,7 +28,7 @@ Why would we want to do this? Everything in computing comes at a cost and event 
 
 Say you wanted to listen for the `hover` event on a group of 1000 list items. Attaching an event listener to each of the list items would be quite costly in terms of memory consumption and even CPU usage as the browser has to track interactions with so many DOM nodes.
 
-Alternately, you could attach one event listener to the list, itself, then check use `target` property of the `Event` object to make changes to the element.
+Alternately, you could attach one event listener to the list, itself, then use the `target` property of the `Event` object to make changes to the element.
 
 The difference may not be noticeable on most websites, but definitely results in a snappier UI on even moderately complex pages.
 

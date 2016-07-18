@@ -8,7 +8,7 @@ For the foreseeable future, you can implement JavaScript modules in one of the f
 
 1. In an [IIFE](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
 2. Using a 3rd party library
-3. Dependency resolution using a build step
+3. Via dependency resolution using a build step
 4. Using a transpiler.
 
 ------

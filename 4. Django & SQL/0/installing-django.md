@@ -36,5 +36,4 @@ If, for some reason, you don’t have pip installed, you can follow these [insta
 
 Once you have pip installed and updated to the latest version, you can install Django using the following command:
 
-    
-
+    pip install Django

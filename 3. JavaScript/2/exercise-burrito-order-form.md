@@ -6,7 +6,7 @@ Practice working as a team using modular JavaScript.
 
 ## Requirements
 
-![El Burrito Grande Order Form](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/3.%20JavaScript/assets/burrito-order-form.png?token=AAAQ0jfGTOPFkL1_lRJIdld1GFoXEQksks5XcbUlwA%3D%3D)
+![El Burrito Grande Order Form](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/3.%20JavaScript/assets/burrito-order-form.png?token=AAAQ0lClKONXHz9NWzUps-E0nK6mQnRnks5XlpukwA%3D%3D)
 
 Our burrito order form needs the following features:
 

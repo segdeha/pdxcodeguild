@@ -33,4 +33,4 @@ _Hint: It might help you understand the structure of the returned JSON to run it
 
 - Format each entry as a card with the user’s photo floated to the right and the email linked, something like the following (or prettier!):
 
-![Formatted cards](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/3.%20JavaScript/assets/formatted-cards.png?token=AAAQ0rLeHHRpMAMXgHzr6bIInICYF8omks5XcbbmwA%3D%3D)
+![Formatted cards](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/3.%20JavaScript/assets/formatted-cards.png?token=AAAQ0qHm3qC0ZkTXJQB8Ny5pqG9sjZwFks5Xlp0nwA%3D%3D)

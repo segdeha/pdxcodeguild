@@ -10,13 +10,13 @@ Event delegation is a technique whereby you can set an event listener on a paren
 
 JavaScript events propagate from the top of the tree down through the elements (called event “capturing”) until they reach the target element.
 
-![Event capture phase](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/3.%20JavaScript/assets/event-flow-capture.png?token=AAAQ0s14P6-nx-bhYCpbSsLEr8UhVc_Eks5XailTwA%3D%3D)
+![Event capture phase](https://github.com/segdeha/pdxcodeguild/blob/master/3.%20JavaScript/assets/event-flow-capture.png?raw=true)
 
 ### Bubble Phase
 
 Once an event reaches its target element, it then “bubbles” back up through the DOM tree.
 
-![Event bubble phase](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/3.%20JavaScript/assets/event-flow-bubble.png?token=AAAQ0mLyanwGCJ7st1Iwm9Yyr64OX7C-ks5XaimGwA%3D%3D)
+![Event bubble phase](https://raw.githubusercontent.com/segdeha/pdxcodeguild/master/3.%20JavaScript/assets/event-flow-bubble.png?raw=true)
 
 One implication of the way events flow is that we can listen for an event at a higher level of the tree than the element we’re actually targeting.
 

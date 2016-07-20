@@ -55,4 +55,11 @@ def notes(request):
     notes = Note.objects.filter(user=request.user)
     return render(request, 'notes.html', {"notes":notes})
 
+def search(request):
+    if request.method == 'POST':
+        query = request.POST['query']
+        results = Note.objects.filter(user=request.user, note__contains=query)
+        return  render(request, 'search.html', {'results':results})
+    return HttpResponse('Nothing to see here, Move along.')
+
 

@@ -1,0 +1,27 @@
+<!--A search html file to return results of the search box. -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    {#  the for loop iterates over each note #}
+
+    {% for search in results %}
+
+        <div class="ui left aligned container">
+
+            {{ note.note }}
+
+        </div>
+
+
+    {% endfor %}
+
+
+{% endblock content %}
+
+
+
+
+
+

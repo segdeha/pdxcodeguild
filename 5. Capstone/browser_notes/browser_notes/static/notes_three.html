@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Browser Notes</title>
+        <link rel="stylesheet" href="semantic.css">
+        <script defer src=""></script>
+
+        <style>
+
+            .ui.inverted.vertical.footer.segment {
+                margin: 2em 0em 0em;
+                padding: 2em 0em;
+            }
+
+            .ui.four.wide.column.notes-list {
+                border-right: 1px solid black;
+                padding-left: 2%;
+
+            }
+
+            .ui.fluid.action.input {
+                width: 1373px:
+                height: 70%;
+                vertical-align: middle;
+                float: right;
+
+                margin-bottom: 1em;
+            }
+
+            .ui.grid {
+                padding: 1px;
+                height: 82%;
+            }
+
+            p  {
+                width: 65%;
+            }
+
+            input {
+                width: 275px;
+            }
+
+            .ui.button {
+                float: right;
+            }
+            .ui.twelve.twelve.wide.column.note {
+                padding-right: 2%;
+            }
+            .ui.inverted.segment.fluid.action.input {
+                width: 100%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <!-- branding, search bar, login link -->
+            <div class="ui inverted segment fluid action input">
+                <p>Browser Notes</p>
+                    <input type="text" placeholder="Search...">
+                        <div class="ui button">Search</div>
+            </div>
+        </header><br>
+
+        <section class="ui grid">
+            <div class="ui four wide column notes-list"><br>
+                <!-- list of notes -->
+                <p>This is a note.</p>
+
+            </div>
+
+            <div class="ui twelve wide column note"><br>
+                <!-- current note -->
+                <div contenteditable="true">
+                        This text can be edited by the user.
+                </div><br>
+
+                <button class="ui button">
+                        Save
+                </button>
+            </div>
+        </section><br>
+        <footer>
+            <!-- copyright, privacy link, terms & conditions link, etc. -->
+            <div class="ui inverted vertical footer segment">
+                <p>Copyright             About           </p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -16,12 +16,42 @@
 
     {% block css %}
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
 
     <!-- Your stuff: Third-party css libraries go here -->
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <style>
+    p {
+        text-align: right;
+        float: right;
+    }
+
+     .nav-item {
+        float: right;
+
+    }
+
+     a {
+         padding-right: 10px;
+     }
+
+     li {
+         padding-right: 10px;
+     }
+
+    .search {
+        text-align: left;
+        padding-right: 10px;
+        width: 600px;
+        float: right;
+        padding-bottom: 10px;
+
+    }
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="static/css/semantic.css">
     <!-- This file store project specific CSS -->
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'css/semantic.css' %}" rel="stylesheet">
 
     {% endblock %}
 
@@ -31,31 +61,36 @@
 
     <div class="m-b">
       <nav class="navbar navbar-dark navbar-static-top bg-inverse">
-        <div class="container">
+
+        <div class="ui container">
           <a class="navbar-brand" href="/">browser_notes</a>
-          <button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
-            &#9776;
-          </button>
+
+         <div class="search ui fluid action input">
+
+                  <input type="text" placeholder="Search a very wide input...">
+                  <i class="search icon"></i>
+
+
+                <ul class="nav navbar-nav pull-xs-right">
+                    {% if request.user.is_authenticated %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}"> {% trans "Sign out" %}</a>
+                    </li>
+                 </ul>
+          </div>
+
+
+
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
-              </li>
-            </ul>
 
-            <ul class="nav navbar-nav pull-xs-right">
-              {% if request.user.is_authenticated %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
-                </li>
+
+
               {% else %}
                 <li class="nav-item">
                   <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
@@ -68,9 +103,9 @@
           </div>
         </div>
       </nav>
-    </div>
+    </div><br>
 
-    <div class="container">
+    <div class="ui right aligned container" class="six wide column">
 
       {% if messages %}
           {% for message in messages %}
@@ -79,8 +114,8 @@
       {% endif %}
 
       {% block content %}
-          <div class="ui raised very padded text container segment">
-        <p>Use this document as a way to quick start any new project.</p>
+          <div class="ui right aligned container">
+
           </div>
       {% endblock content %}
 

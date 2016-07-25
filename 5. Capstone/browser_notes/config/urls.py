@@ -9,7 +9,9 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 # imported views parameters below
 from browser_notes.users.views import notes
-from browser_notes.users.views import search
+
+from browser_notes.users.views import note
+
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
@@ -23,7 +25,8 @@ urlpatterns = [
                   url(r'^accounts/', include('allauth.urls')),
     #  Added the line below for notes
     url(r'^notes/', notes, name='notes'),
-    url(r'^search/', search, name='results'),
+    url(r'^note/', note, name='note'),
+#    url(r'^search/', search, name='results'),
 
     # Your stuff: custom urls includes go here
 

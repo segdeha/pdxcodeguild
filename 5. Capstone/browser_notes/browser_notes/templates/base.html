@@ -1,4 +1,5 @@
 {% load staticfiles i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,23 +33,18 @@
 
      a {
          padding-right: 10px;
+         width: 60%;
      }
 
      li {
          padding-right: 10px;
+
      }
-
-    .search {
-        text-align: left;
-        padding-right: 10px;
-        width: 600px;
-        float: right;
-        padding-bottom: 10px;
-
-    }
 
 
     </style>
+
+
     <link rel="stylesheet" type="text/css" href="static/css/semantic.css">
     <!-- This file store project specific CSS -->
     <link href="{% static 'css/semantic.css' %}" rel="stylesheet">
@@ -62,15 +58,6 @@
     <div class="m-b">
       <nav class="navbar navbar-dark navbar-static-top bg-inverse">
 
-        <div class="ui container">
-          <a class="navbar-brand" href="/">browser_notes</a>
-
-         <div class="search ui fluid action input">
-
-                  <input type="text" placeholder="Search a very wide input...">
-                  <i class="search icon"></i>
-
-
                 <ul class="nav navbar-nav pull-xs-right">
                     {% if request.user.is_authenticated %}
 
@@ -80,10 +67,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}"> {% trans "Sign out" %}</a>
                     </li>
+
                  </ul>
-          </div>
-
-
 
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -92,20 +77,21 @@
 
 
               {% else %}
+              <ul>
                 <li class="nav-item">
                   <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
                 </li>
                 <li class="nav-item">
                   <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
                 </li>
+              </ul>
               {% endif %}
-            </ul>
           </div>
-        </div>
+
       </nav>
     </div><br>
 
-    <div class="ui right aligned container" class="six wide column">
+
 
       {% if messages %}
           {% for message in messages %}

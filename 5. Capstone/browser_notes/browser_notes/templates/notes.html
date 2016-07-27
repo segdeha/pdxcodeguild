@@ -1,13 +1,15 @@
 {# templates/notes.html #}
-<!doctype html>
-<html xmlns="http://www.w3.org/1999/html">
+{% extends "base.html" %}
+
+
+<!DOCTYPE html>
+<html>
+
     <head>
         <meta charset="UTF-8">
 
-        <link rel="stylesheet" href="semantic.css">
-        <script defer src=""></script>
     </head>
-
+ {% block content %}
     <body>
         <header>
             <!-- branding, search bar, login link -->
@@ -16,17 +18,13 @@
                     <input type="text" placeholder="Search...">
                         <div class="ui button">Search</div>
 
-
             </div>
+
+
         </header><br>
-
-
-{% extends "base.html" %}
-
-
-{% block content %}<br>
-
     <style>
+
+
 
     .notes-list {
         overflow: auto;
@@ -89,10 +87,11 @@
 
     </style>
 
+
+
      <section class="ui grid">
             <div class="ui four wide column notes-list"><br>
                 <!-- list of notes -->
-
 
               {#  the for loop iterates over each note #}
                  {% for note in notes %}
@@ -111,10 +110,11 @@
                 <div id="current-note" contenteditable="true">
                     This text can be edited by the user.
                 </div><br>
-                <button class="ui-button">
+                <button class="ui button">
                         Save
                 </button>
             </div>
+
 
      </section><br>
 
@@ -126,16 +126,20 @@
             </div>
     </footer>
 
-{% endblock content %}
 
-     <script>
+    {% csrf_token %}
 
-    $('.ui-button').on('click', function(evt) {
-        alert('lambas');
+
+    <script type="text/javascript">
+
+    $('.ui.button').on('click', function() {
         var note = $('#current-note').html();
         $.post({
             url: '//localhost:8000/notes/',
-            data: { note: note},
+            data: {
+                csrfmiddlewaretoken: $('[name=csrfmiddlewaretoken]').val(),
+                note: note
+            },
             success: function (data) {
                 $('.notes-list').html(data);
             }
@@ -145,6 +149,7 @@
     </script>
 
     </body>
+{% endblock content %}
 </html>
 
 

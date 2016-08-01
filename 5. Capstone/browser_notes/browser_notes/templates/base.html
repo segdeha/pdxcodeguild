@@ -14,11 +14,12 @@
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
 
+
     <![endif]-->
   {% load staticfiles %}
 
 
-    {% block css %}
+  {% block css %}
     <!-- Latest compiled and minified CSS -->
 
     <!-- Your stuff: Third-party css libraries go here -->
@@ -43,24 +44,123 @@
 
      }
 
+    .notes-list {
+        overflow: auto;
+        text-align: left;
+        border-right: 1px solid black;
+        margin-right: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+    }
+
+    .note {
+
+        float: right;
+        text-align: left;
+        overflow: auto;
+        margin: 0px;
+    }
+      .ui.inverted.vertical.footer.segment {
+                margin: 2em 0em 0em;
+                padding: 2em 0em;
+
+
+            }
+
+            .ui.four.wide.wide.column.notes-list {
+                border-right: 1px solid black;
+                padding-left: 2%;
+                height: 100%;
+
+
+            }
+
+            .ui.fluid.action.input {
+
+                height: 70%;
+                vertical-align: middle;
+                float: right;
+
+                margin-bottom: 1em;
+            }
+
+            .ui.grid {
+                padding: 1px;
+                height: 82%;
+                float: left;
+
+
+
+            }
+
+            p  {
+                float: left;
+            }
+
+
+            .ui.inverted.segment.fluid.action.input {
+                width: 100%;
+                height: auto;
+            }
+
+            a {
+                color: rgb(65,176,162);
+            }
+
+            .ui.button {
+                float: right;
+            }
+
+            .note.ui.segment {
+                vertical-align: middle;
+                float: right;
+                height: 100%;
+                width: 60%;
+
+            }
 
     </style>
-
-
 
     <!-- This file store project specific CSS -->
     <link href="{% static 'css/semantic.css' %}" rel="stylesheet">
 
-    {% endblock %}
+
+  {% endblock %}
 
   </head>
 
+        <header>
+            <!-- branding, search bar, login link -->
+            <div class="ui inverted segment fluid action input">
+                <a class="navbar-brand" href="/">browser_notes</a>
+                    <input type="text" placeholder="Search...">
+                        <div class="ui button">Search</div>
+
+            </div>
+
+
+        </header><br>
+
   <body>
+    {% csrf_token %}
 
-      {% block content %}
+      {{html}}
 
-      {% endblock content %}
- </body>
+
+
+
+
+
+
+  <footer>
+            <!-- copyright, privacy link, terms & conditions link, etc. -->
+            <div class="ui inverted vertical footer segment">
+                <p>Copyright             About           </p>
+            </div>
+  </footer>
+  <script src="{% static 'js/behavior.js' %}"></script>
+  </body>
+
 </html>
 
 
@@ -88,7 +188,8 @@
 
       <!-- place project specific Javascript in this file -->
 
-      <script src="{% static 'js/semantic.js' %}"></script>
+
+
 
 
     {% endblock javascript %}

@@ -1,18 +1,23 @@
-# this will be a small file to send back to the browser the contents of a single note.
 
-{% extends "base.html" %}
 
-{% block content %}
 
-{% for note in note %}
 
-    <div id="saved-notes" class="notes-list ui segments">
-        {{ note.user }} <br>
-        {{ note.created }}<br>
-        {{ note.note }} <br>
-        {{ note.modified}}
+
+
+
+
+    <div class="note ui segment">
+                <div id="current-note" contenteditable="true">
+                    {{ note }}
+                </div>
+                <button class="ui button">
+                        Save
+                </button>
     </div>
-{% endfor %}<br>
 
 
-{% endblock content %}
+
+
+
+
+

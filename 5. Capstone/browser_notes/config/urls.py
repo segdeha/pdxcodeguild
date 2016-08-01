@@ -10,8 +10,9 @@ from django.views import defaults as default_views
 # imported views parameters below
 from browser_notes.users.views import notes
 
-from browser_notes.users.views import note
 
+from browser_notes.users.views import note
+from browser_notes.users.views import base
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
@@ -26,6 +27,8 @@ urlpatterns = [
     #  Added the line below for notes
     url(r'^notes/', notes, name='notes'),
     url(r'^note/', note, name='note'),
+    url(r'^home', base, name='base'),
+
 #    url(r'^search/', search, name='results'),
 
     # Your stuff: custom urls includes go here

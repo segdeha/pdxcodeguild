@@ -97,7 +97,7 @@ def render_notes(notes):
     """This function takes the variable note_id which is assigned the modified value from Class Note."""
     with open('/Users/jefferybentley/Documents/pdxcodeguild/5. Capstone/browser_notes/browser_notes/templates/notes.html') as f:
         tmpl = Template(f.read())
-        ctxt = Context({notes: notes})
+        ctxt = Context({'notes': notes})
         return tmpl.render(ctxt)
 
 
@@ -106,7 +106,7 @@ def render_note(note):
     # get template as string
     with open('/Users/jefferybentley/Documents/pdxcodeguild/5. Capstone/browser_notes/browser_notes/templates/note.html') as f:
         tmpl = Template(f.read())
-        ctxt = Context({note: note.note})
+        ctxt = Context({'note': note})
         return tmpl.render(ctxt)
 
 

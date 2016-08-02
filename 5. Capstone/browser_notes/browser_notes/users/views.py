@@ -58,7 +58,7 @@ class UserListView(LoginRequiredMixin, ListView):
 def notes(request):
     if request.method == 'POST':
         print(request.POST.get("note"))
-        n = Note(note=request.POST.get("note"))
+        n = Note(note=request.POST.get("note"), user=request.user)
 
         n.save()
     notes = Note.objects.filter(user=request.user)
@@ -83,23 +83,21 @@ def note(request):
 
 def base(request):
     notes = Note.objects.filter(user=request.user)
-    notes_html= render_notes(notes)
+    notes_html = render_notes(notes)
     # Figure out how to grabe a single note from the database.
-    note_html= render_note(notes[0])
+    note_html = render_note(notes)
     html = notes_html + note_html
     return render(request, 'base.html', {"html": html})
 
 
 
-
 def render_notes(notes):
     # pure function to hand a value to notes view
-    """This function takes the variable note_id which is assigned the modified value from Class Note."""
+
     with open('/Users/jefferybentley/Documents/pdxcodeguild/5. Capstone/browser_notes/browser_notes/templates/notes.html') as f:
         tmpl = Template(f.read())
         ctxt = Context({'notes': notes})
         return tmpl.render(ctxt)
-
 
 
 def render_note(note):
@@ -120,15 +118,4 @@ def render_note(note):
 
 
 
-
-# def get_notes_list(user_id): # request from browser
-    """When you log in to the database get and return to the browser the notes from the database"""
-
-
-# def get_page_by_username(): # response by server
-    """Get everything on the page and return it to the browser"""
-
-
-# def get_note_response(): # response by server
-    """As a logged in user when you click on a note send and load that note into the active window on the right"""
 

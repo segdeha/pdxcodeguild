@@ -14,6 +14,8 @@ from browser_notes.users.views import notes
 from browser_notes.users.views import note
 from browser_notes.users.views import base
 
+
+
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
@@ -28,6 +30,7 @@ urlpatterns = [
     url(r'^notes/', notes, name='notes'),
     url(r'^note/', note, name='note'),
     url(r'^home', base, name='base'),
+
 
 #    url(r'^search/', search, name='results'),
 

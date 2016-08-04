@@ -9,15 +9,16 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 # imported views parameters below
 from browser_notes.users.views import notes
-
-
+from browser_notes.users.views import login
+from browser_notes.users.views import my_login
 from browser_notes.users.views import note
 from browser_notes.users.views import base
+from django.contrib.auth import views as auth_views
 
 
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
+    url(r'^$', login, name='login'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}
@@ -29,7 +30,10 @@ urlpatterns = [
     #  Added the line below for notes
     url(r'^notes/', notes, name='notes'),
     url(r'^note/', note, name='note'),
-    url(r'^home', base, name='base'),
+    url(r'^home', base, name='home'),
+
+    url('^', include('django.contrib.auth.urls')),
+    url(r'^accounts/login/$', auth_views.login),
 
 
 #    url(r'^search/', search, name='results'),

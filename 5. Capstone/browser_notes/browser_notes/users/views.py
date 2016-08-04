@@ -5,10 +5,11 @@ from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib.auth import authenticate, login
+from .forms import LoginForm
 from .models import User
 from .models import Note
-
+from django.shortcuts import redirect
 
 
 from django.shortcuts import render
@@ -82,13 +83,39 @@ def note(request):
 
 
 def base(request):
-    notes = Note.objects.filter(user=request.user)
-    notes_html = render_notes(notes)
-    # Figure out how to grabe a single note from the database.
-    note_html = render_note(notes)
-    html = notes_html + note_html
-    return render(request, 'base.html', {"html": html})
+    """if it is a POST log user in else redirect back to '/'
 
+    else check whether user is logged in  if logged in show notes
+    else redirect to '/' """
+    if request.method == 'POST':
+
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            if user.is_active:
+                notes = Note.objects.filter(user=user)
+                notes_html = render_notes(notes)
+                # Figure out how to grabe a single note from the database.
+                note_html = render_note(notes)
+                html = notes_html + note_html
+                return render(request, 'base.html', {"html": html})
+
+        else:
+            return redirect('/')
+
+    else:       # if user types wrong login (Anonymous user)
+
+        if '' == request.user.get_username():
+            return redirect('/')        # redirect back to login screen
+
+        else:
+            notes = Note.objects.filter(user=request.user)
+            notes_html = render_notes(notes)
+            note_html = render_note(notes)
+            html = notes_html + note_html
+            return render(request, 'base.html', {"html": html})
 
 
 def render_notes(notes):
@@ -108,9 +135,26 @@ def render_note(note):
         return tmpl.render(ctxt)
 
 
+def my_login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            # Redirect to a success page.
+            return render(request, 'my_login.html')
+        else:
+            # Return a 'disabled account' error message
+            ...
+    else:
+        # Return an 'invalid login' error message.
+        ...
 
 
-
+def login(request):
+    form = LoginForm()
+    return render(request, 'my_login.html', {'form': form})
 
 
 

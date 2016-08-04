@@ -145,8 +145,10 @@
   <body>
     {% csrf_token %}
 
-      {{html}}
+    {% block content %}
+    {% endblock content %}
 
+      {{html}}
 
 
 

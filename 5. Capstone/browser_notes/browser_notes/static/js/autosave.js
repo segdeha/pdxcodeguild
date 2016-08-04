@@ -1,19 +1,41 @@
- $('.ui.button').on('click', function() {
-        var note_id = $('#current-note').html();
+
+
+
+
+
+$('.ui.button').on('click', function() {
+        var note_id = $('#current-note').attr('data-id');
+        var note = $('#current-note').html();
         $.post({
-            url: '//localhost:8000/notes/',
+            url: '/notes/',
             data: {
                 csrfmiddlewaretoken: $('[name=csrfmiddlewaretoken]').val(),
-                note: note_id
+                note_id: note_id,
+                note: note
+
+
             },
 
-                    success: function (data) {
-                $('#notes-list').html(data);
+            success: function (data) {
+                console.log(data)
+                $('#current-note').attr('data-id', data.id);
+                updateList();
             }
         });
     });
 
-            
 
 
+function updateList() {
+    console.log("updatelist")
+    $.ajax({
+        url: '/notes/',
+        success: function (data) {
+            console.log(data)
+                $('#notes-list').html(data);
+            }
+
+    })
+
+}
 

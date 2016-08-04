@@ -3,7 +3,7 @@ from __future__ import absolute_import, unicode_literals
 
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
-
+from django.http import JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
@@ -59,11 +59,15 @@ class UserListView(LoginRequiredMixin, ListView):
 def notes(request):
     if request.method == 'POST':
         print(request.POST.get("note"))
+        print(request.POST.get("note_id"))
         n = Note(note=request.POST.get("note"), user=request.user)
 
         n.save()
-    notes = Note.objects.filter(user=request.user)
-    return render(request, 'notes.html', {"notes": notes})
+        json_object = {'id': n.id}
+        return JsonResponse(json_object)
+    else:
+        notes = Note.objects.filter(user=request.user)
+        return render(request, 'notes.html', {"notes": notes})
 
 # def search(request):
 #    if request.method == 'POST':
@@ -99,7 +103,8 @@ def base(request):
                 notes_html = render_notes(notes)
                 # Figure out how to grabe a single note from the database.
                 note_html = render_note(notes)
-                html = notes_html + note_html
+                # html = notes_html + note_html
+                html = '<section class="ui grid"><div id="notes-list" class="ui four wide column notes-list">' + notes_html + '</div>' + note_html + '</section>'
                 return render(request, 'base.html', {"html": html})
 
         else:
@@ -114,7 +119,7 @@ def base(request):
             notes = Note.objects.filter(user=request.user)
             notes_html = render_notes(notes)
             note_html = render_note(notes)
-            html = notes_html + note_html
+            html = '<section class="ui grid"><div id="notes-list" class="ui four wide column notes-list">'+notes_html+'</div>'+note_html+'</section>'
             return render(request, 'base.html', {"html": html})
 
 

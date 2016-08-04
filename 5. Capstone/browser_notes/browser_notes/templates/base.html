@@ -148,7 +148,7 @@
     {% block content %}
     {% endblock content %}
 
-      {{html}}
+      {{html|safe}}
 
 
 
@@ -156,7 +156,7 @@
 
 
 
-  <script src="{% static 'js/behavior.js' %}"></script>
+  <script src="{% static 'js/autosave.js' %}"></script>
   </body>
 
 </html>

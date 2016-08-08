@@ -102,41 +102,54 @@ def note(request):
 
 
 def base(request):
-    """if it is a POST log user in else redirect back to '/'
+    user = request.user
+    if user is not None:
+        notes = Note.objects.filter(user=user)
+        notes_html = render_notes(notes)
+        # Figure out how to grabe a single note from the database.
+        note_html = render_note(notes)
+        # html = notes_html + note_html
+        html = '<section class="ui grid"><div id="notes-list" class="ui four wide column notes-list">' + notes_html + '</div>' + note_html + '</section>'
+        return render(request, 'base.html', {"html": html})
 
-    else check whether user is logged in  if logged in show notes
-    else redirect to '/' """
-    if request.method == 'POST':
 
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
 
-        if user is not None:
-            if user.is_active:
-                login(request, user)
-                notes = Note.objects.filter(user=user)
-                notes_html = render_notes(notes)
-                # Figure out how to grabe a single note from the database.
-                note_html = render_note(notes)
-                # html = notes_html + note_html
-                html = '<section class="ui grid"><div id="notes-list" class="ui four wide column notes-list">' + notes_html + '</div>' + note_html + '</section>'
-                return render(request, 'base.html', {"html": html})
-
-        else:
-            return redirect('/')
-
-    else:       # if user types wrong login (Anonymous user)
-
-        if not request.user.is_authenticated():
-            return redirect('/')        # redirect back to login screen
-
-        else:
-            notes = Note.objects.filter(user=request.user)
-            notes_html = render_notes(notes)
-            note_html = render_note(notes)
-            html = '<section class="ui grid"><div id="notes-list" class="ui four wide column notes-list">'+notes_html+'</div>'+note_html+'</section>'
-            return render(request, 'base.html', {"html": html})
+# def base(request):
+#     """if it is a POST log user in else redirect back to '/'
+#
+#     else check whether user is logged in  if logged in show notes
+#     else redirect to '/' """
+#     if request.method == 'POST':
+#
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         user = authenticate(username=username, password=password)
+#
+#         if user is not None:
+#             if user.is_active:
+#                 login(request, user)
+#                 notes = Note.objects.filter(user=user)
+#                 notes_html = render_notes(notes)
+#                 # Figure out how to grabe a single note from the database.
+#                 note_html = render_note(notes)
+#                 # html = notes_html + note_html
+#                 html = '<section class="ui grid"><div id="notes-list" class="ui four wide column notes-list">' + notes_html + '</div>' + note_html + '</section>'
+#                 return render(request, 'base.html', {"html": html})
+#
+#         else:
+#             return redirect('/')
+#
+#     else:       # if user types wrong login (Anonymous user)
+#
+#         if not request.user.is_authenticated():
+#             return redirect('/')        # redirect back to login screen
+#
+#         else:
+#             notes = Note.objects.filter(user=request.user)
+#             notes_html = render_notes(notes)
+#             note_html = render_note(notes)
+#             html = '<section class="ui grid"><div id="notes-list" class="ui four wide column notes-list">'+notes_html+'</div>'+note_html+'</section>'
+#             return render(request, 'base.html', {"html": html})
 
 
 def render_notes(notes):

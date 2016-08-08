@@ -33,7 +33,7 @@ urlpatterns = [
     url(r'^home', base, name='home'),
 
     url('^', include('django.contrib.auth.urls')),
-    url(r'^$', auth_views.login),
+    url(r'^$', auth_views.login, name="login"),
 
 
 #    url(r'^search/', search, name='results'),

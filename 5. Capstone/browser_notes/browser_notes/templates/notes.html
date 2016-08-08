@@ -1,16 +1,19 @@
 {# templates/notes.html #}
 
 
-
                 <!-- list of notes -->
 
               {#  the for loop iterates over each note #}
                  {% for note in notes %}
 
+
                 <div data-id="{{ note.id }}" class="notes-list ui segments">
-                    {{ note.user }} <br>
-                    {{ note.created }}<br>
-                    {{ note.note }} <br>
+
+                    {{ note.note | truncatewords:50}} <br>
                     {{ note.modified}}
+
                 </div>
+
                     {% endfor %}
+
+

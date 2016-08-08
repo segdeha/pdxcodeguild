@@ -11,3 +11,12 @@
             }
         });
     });
+
+ 
+ 
+ $("#notes-list").on.('click', function(evt) {
+  var id = $(evt.target)
+      .attr('data-id');
+  $.ajax("#current-note").load(id);
+  return false;
+});

@@ -11,7 +11,6 @@ from .models import User
 from .models import Note
 from django.shortcuts import redirect
 
-
 from django.shortcuts import render
 from django.template import Context, Template
 
@@ -58,15 +57,29 @@ class UserListView(LoginRequiredMixin, ListView):
 
 def notes(request):
     if request.method == 'POST':
-        print(request.POST.get("note"))
-        print(request.POST.get("note_id"))
-        n = Note(note=request.POST.get("note"), user=request.user)
+        if request.POST.get("note_id") == "newnote":
+            # create a new note
 
-        n.save()
-        json_object = {'id': n.id}
-        return JsonResponse(json_object)
+            print(request.POST.get("note"))
+            print(request.POST.get("note_id"))
+            n = Note(note=request.POST.get("note"), user=request.user)
+
+            n.save()
+            json_object = {'id': n.id}
+            return JsonResponse(json_object)
+
+
+        else:
+            # update existing note
+            print("test")
+            note = Note.objects.get(id=request.POST.get("note_id"))
+            note.note = request.POST.get("note")  # change field
+            note.save()  # this will update only
+            return JsonResponse({'id': note.id})
+
     else:
-        notes = Note.objects.filter(user=request.user)
+
+        notes = Note.objects.filter(user=request.user).order_by('-modified')
         return render(request, 'notes.html', {"notes": notes})
 
 # def search(request):
@@ -79,11 +92,13 @@ def notes(request):
 # Below is the view function for the Note model for a new saved note
 
 def note(request):
-    note = Note.objects.filter(user=request.user)
-    if request.method == 'POST':
-        html = render_note(note)
-        print(html)
-    return render(request, 'note.html', {"note": note})
+    note = Note.objects.filter(id=request.GET.get("note_id")).values("note")
+    print(request.GET.get("note_id"))
+    print(note)
+    # if request.method == 'POST':
+    #     html = render_note(note)
+    #     print(html)
+    return JsonResponse({'note': note[0]["note"]})
 
 
 def base(request):
@@ -99,6 +114,7 @@ def base(request):
 
         if user is not None:
             if user.is_active:
+                login(request, user)
                 notes = Note.objects.filter(user=user)
                 notes_html = render_notes(notes)
                 # Figure out how to grabe a single note from the database.
@@ -112,7 +128,7 @@ def base(request):
 
     else:       # if user types wrong login (Anonymous user)
 
-        if '' == request.user.get_username():
+        if not request.user.is_authenticated():
             return redirect('/')        # redirect back to login screen
 
         else:
@@ -157,7 +173,7 @@ def my_login(request):
         ...
 
 
-def login(request):
+def login_form(request):
     form = LoginForm()
     return render(request, 'my_login.html', {'form': form})
 

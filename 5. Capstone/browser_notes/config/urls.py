@@ -9,8 +9,8 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 # imported views parameters below
 from browser_notes.users.views import notes
-from browser_notes.users.views import login
-from browser_notes.users.views import my_login
+# from browser_notes.users.views import login_form
+
 from browser_notes.users.views import note
 from browser_notes.users.views import base
 from django.contrib.auth import views as auth_views
@@ -18,7 +18,7 @@ from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
-    url(r'^$', login, name='login'),
+    # url(r'^$', login_form, name='login'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}
@@ -33,7 +33,7 @@ urlpatterns = [
     url(r'^home', base, name='home'),
 
     url('^', include('django.contrib.auth.urls')),
-    url(r'^accounts/login/$', auth_views.login),
+    url(r'^$', auth_views.login),
 
 
 #    url(r'^search/', search, name='results'),

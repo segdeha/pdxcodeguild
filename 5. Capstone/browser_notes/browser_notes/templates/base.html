@@ -21,7 +21,7 @@
 
   {% block css %}
     <!-- Latest compiled and minified CSS -->
-
+    <link href="{% static 'css/semantic.css' %}" rel="stylesheet">
     <!-- Your stuff: Third-party css libraries go here -->
     <style>
     p {
@@ -31,9 +31,10 @@
 
 
 
-     a {
+     .navbar-brand {
 
-         width: 60%;
+         width: 90%;
+         font-size: 1.5em;
      }
 
 
@@ -109,6 +110,7 @@
                 float: right;
 
 
+
             }
 
             .note.ui.segment {
@@ -116,14 +118,26 @@
                 float: right;
                 height: 100%;
                 width: 72%;
-                p
+                margin-bottom: 0%;
+
 
             }
+
+            #current-note {
+                height: 100%;
+                width: 100%;
+            }
+
+            #logout {
+                font-size: 1em;
+                float: right;
+            }
+
 
     </style>
 
     <!-- This file store project specific CSS -->
-    <link href="{% static 'css/semantic.css' %}" rel="stylesheet">
+
 
 
   {% endblock %}
@@ -133,9 +147,16 @@
         <header>
             <!-- branding, search bar, login link -->
             <div class="ui inverted segment fluid action input">
-                <a class="navbar-brand" href="/">browser_notes</a>
-                    <input type="text" placeholder="Search...">
-                        <div class="ui button">Search</div>
+                <a class="navbar-brand" href="/" >Browser Notes</a>
+                {% if request.user.is_authenticated %}Welcome '{{ request.user.username }}'
+                {% endif %}
+
+
+
+
+{#                    <input type="text" placeholder="Search...">#}
+{#                        <div class="ui button">Search</div>#}
+                <a id="logout" href="/accounts/logout">logout</a>
 
             </div>
 
@@ -143,9 +164,13 @@
         </header><br>
 
   <body>
+
+
     {% csrf_token %}
 
     {% block content %}
+
+
     {% endblock content %}
 
       {{html|safe}}
@@ -167,28 +192,28 @@
 
     <!-- /container -->
 
-    {% block modal %}{% endblock modal %}
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    {% block javascript %}
-      <!-- Latest JQuery -->
-
-
-      <!-- Tether - a requirement for Bootstrap tooltips -->
-
-
-      <!-- Latest compiled and minified JavaScript -->
-
-
-      <!-- Your stuff: Third-party javascript libraries go here -->
-
-      <!-- place project specific Javascript in this file -->
-
-
-
-
-
-    {% endblock javascript %}
+{#    {% block modal %}{% endblock modal %}#}
+{##}
+{#    <!-- Le javascript#}
+{#    ================================================== -->#}
+{#    <!-- Placed at the end of the document so the pages load faster -->#}
+{#    {% block javascript %}#}
+{#      <!-- Latest JQuery -->#}
+{##}
+{##}
+{#      <!-- Tether - a requirement for Bootstrap tooltips -->#}
+{##}
+{##}
+{#      <!-- Latest compiled and minified JavaScript -->#}
+{##}
+{##}
+{#      <!-- Your stuff: Third-party javascript libraries go here -->#}
+{##}
+{#      <!-- place project specific Javascript in this file -->#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#    {% endblock javascript %}#}
 

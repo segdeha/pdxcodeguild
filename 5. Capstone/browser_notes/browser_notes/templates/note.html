@@ -1,14 +1,23 @@
 
 
 
+
+
     <div class="note ui segment">
-                <div id="current-note" contenteditable="true" data-id="newnote"></div>
+                <textarea id="current-note"    data-id="newnote"></textarea>
 
 
-                <button class="ui button">
-                        Save
-                </button>
+{#                <button class="ui button">#}
+{#                        Save#}
+{#                </button>#}
     </div>
 
 
+
+    <script type="text/javascript">
+
+            $(function() {
+        document.getElementById("current-note").focus();
+    });
+    </script>
 

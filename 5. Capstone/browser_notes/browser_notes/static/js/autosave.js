@@ -1,29 +1,7 @@
 
 
 
-
-
-$('.ui.button').on('click', function() {
-        var note_id = $('#current-note').attr('data-id');
-        var note = $('#current-note').html();
-        $.post({
-            url: '/notes/',
-            data: {
-                csrfmiddlewaretoken: $('[name=csrfmiddlewaretoken]').val(),
-                note_id: note_id,
-                note: note
-
-
-            },
-
-            success: function (data) {
-                console.log(data)
-                $('#current-note').attr('data-id', data.id);
-                updateList();
-            }
-        });
-    });
-
+// jQuery to update list after autosave and editing.
 
 
 function updateList() {
@@ -68,7 +46,7 @@ $(function(){
                 success: function (data) {
                     console.log("successfully saved")
                     $current_note.attr('data-id', data.id);
-                    updateList();
+                    updateList();    // call update list function
                 }
             });
 
@@ -92,7 +70,7 @@ $("#notes-list").on('click', function(evt) {
                     note_id: note_id},
 
       success: function (data) {
-         
+
           $('#current-note').attr('data-id', note_id).val(data.note);
       }
   });

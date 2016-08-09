@@ -30,13 +30,11 @@
     }
 
 
-
      .navbar-brand {
 
          width: 90%;
          font-size: 1.5em;
      }
-
 
 
     .notes-list {
@@ -69,8 +67,6 @@
                 height: 100%;
                 width: 30%
 
-
-
             }
 
             .ui.fluid.action.input {
@@ -87,8 +83,6 @@
                 height: 82%;
                 float: left;
                 width: 100%;
-
-
 
             }
 
@@ -139,7 +133,6 @@
     <!-- This file store project specific CSS -->
 
 
-
   {% endblock %}
 
   </head>
@@ -151,8 +144,7 @@
                 {% if request.user.is_authenticated %}Welcome '{{ request.user.username }}'
                 {% endif %}
 
-
-
+{# Search placeholder below for future Search feature #}
 
 {#                    <input type="text" placeholder="Search...">#}
 {#                        <div class="ui button">Search</div>#}
@@ -177,10 +169,6 @@
 
 
 
-
-
-
-
   <script src="{% static 'js/autosave.js' %}"></script>
   </body>
 
@@ -189,31 +177,4 @@
 
 
 
-
-    <!-- /container -->
-
-{#    {% block modal %}{% endblock modal %}#}
-{##}
-{#    <!-- Le javascript#}
-{#    ================================================== -->#}
-{#    <!-- Placed at the end of the document so the pages load faster -->#}
-{#    {% block javascript %}#}
-{#      <!-- Latest JQuery -->#}
-{##}
-{##}
-{#      <!-- Tether - a requirement for Bootstrap tooltips -->#}
-{##}
-{##}
-{#      <!-- Latest compiled and minified JavaScript -->#}
-{##}
-{##}
-{#      <!-- Your stuff: Third-party javascript libraries go here -->#}
-{##}
-{#      <!-- place project specific Javascript in this file -->#}
-{##}
-{##}
-{##}
-{##}
-{##}
-{#    {% endblock javascript %}#}
 

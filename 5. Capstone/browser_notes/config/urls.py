@@ -7,9 +7,9 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-# imported views parameters below
+
 from browser_notes.users.views import notes
-# from browser_notes.users.views import login_form
+
 
 from browser_notes.users.views import note
 from browser_notes.users.views import base
@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^$', auth_views.login, name="login"),
 
 
-#    url(r'^search/', search, name='results'),
+
 
     # Your stuff: custom urls includes go here
 

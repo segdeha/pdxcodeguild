@@ -5,11 +5,11 @@ from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 from django.http import JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth import authenticate, login
+
 from .forms import LoginForm
 from .models import User
 from .models import Note
-from django.shortcuts import redirect
+
 
 from django.shortcuts import render
 from django.template import Context, Template
@@ -82,6 +82,8 @@ def notes(request):
         notes = Note.objects.filter(user=request.user).order_by('-modified')
         return render(request, 'notes.html', {"notes": notes})
 
+
+# Below view for future work on search
 # def search(request):
 #    if request.method == 'POST':
 #        query = request.POST['query']
@@ -106,50 +108,11 @@ def base(request):
     if user is not None:
         notes = Note.objects.filter(user=user)
         notes_html = render_notes(notes)
-        # Figure out how to grabe a single note from the database.
+        # Figure out how to grab a single note from the database.
         note_html = render_note(notes)
         # html = notes_html + note_html
         html = '<section class="ui grid"><div id="notes-list" class="ui four wide column notes-list">' + notes_html + '</div>' + note_html + '</section>'
         return render(request, 'base.html', {"html": html})
-
-
-
-# def base(request):
-#     """if it is a POST log user in else redirect back to '/'
-#
-#     else check whether user is logged in  if logged in show notes
-#     else redirect to '/' """
-#     if request.method == 'POST':
-#
-#         username = request.POST.get('username')
-#         password = request.POST.get('password')
-#         user = authenticate(username=username, password=password)
-#
-#         if user is not None:
-#             if user.is_active:
-#                 login(request, user)
-#                 notes = Note.objects.filter(user=user)
-#                 notes_html = render_notes(notes)
-#                 # Figure out how to grabe a single note from the database.
-#                 note_html = render_note(notes)
-#                 # html = notes_html + note_html
-#                 html = '<section class="ui grid"><div id="notes-list" class="ui four wide column notes-list">' + notes_html + '</div>' + note_html + '</section>'
-#                 return render(request, 'base.html', {"html": html})
-#
-#         else:
-#             return redirect('/')
-#
-#     else:       # if user types wrong login (Anonymous user)
-#
-#         if not request.user.is_authenticated():
-#             return redirect('/')        # redirect back to login screen
-#
-#         else:
-#             notes = Note.objects.filter(user=request.user)
-#             notes_html = render_notes(notes)
-#             note_html = render_note(notes)
-#             html = '<section class="ui grid"><div id="notes-list" class="ui four wide column notes-list">'+notes_html+'</div>'+note_html+'</section>'
-#             return render(request, 'base.html', {"html": html})
 
 
 def render_notes(notes):
@@ -169,21 +132,6 @@ def render_note(note):
         return tmpl.render(ctxt)
 
 
-def my_login(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(username=username, password=password)
-    if user is not None:
-        if user.is_active:
-            login(request, user)
-            # Redirect to a success page.
-            return render(request, 'my_login.html')
-        else:
-            # Return a 'disabled account' error message
-            ...
-    else:
-        # Return an 'invalid login' error message.
-        ...
 
 
 def login_form(request):
